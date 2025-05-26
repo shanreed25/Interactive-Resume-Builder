@@ -28,7 +28,7 @@
 
                         <input class="med" type="email" name="email" id ="email" placeholder="Email" required />
 
-                        <input class="med" type="tel" name="phoneNumber" id ="phoneNumber" placeholder="Phone Number 123-456-789"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+                        <input class="med" type="tel" name="phoneNumber" id ="phoneNumber" placeholder="Phone Number 123-456-789"  pattern="[0-9]{3}[0-9]{3}[0-9]{4}"/>
 
                         <input class="small" type="text" name="city" id ="city" placeholder="City"/>
 
@@ -36,7 +36,7 @@
 
                         <input class="small" type="number" name="zipCode" id ="zipCode" maxlength = "5" minlength="5" placeholder="Zip Code"/>
                         
-                        <button type="submit">Add Contact Details</button>
+                        <button type="submit" onclick="saveData()">Add Contact Details</button>
                     </form>
             </div>
 

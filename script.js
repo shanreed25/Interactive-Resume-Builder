@@ -32,6 +32,26 @@ contactForm.addEventListener('submit', function(event) {
    
 });
 
+
+
+//Local storage
+function saveData(){
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const email = document.getElementById("email").value;
+    const phoneNumber = document.getElementById("phoneNumber").value;
+    const city = document.getElementById("city").value;
+    const state = document.getElementById("state").value;
+    const zipCode = document.getElementById("zipCode").value;
+
+
+    
+    var userFirstName = localStorage.setItem('firstName', firstName);//using key value pairs to store data locally
+    var userLastName = localStorage.setItem('lastName', lastName);
+
+}
+
+
 const workHistoryForm = document.getElementById('workHistoryForm');                    
 
 // Add a form submit event listener
@@ -58,7 +78,11 @@ workHistoryForm.addEventListener('submit', function(event) {
     document.getElementById("previewEndDate").innerHTML = endDate;
     document.getElementById("previewWorkCity").innerHTML = workCity;
     document.getElementById("previewWorkState").innerHTML = workState;
+
    
 });
 
+
+
+// var uid = document.getElementById("firstName")
 // LocalStorage.setItem("resumeData", JSON.stringify(formData));
