@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+    <title>Form</title>
+</head>
+    <body>
+        <!-- <div class="title-bar">
+            <h1>Resume Builder</h1>
+        </div> -->
+        <div id="content">
+            
+        <div id="left-side">
+            <div>
+                <div class='header'>
+                <h2 class="heading">Contact Details</h2>
+                <p class="sub-heading">Providing Contact Information Is Essential For Employers To Contact You</p>
+                </div>
+                    <form class="form"id="contactForm">
+                        <input class="med" type="text" name="firstName" id ="firstName" placeholder="First Name" required />
+
+                        <input class="med" type="text" name="lastName" id ="lastName" placeholder="Last Name" required />
+
+                        <input class="med" type="email" name="email" id ="email" placeholder="Email" required />
+
+                        <input class="med" type="tel" name="phoneNumber" id ="phoneNumber" placeholder="Phone Number 123-456-789"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+
+                        <input class="small" type="text" name="city" id ="city" placeholder="City"/>
+
+                        <input class="small" type="text" name="state" id ="state" placeholder="State/Province"/>
+
+                        <input class="small" type="number" name="zipCode" id ="zipCode" maxlength = "5" minlength="5" placeholder="Zip Code"/>
+                        
+                        <button type="submit">Add Contact Details</button>
+                    </form>
+            </div>
+
+
+            <div>
+                <div class='header'>
+                <h2 class="heading">Work History</h2>
+                <p class="sub-heading">Enter details about your work history, start with your most recent job and work backwards</p>
+                </div>
+                    <form class="form"id="workHistoryForm">
+                        <input type="checkbox" id="currentPosition" name="currentPosition" value="Present">
+                            <label for="currentPosition"> I currently work here</label><br>
+                            
+                        <input class="med" type="text" name="jobTitle" id ="jobTitle" placeholder="Job Title" required />
+
+                        <input class="med" type="text" name="employerName" id ="employerName" placeholder="Employer/Company Name" required />
+                           <input class="med" type="text" name="startDate" id ="startDate" placeholder="Start Date Apirl 2020"  />
+                        <input class="med" type="text" name="endDate" id ="endDate" placeholder="End Date Apirl 2020" />
+
+                        <input class="med" type="text" name="workCity" id ="workCity" placeholder="City"/>
+
+                        <input class="med" type="text" name="workState" id ="workState" placeholder="State/Province"/>
+
+                     
+                        <button type="submit">Add Work Details</button>
+                    </form>
+            </div>
+            <!-- <div>
+                <h2>Work History</h2> -->
+                <!-- You can include any work experience, internships, scholarships,
+relevant coursework and academic achievements. -->
+                    <!-- <form id="resumeForm">
+                        <input type="text" name="experience" id ="experience" placeholder="Experience" required />
+                        <button type="submit">Generate Resume</button>
+                    </form>
+            </div>
+
+                        <div>
+                <h2>Skills</h2>
+                    <form id="resumeForm">
+                        <input type="text" name="name" id ="name" placeholder="Full Name" required />
+                        <input type="email" name="email" id ="email" placeholder="Email" required />
+                        <input type="phoneNumber" name="phoneNumber" id ="phoneNumber" placeholder="Phone Number" required />
+                        <input type="text" name="education" id ="education" placeholder="Education" required />
+                        <input type="text" name="experience" id ="experience" placeholder="Experience" required />
+                        <button type="submit">Generate Resume</button>
+                    </form>
+            </div>
+
+                     <div>
+                <h2>Education</h2>
+                    <form id="resumeForm">
+                        <input type="text" name="name" id ="name" placeholder="Full Name" required />
+                        <input type="email" name="email" id ="email" placeholder="Email" required />
+                        <input type="phoneNumber" name="phoneNumber" id ="phoneNumber" placeholder="Phone Number" required />
+                        <input type="text" name="education" id ="education" placeholder="Education" required />
+                        <input type="text" name="experience" id ="experience" placeholder="Experience" required />
+                        <button type="submit">Generate Resume</button>
+                    </form>
+            </div> -->
+        </div>
+
+        <div id="right-side">
+            <h2>Resume Preview</h2>
+                <div id ="resumeContactPreview">
+                    <p id="previewFirstName"></p>
+                    <p id="previewLastName"></p>
+                    <p id="previewEmail"></p>
+                    <p id="previewPhoneNumber"></p>
+                    <p id="previewCity"></p>
+                    <p id="previewState"></p>
+                    <p id="previewZipCode"></p>
+                </div>
+
+                <div id ="resumeWorkDetailsPreview">
+                    <p id="previewJobTitle"></p>
+                    <p id="previewEmployerName"></p>
+                    <p id="previewStartDate"></p>
+                    <p id="previewEndDate"></p>
+                    <p id="previewWorkCity"></p>
+                    <p id="previewWorkState"></p>
+                </div>
+        </div>
+        </div>
+        <script src ="script.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> -->
+    </body>
+</html>
