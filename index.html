@@ -10,16 +10,17 @@
     <title>Form</title>
 </head>
     <body>
-        <!-- <div class="title-bar">
-            <h1>Resume Builder</h1>
-        </div> -->
-        <div id="content">
-            
+     <div id="content">
         <div id="left-side">
-            <div>
-                <div class='header'>
-                <h2 class="heading">Contact Details</h2>
-                <p class="sub-heading">Providing Contact Information Is Essential For Employers To Contact You</p>
+         <div id="header">
+            <h1>Resume Builder</h1>
+        </div>
+        <div id="left-side-content">
+
+            <section id="contact-details-box">
+                <div class='form-lables'>
+                <h2 class="form-headings">Contact Details</h2>
+                <p class="form-sub-heading">Providing Contact Information Is Essential For Employers To Contact You</p>
                 </div>
                     <form class="form"id="contactForm">
                         <input class="med" type="text" name="firstName" id ="firstName" placeholder="First Name" required />
@@ -36,15 +37,14 @@
 
                         <input class="small" type="number" name="zipCode" id ="zipCode" maxlength = "5" minlength="5" placeholder="Zip Code"/>
                         
-                        <button type="submit" onclick="saveData()">Add Contact Details</button>
+                        <button type="submit" onclick="saveContactData()">Add Contact Details</button>
                     </form>
-            </div>
+            </section>
 
-
-            <div>
-                <div class='header'>
-                <h2 class="heading">Work History</h2>
-                <p class="sub-heading">Enter details about your work history, start with your most recent job and work backwards</p>
+            <section>
+                <div class='form-lables'>
+                <h2 class="form-headings">Work History</h2>
+                <p class="form-sub-heading">Enter details about your work history, start with your most recent job and work backwards</p>
                 </div>
                     <form class="form"id="workHistoryForm">
                         <input type="checkbox" id="currentPosition" name="currentPosition" value="Present">
@@ -63,44 +63,14 @@
                      
                         <button type="submit">Add Work Details</button>
                     </form>
-            </div>
-            <!-- <div>
-                <h2>Work History</h2> -->
-                <!-- You can include any work experience, internships, scholarships,
-relevant coursework and academic achievements. -->
-                    <!-- <form id="resumeForm">
-                        <input type="text" name="experience" id ="experience" placeholder="Experience" required />
-                        <button type="submit">Generate Resume</button>
-                    </form>
-            </div>
+            </section>
 
-                        <div>
-                <h2>Skills</h2>
-                    <form id="resumeForm">
-                        <input type="text" name="name" id ="name" placeholder="Full Name" required />
-                        <input type="email" name="email" id ="email" placeholder="Email" required />
-                        <input type="phoneNumber" name="phoneNumber" id ="phoneNumber" placeholder="Phone Number" required />
-                        <input type="text" name="education" id ="education" placeholder="Education" required />
-                        <input type="text" name="experience" id ="experience" placeholder="Experience" required />
-                        <button type="submit">Generate Resume</button>
-                    </form>
             </div>
-
-                     <div>
-                <h2>Education</h2>
-                    <form id="resumeForm">
-                        <input type="text" name="name" id ="name" placeholder="Full Name" required />
-                        <input type="email" name="email" id ="email" placeholder="Email" required />
-                        <input type="phoneNumber" name="phoneNumber" id ="phoneNumber" placeholder="Phone Number" required />
-                        <input type="text" name="education" id ="education" placeholder="Education" required />
-                        <input type="text" name="experience" id ="experience" placeholder="Experience" required />
-                        <button type="submit">Generate Resume</button>
-                    </form>
-            </div> -->
         </div>
 
         <div id="right-side">
             <h2>Resume Preview</h2>
+            <div id="resume-content">
                 <div id ="resumeContactPreview">
                     <p id="previewFirstName"></p>
                     <p id="previewLastName"></p>
@@ -119,9 +89,18 @@ relevant coursework and academic achievements. -->
                     <p id="previewWorkCity"></p>
                     <p id="previewWorkState"></p>
                 </div>
+            </div>
+            <div>
+                <button onclick="generatePDF()">Download PDF</button>
+            </div>
+                
+
         </div>
         </div>
+
+
+
         <script src ="script.js"></script>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
     </body>
 </html>

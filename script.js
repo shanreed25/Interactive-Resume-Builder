@@ -35,7 +35,7 @@ contactForm.addEventListener('submit', function(event) {
 
 
 //Local storage
-function saveData(){
+function saveContactData(){
     const firstName = document.getElementById("firstName").value;
     const lastName = document.getElementById("lastName").value;
     const email = document.getElementById("email").value;
@@ -83,6 +83,48 @@ workHistoryForm.addEventListener('submit', function(event) {
 });
 
 
+// //Local storage
+// function saveWorkData(){
+//     const jobTitle = document.getElementById("jobTitle").value;
+//     const employerName = document.getElementById("employerName").value;
+//     const startDate = document.getElementById("startDate").value;
+//     const endDate = document.getElementById("endDate").value;
+//     const workCity = document.getElementById("workCity").value;
+//     const workState = document.getElementById("workState").value;
+//     const zipCode = document.getElementById("zipCode").value;
+
+
+    
+//     var userFirstName = localStorage.setItem('firstName', firstName);//using key value pairs to store data locally
+//     var userLastName = localStorage.setItem('lastName', lastName);
+
+// }
+
+
 
 // var uid = document.getElementById("firstName")
 // LocalStorage.setItem("resumeData", JSON.stringify(formData));
+
+
+function generatePDF() {
+    // Choose the element to convert
+const element = document.getElementById('resume-content');
+
+// Optional configuration
+const opt = {
+margin: 1,
+filename: 'myfile.pdf',
+image: { type: 'jpeg', quality: 0.98 },
+html2canvas: { scale: 2 },
+jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+};
+
+// Generate the PDF
+html2pdf().set(opt).from(element).save();
+console.log(element);
+
+// var element = document.getElementById('resume-content');
+// html2pdf(element);
+}
+
+
