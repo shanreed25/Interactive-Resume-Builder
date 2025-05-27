@@ -61,12 +61,15 @@ h1, h2, h3, h4, h5, h6 {
         height: 100vh;
     
 }
+
+
 #right-side{
+  font-family: Arial, sans-serif;
     position: fixed;
     right: 0rem;
     width: 20%;
     color: white;
-    background-color: rgb(60,90,155);
+    background-color: #2c3e50;;
     border-left-style: inset;
     height: 100rem;
 }
