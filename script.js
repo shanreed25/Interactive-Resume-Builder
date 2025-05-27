@@ -13,7 +13,7 @@ contactForm.addEventListener('submit', function(event) {
         formData[key] = value;
     });
 
-    // Access and log the values
+    // Access the values
     const firstName = formData.firstName;
     const lastName = formData.lastName;
     const email = formData.email;
@@ -22,6 +22,8 @@ contactForm.addEventListener('submit', function(event) {
     const state = formData.state;
     const zipCode = formData.zipCode;
 
+
+    //Pass values to HTML element
     document.getElementById("previewFirstName").innerHTML = firstName;
     document.getElementById("previewLastName").innerHTML = lastName;
     document.getElementById("previewEmail").innerHTML = email;
