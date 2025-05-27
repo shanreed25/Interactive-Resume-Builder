@@ -1,51 +1,6 @@
 # Interactive-Resume-Builder - Sprint 1
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sprint Planning Document</title>
-<style>
-body {
-font-family: Arial, sans-serif;
-margin: 40px;
-line-height: 1.6;
-background: #f8f9fa;
-color: #333;
-}
 
-h1, h2, h3 {
-color: #2c3e50;
-}
-
-.section {
-margin-bottom: 30px;
-padding: 20px;
-background: #fff;
-border-radius: 6px;
-box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-}
-
-table {
-width: 100%;
-border-collapse: collapse;
-margin-top: 10px;
-}
-
-th, td {
-border: 1px solid #ccc;
-padding: 10px;
-text-align: left;
-}
-
-th {
-background-color: #ecf0f1;
-}
-</style>
-
-</head>
-<body>
 
 <h1>Sprint Planning Document</h1>
 
@@ -123,5 +78,3 @@ background-color: #ecf0f1;
 </ul>
 </div>
 
-</body>
-</html>
