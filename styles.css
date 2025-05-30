@@ -1,0 +1,204 @@
+/* body {
+    font-family: Arial, sans-serif;
+    gap: 40px;
+    padding: 30px;
+    background-color:  #ECF0F1;
+} */
+/*CSS RESET....https://www.joshwcomeau.com/css/custom-css-reset*/
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  background-color: #2c3e50;
+  color: #2d3436;
+}
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*My Code*/
+/*HEADER*/
+header {
+  background-color: #ecf0f1;
+  box-shadow: 0px 1px 7px 0px rgba(236, 240, 241, 0.75);
+  -webkit-box-shadow: 0px 1px 7px 0px rgba(236, 240, 241, 0.75);
+  -moz-box-shadow: 0px 1px 7px 0px rgba(236, 240, 241, 0.75);
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu{
+    width:80%;
+    list-style-type: none ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     
+}
+
+.menu-list {
+    width: 100%;
+    color:  #1ABC9C;
+    font-weight: bolder;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    
+    
+}
+
+
+/*CONTENT-----------------------------------------------------*/
+#content {
+  display: flex;
+  justify-content: space-around;
+}
+
+#resume-form-section,
+#resume-preview-section {
+  width: 48%;
+  background: #ecf0f1;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+input,
+textarea {
+  /* width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px; */
+}
+
+.med {
+  width: 45%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.small {
+  width: 29.9%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+h2 {
+  border-bottom: 2px solid #2d3436;
+  padding-bottom: 5px;
+}
+
+button {
+  background-color: #1abc9c;
+}
+
+/*CONTACT-----------------------------------------------------*/
+.preview-contact-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.preview-name {
+  display: flex;
+}
+#preview-first-name {
+  margin-right: 0.4rem;
+}
+/*EXPERIENCE--------------------------------------------------*/
+.experience-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.experience-date {
+  font-size: 0.7rem;
+  display: flex;
+  margin: 0;
+}
+
+.experience-date p,
+.experience-summary h4 {
+  margin: 0;
+}
+
+.experience-summary {
+  width: 70%;
+}
+
+/* #experience-title-date{
+    display: flex;
+}
+
+.start, .end{
+    font-size: .6rem;
+} */

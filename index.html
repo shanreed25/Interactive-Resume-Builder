@@ -3,87 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./code/styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
-    <title>Form</title>
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+    <title>Interactive Resume Builder</title>
 </head>
     <body>
-     <div id="content">
-        <div id="left-side">
-         <div id="header">
-            <h1>Resume Builder</h1>
-        </div>
-        <div id="left-side-content">
+        <header>
+            <div>
+                <h1>Resume Builder</h1>
+            </div>
+            <div class="menu">
+                <ul class="menu-list">
+                    <li>Contact</li>
+                    <li>Experience</li>
+                    <li>Skills</li>
+                    <li>Education</li>
+                </ul>
+            </div>
+            
+        </header>
 
-            <section id="contact-details-box">
-                <div class='form-lables'>
-                <h2 class="form-headings">Contact Details</h2>
-                <p class="form-sub-heading">Providing Contact Information Is Essential For Employers To Contact You</p>
-                </div>
-                    <form class="form"id="contactForm">
-                        <input class="med" type="text" name="firstName" id ="firstName" placeholder="First Name" required />
+        <div id="content">
+         <section id="resume-form-section">      
+            <form class="form"id="resume-form">
+                <div class="resume-form-contact">
+                    <h2>Contact Details</h2>
+                        <input class="med" type="text" name="first-name" id ="first-name" placeholder="First Name" required />
 
-                        <input class="med" type="text" name="lastName" id ="lastName" placeholder="Last Name" required />
+                        <input class="med" type="text" name="last-name" id ="last-name" placeholder="Last Name" required />
 
                         <input class="med" type="email" name="email" id ="email" placeholder="Email" required />
 
-                        <input class="med" type="tel" name="phoneNumber" id ="phoneNumber" placeholder="Phone Number 123-456-789"  pattern="[0-9]{3}[0-9]{3}[0-9]{4}"/>
+                        <input class="med" type="tel" name="phone-number" id ="phone-number" placeholder="Phone Number 123-456-789"  pattern="[0-9]{3}[0-9]{3}[0-9]{4}"/>
 
-                        <input class="small" type="text" name="city" id ="city" placeholder="City"/>
+                        <input class="med" type="text" name="city" id ="city" placeholder="City"/>
 
-                        <input class="small" type="text" name="state" id ="state" placeholder="State/Province"/>
+                        <select class="med" id="state" name="state">
+                        <option value="">SELECT STATE</option>
+                        <option value="AL">AL</option>
+                        <option value="AK">AK</option>
+                        <option value="AZ">AZ</option>
+                        <option value="AR">AR</option>
+                        <option value="CA">CA</option>
+                        <option value="CO">CO</option>
+                        <option value="CT">CT</option>
+                        <option value="DE">DE</option>
+                        <option value="FL">FL</option>
+                        <option value="GA">GA</option>
+                        <option value="HI">HI</option>
+                        <option value="ID">ID</option>
+                        <option value="IL">IL</option>
+                        <option value="IN">IN</option>
+                        <option value="IA">IA</option>
+                        <option value="KS">KS</option>
+                        <option value="KY">KY</option>
+                        <option value="LA">LA</option>
+                        <option value="ME">ME</option>
+                        <option value="MD">MD</option>
+                        <option value="MA">MA</option>
+                        <option value="MI">MI</option>
+                        <option value="MN">MN</option>
+                        <option value="MS">MS</option>
+                        <option value="MO">MO</option>
+                        <option value="MT">MT</option>
+                        <option value="NE">NE</option>
+                        <option value="NV">NV</option>
+                        <option value="NH">NH</option>
+                        <option value="NJ">NJ</option>
+                        <option value="NM">NM</option>
+                        <option value="NY">NY</option>
+                        <option value="NC">NC</option>
+                        <option value="ND">ND</option>
+                        <option value="OH">OH</option>
+                        <option value="OK">OK</option>
+                        <option value="OR">OR</option>
+                        <option value="PA">PA</option>
+                        <option value="RI">RI</option>
+                        <option value="SC">SC</option>
+                        <option value="SD">SD</option>
+                        <option value="TN">TN</option>
+                        <option value="TX">TX</option>
+                        <option value="UT">UT</option>
+                        <option value="VT">VT</option>
+                        <option value="VA">VA</option>
+                        <option value="WA">WA</option>
+                        <option value="WV">WV</option>
+                        <option value="WI">WI</option>
+                        <option value="WY">WY</option>
+                        </select>
+                </div>
 
-                        <input class="small" type="number" name="zipCode" id ="zipCode" maxlength = "5" minlength="5" placeholder="Zip Code"/>
+                <div class="resume-form-experience">
+                    <h2 class="form-headings">Experience</h2>
+                        <input type="checkbox" id="currentPosition" name="currentPosition" value="Present">
+                        <label for="currentPosition"> I currently work here</label><br>
+                            
+                        <input class="med" type="text" name="job-title" id ="job-title" placeholder="Job Title" required />
                         
+                        <input class="med" type="text" name="employer-name" id ="employer-name" placeholder="Employer/Company Name" required />
+                                                
+                        <input class="med month-year" type="month" name="start-date" id ="start-date"  placeholder="Start Date Apirl 2020"  />
+                        
+                        <input class="med month-year" type="month" name="end-date" id ="end-date"  placeholder="End Date Apirl 2020" />
+                        
+                        <input class="med" type="text" name="work-city" id ="work-city" placeholder="City"/>
 
-                        <button type="submit" onclick="saveContactData()">ADD</button>
-
-
-                        <a href="./workhistory.html">
-                            <button type="button">NEXT</button>
-                        </a>
-                    </form>
-            </section>
-
-
-            </div>
-        </div>
-
-        <div id="right-side">
-            <h2>Resume Preview</h2>
-            <div id="resume-content">
-                <div id ="resumeContactPreview">
-                    <p id="previewFirstName"></p>
-                    <p id="previewLastName"></p>
-                    <p id="previewEmail"></p>
-                    <p id="previewPhoneNumber"></p>
-                    <p id="previewCity"></p>
-                    <p id="previewState"></p>
-                    <p id="previewZipCode"></p>
+                        <input class="med" type="text" name="work-state" id ="work-state" placeholder="State/Province"/>
                 </div>
-
-                <div id ="resumeWorkDetailsPreview">
-                    <p id="previewJobTitle"></p>
-                    <p id="previewEmployerName"></p>
-                    <p id="previewStartDate"></p>
-                    <p id="previewEndDate"></p>
-                    <p id="previewWorkCity"></p>
-                    <p id="previewWorkState"></p>
-                </div>
-            </div>
-            <div>
-                <button onclick="generatePDF()">Download PDF</button>
-            </div>
                 
+            </form>
+         </section>
+
+
+         <section id="resume-preview-section">
+
+            <div class="preview-container">
+
+                <h2>Live Preview</h2>
+
+                    <div id="preview">
+
+                        <div class="preview-section preview-contact-section">
+                            
+                            <div class="preview-name">
+                                <h1 id="preview-first-name">Lisa</h1>
+                                <h1 id="preview-last-name">Jones</h1>
+                            </div>
+
+                            <div class="preview-contact-info">
+                                <p id="preview-email">john@example.com</p>
+                                <p id="preview-phone-number">(123) 456-7890</p>
+                                <p id="preview-city">Las Vegas</p>
+                                <p id="preview-state">Nevada</p>
+                            </div>
+                            
+                        </div>
+
+                        <div class="preview-section preview-experience">
+
+                            <h2>Experience</h2>
+                            <div class="experience-details">
+
+                             <div class="experience-date">                            
+                                <p id="preview-start-date" class="start">May 2020</p>
+                                <p>&nbsp;&#8209;&nbsp;</p>
+                                <p id="preview-end-date">June 2023</p>
+                             </div>
+
+                             <div class="experience-summary">
+                                <h4 id="preview-job-title">Driver</h4>
+                                <p id="preview-employer-name">Fed-Ex</p>
+                                <p id="preview-work-city">Chula Vista</p>
+                                <p id="preview-work-state">CA</p>
+                             </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <button onclick="generatePDF()">Download PDF</button>
+            </div>
+
+         </section>
 
         </div>
-        </div>
 
 
-
-        <script src ="./code/script.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+            <script src="./index.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
     </body>
 </html>

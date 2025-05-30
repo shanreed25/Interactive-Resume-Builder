@@ -1,25 +1,21 @@
 # Interactive-Resume-Builder - Sprint 1
 
-
-
-<h1>Sprint Planning Document</h1>
-
 <div class="section">
 <h2>Sprint Overview</h2>
-<p><strong>Sprint Number:</strong> Sprint 5</p>
-<p><strong>Start Date:</strong> May 27, 2025</p>
-<p><strong>End Date:</strong> June 10, 2025</p>
-<p><strong>Duration:</strong> 2 weeks</p>
-<p><strong>Team:</strong> Alpha Development Team</p>
-<p><strong>Scrum Master:</strong> Jane Doe</p>
+<p><strong>Sprint Number:</strong> Sprint 1</p>
+<p><strong>Start Date:</strong> May 24, 2025</p>
+<p><strong>End Date:</strong> May 27, 2025</p>
+<p><strong>Duration:</strong> 4 days</p>
+<p><strong>Developer:</strong> Shannon Reed</p>
 </div>
 
 <div class="section">
 <h2>Sprint Goals</h2>
 <ul>
-<li>Implement user authentication module.</li>
-<li>Integrate payment gateway.</li>
-<li>Fix high-priority bugs from previous sprint.</li>
+<li>Create HTML form for contact and work history details</li>
+<li>Create HTML layout for resume builder</li>
+<li>Implement a way for users to view the data on screen</li>
+<li>Implement hmtl2pdf.js using CDN</li>
 </ul>
 </div>
 

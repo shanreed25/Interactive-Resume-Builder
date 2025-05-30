@@ -1,6 +1,10 @@
 # Interactive-Resume-Builder
 
 Interactive Resume Builder (No FrameWorks)
+## Color Scheme
+- Background:Charcoal #2C3E50
+- Text: Almost Black #2D3436
+- Accent: 
 
 ## HTML Forms
 
@@ -23,3 +27,20 @@ Interactive Resume Builder (No FrameWorks)
 
 ---
 
+
+
+
+const startDateInput = document.getElementsByClassName('month-year');
+const formattedDate = document.getElementById('formattedDate');
+
+startDateInput.addEventListener('change', () => {
+const value = monthInput.value; // e.g., "2024-06"
+if (value) {
+const [year, month] = value.split("-");
+const date = new Date(year, month - 1); // Month is zero-based
+const options = { year: 'numeric', month: 'long' };
+formattedDate.textContent = date.toLocaleDateString('en-US', options);
+} else {
+formattedDate.textContent = "";
+}
+});
