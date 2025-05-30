@@ -4,7 +4,7 @@ Interactive Resume Builder (No FrameWorks)
 ## Color Scheme
 - Background:Charcoal #2C3E50
 - Text: Almost Black #2D3436
-- Accent: 
+- Accent: Teal #1ABC9C
 
 ## HTML Forms
 

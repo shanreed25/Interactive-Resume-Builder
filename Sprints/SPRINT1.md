@@ -1,73 +1,33 @@
-# Interactive-Resume-Builder - Sprint 1
+# Sprint Backlog - Sprint 1
 
-<div class="section">
-<h2>Sprint Overview</h2>
-<p><strong>Sprint Number:</strong> Sprint 1</p>
-<p><strong>Start Date:</strong> May 24, 2025</p>
-<p><strong>End Date:</strong> May 27, 2025</p>
-<p><strong>Duration:</strong> 4 days</p>
-<p><strong>Developer:</strong> Shannon Reed</p>
-</div>
+## Sprint Goal:
+- [x] Create the initial version of the form and review sections. 
+    - The form should have two different sections contact and work history. 
+- Allow users to complete the contact and work history forms, while being able to review and change the information that they have entered without navigating away from the current page. 
+- Allow users to download a PDF format of the resume
 
-<div class="section">
-<h2>Sprint Goals</h2>
-<ul>
-<li>Create HTML form for contact and work history details</li>
-<li>Create HTML layout for resume builder</li>
-<li>Implement a way for users to view the data on screen</li>
-<li>Implement hmtl2pdf.js using CDN</li>
-</ul>
-</div>
+## User Stories:
 
-<div class="section">
-<h2>Planned Stories / Tasks</h2>
-<table>
-<thead>
-<tr>
-<th>Story ID</th>
-<th>Description</th>
-<th>Assignee</th>
-<th>Status</th>
-<th>Story Points</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>#101</td>
-<td>Create Contact and Work History Forms</td>
-<td>Completed</td>
-<td>5</td>
-</tr>
-<tr>
-<td>#102</td>
-<td>Create A Way For users to</td>
-<td>In Progress</td>
-<td>8</td>
-</tr>
-<tr>
-<td>#103</td>
-<td>Stripe payment setup</td>
-<td>To Do</td>
-<td>13</td>
-</tr>
-</tbody>
-</table>
-</div>
+| User Story | Priority | Estimated Effort (Story Points) | Status |
+|---|---|---|---|
+| As a user, I want to be able to view the form and resume/view sections on the same page. | High | M | Complete |
+| As a user, I want to be able to complete the contact and work history details of the form and view the details in the resume/view section, as it is being entered into the form. | High | M | Complete |
+| As a user, I want to be able to edit my contact and work details on the form and the update be reflected in the resume/view section, as it is being entered into the form. | High | L | Complete |
+| As a user, I want to be able to download a PDF version of my information in the resume format. | High | S | Complete |
 
-<div class="section">
-<h2>Risks & Mitigation</h2>
-<ul>
-<li><strong>Risk:</strong> Delay in Stripe API integration.<br><strong>Mitigation:</strong> Begin setup early and schedule a buffer day for troubleshooting.</li>
-<li><strong>Risk:</strong> Unclear OAuth requirements from client.<br><strong>Mitigation:</strong> Schedule a clarification call with the client.</li>
-</ul>
-</div>
 
-<div class="section">
-<h2>Retrospective Notes (Leave blank until end of sprint)</h2>
-<ul>
-<li><strong>What went well:</strong> </li>
-<li><strong>What could be improved:</strong> </li>
-<li><strong>Action Items:</strong> </li>
-</ul>
-</div>
+## Tasks
 
+| Task | User Story | Status |
+|---|---|---|
+| Design and implement the both the form and resume/view sections of the page. | As a user, I want to be able to view the form and resume/view sections on the same page. | Complete |
+| Implement the logic to allow a user to add details to the form and view the details in the resume/view section as it is being entered into the form. |  As a user, I want to be able to complete the contact and work history details of the form and view the details in the resume/view section, as it is being entered into the form. | Complete |
+| Implement the logic to edit details using the form. | As a user, I want to be able to edit my contact and work details on the form and the update be reflected on the resume/view section, as I update it in the form. | Complete |
+| Implement PDF download. | As a user, I want to be able to download a PDF version of my information in the resume format. | Complete |
+
+
+## Notes:
+- Using HTML2PDF.js to download PDF version of resume
+
+## Glossary:
+- HTML2PDF.js

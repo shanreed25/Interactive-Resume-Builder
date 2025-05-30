@@ -2,8 +2,6 @@
 
 
 function updateResume() {
-
-
   //setting the preview value to the value entered into the form----------------------------------------------------------
   document.getElementById("preview-first-name").innerText =
     document.getElementById("first-name").value;
@@ -19,7 +17,7 @@ function updateResume() {
     document.getElementById("state").value;
 
 
-//Converts the Start and end date format from 2024-06 to June 2024, 
+//Converts the Start and End date format from 2024-06 to June 2024, 
 // use querySelectorAll to make this code simpler later---------------------------------------------------------
   const startDateInput = document.getElementById("start-date");
   const formattedStartDate = document.getElementById("preview-start-date");
