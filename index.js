@@ -1,4 +1,10 @@
+
+
+
 function updateResume() {
+
+
+  //setting the preview value to the value entered into the form----------------------------------------------------------
   document.getElementById("preview-first-name").innerText =
     document.getElementById("first-name").value;
   document.getElementById("preview-last-name").innerText =
@@ -13,7 +19,8 @@ function updateResume() {
     document.getElementById("state").value;
 
 
-//Converts the Start and end date for mat from 2024-06 to June 2024, make this code simpler---------------------------------------------------------
+//Converts the Start and end date format from 2024-06 to June 2024, 
+// use querySelectorAll to make this code simpler later---------------------------------------------------------
   const startDateInput = document.getElementById("start-date");
   const formattedStartDate = document.getElementById("preview-start-date");
   const startDateValue = startDateInput.value; // e.g., "2024-06"
@@ -28,26 +35,26 @@ function updateResume() {
     formattedStartDate.textContent = date.toLocaleDateString("en-US", options);
   } else {
     formattedStartDate.textContent = "";
-    //console.log(formattedStartDate)
   }
-
-  // document.getElementById("preview-start-date").innerText =
-  //   document.getElementById("start-date").value;
-  // document.getElementById("preview-end-date").innerText =
-  //   document.getElementById("end-date").value;
 
   if (endDateValue) {
     const [year, month] = endDateValue.split("-");
     const date = new Date(year, month - 1); // Month is zero-based
+    
     const options = { year: "numeric", month: "long" };
-    formattedEndDate.textContent = date.toLocaleDateString("en-US", options);
+    const newDate = date.toLocaleDateString("en-US", options);
+    formattedEndDate.textContent = ` - ${newDate}`;
   } else {
     formattedEndDate.textContent = "";
     //console.log(formattedStartDate)
   }
 
+
+
+
   //--------------------------------------------------------------------------------------------------------------------------------------------
-    
+    //setting the preview value to the value entered into the form------------------------------------------------------------------------------
+
   document.getElementById("preview-job-title").innerText =
     document.getElementById("job-title").value;
   document.getElementById("preview-employer-name").innerText =
@@ -65,6 +72,8 @@ document.querySelectorAll("input, textarea").forEach((input) => {
 
 updateResume(); // initialize preview
 
+
+//Generate PDF from Preview-------------------------------------------------------------------------------------------------------------------
 function generatePDF() {
   // Choose the element to convert
   const element = document.getElementById("preview");
@@ -81,36 +90,4 @@ function generatePDF() {
   // Generate the PDF
   html2pdf().set(opt).from(element).save();
   console.log(element);
-
-  // var element = document.getElementById('resume-content');
-  // html2pdf(element);
 }
-
-// function convertStartDate() {
-//   const startDateInput = document.getElementById("start-date");
-//   const formattedDate = document.getElementById("preview-start-date");
-//   const value = startDateInput.value; // e.g., "2024-06"
-//   if (value) {
-//     const [year, month] = value.split("-");
-//     const date = new Date(year, month - 1); // Month is zero-based
-//     const options = { year: "numeric", month: "long" };
-//     formattedDate.textContent = date.toLocaleDateString("en-US", options);
-//   } else {
-//     formattedDate.textContent = "";
-//   }
-// }
-
-
-// function convertEndDate() {
-//   const endDateInput = document.getElementById("end-date");
-//   const formattedDate = document.getElementById("preview-end-date");
-//   const value = endDateInput.value; // e.g., "2024-06"
-//   if (value) {
-//     const [year, month] = value.split("-");
-//     const date = new Date(year, month - 1); // Month is zero-based
-//     const options = { year: "numeric", month: "long" };
-//     formattedDate.textContent = date.toLocaleDateString("en-US", options);
-//   } else {
-//     formattedDate.textContent = "";
-//   }
-// }
