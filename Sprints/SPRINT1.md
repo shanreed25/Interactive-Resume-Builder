@@ -34,22 +34,19 @@
 <tbody>
 <tr>
 <td>#101</td>
-<td>Create login/signup pages</td>
-<td>Alex</td>
-<td>To Do</td>
+<td>Create Contact and Work History Forms</td>
+<td>Completed</td>
 <td>5</td>
 </tr>
 <tr>
 <td>#102</td>
-<td>OAuth integration (Google, Facebook)</td>
-<td>Maria</td>
+<td>Create A Way For users to</td>
 <td>In Progress</td>
 <td>8</td>
 </tr>
 <tr>
 <td>#103</td>
 <td>Stripe payment setup</td>
-<td>John</td>
 <td>To Do</td>
 <td>13</td>
 </tr>
