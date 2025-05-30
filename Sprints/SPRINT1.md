@@ -1,10 +1,10 @@
-# Sprint Backlog - Sprint 1
+# Sprint 1
 
 ## Sprint Goal:
 - [x] Create the initial version of the form and review sections. 
     - The form should have two different sections contact and work history. 
-- Allow users to complete the contact and work history forms, while being able to review and change the information that they have entered without navigating away from the current page. 
-- Allow users to download a PDF format of the resume
+- [x] Allow users to complete the contact and work history forms, while being able to review and change the information that they have entered without navigating away from the current page. 
+- [x] Allow users to download a PDF format of the resume
 
 ## User Stories:
 
