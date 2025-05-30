@@ -1,6 +1,11 @@
 # Interactive-Resume-Builder
+**Interactive Resume Builder (No FrameWorks)**
 
-Interactive Resume Builder (No FrameWorks)
+- User can view the form and resume/view sections on the same page
+- User can complete contact and work details of the form
+- As the user enter their details into the form they can view it immediatly in the resume/view section 
+- User can download a PDF format of the resume
+
 ## Color Scheme
 - Background:Charcoal #2C3E50
 - Text: Almost Black #2D3436
