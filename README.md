@@ -31,3 +31,54 @@
 - Used to capture HTML content and convert it into a PDF
 
 ---
+
+
+
+
+
+
+
+<!-- 
+    <button onclick="addForm()">Add Form</button>
+    <div id="formsContainer">
+        <form id="resume-form">
+
+        </form>
+    </div>
+
+    <script>
+        let formCount = 0;
+
+        function addForm() {
+            formCount++;
+
+            const form = document.getElementById('resume-form');
+            //form.id = `form-${formCount}`;
+
+
+            const jobTitle = document.createElement('input');
+            jobTitle.type = 'text';
+            jobTitle.id = 'job-title'
+            jobTitle.placeholder = `Job Title`;
+            jobTitle.name = `job-title`;
+            form.appendChild(jobTitle);
+
+
+
+            // const inputField = document.createElement('input');
+            // inputField.type = 'text';
+            // inputField.placeholder = `Enter value for form ${formCount}`;
+            // inputField.name = `form-${formCount}-input`;
+            // form.appendChild(inputField);
+
+            const submitButton = document.createElement('button');
+            submitButton.type = 'submit';
+            submitButton.textContent = 'Submit';
+            form.appendChild(submitButton);
+
+            // const container = document.getElementById('formsContainer');
+            // container.appendChild(form);
+        }
+    </script>
+</body>
+</html> -->
