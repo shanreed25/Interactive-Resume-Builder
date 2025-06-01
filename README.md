@@ -1,5 +1,4 @@
-# Interactive-Resume-Builder
-# Sprint 1
+# Interactive-Resume-Builder - Sprint 1
 
 ## Sprint Goal:
 - [x] Create the initial version of the form and review sections. 
