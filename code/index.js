@@ -64,7 +64,7 @@ function updateResume() {
 }
 
 // Attach event listeners
-document.querySelectorAll("input, textarea").forEach((input) => {
+document.querySelectorAll("input, select").forEach((input) => {
   input.addEventListener("input", updateResume);
 });
 
