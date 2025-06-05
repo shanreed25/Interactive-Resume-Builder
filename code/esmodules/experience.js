@@ -30,26 +30,28 @@ function addJobTitleInput(formCount, jobContainer, jobPreviewContainer){
   jobTitle.addEventListener("input", () => {
     jobTitlePreview.textContent = jobTitle.value;
   });
-
-  
-  
-  
 }
 
 //EMPLOYER NAME INPUT AND PREVIEW
-function addEmployerNameInput(){
-  // ---> Create Job Title Input
+function addEmployerNameInput(formCount, jobContainer, jobPreviewContainer){
+//-----> Everytime this function is invoke <----
+//---> 1 Create a Employer Name Input 
   const employerName = document.createElement("input");
   employerName.type = "text";
   employerName.id = "employer-name";
   employerName.className = "med";
   employerName.placeholder = "Employer/Company Name";
 
-  // ---> Add Input To Container
-  experienceFormsContainer.appendChild(employerName);
+//---> 2 Create a Job Title Preview Element
+  const employerNamePreview = document.createElement('h4');
+  employerNamePreview.id = `preview-employer-name- ${formCount}`;
+  experiencePreviewsContainer.appendChild(employerNamePreview)
 
-  // ---> Get The Preview Element
-  const employerNamePreview = document.getElementById('preview-employer-name');
+//---> 3. Add Input Element To Job Container
+  jobContainer.appendChild(employerName);
+ 
+//---> 4. Add The Job Title Preview Element To The Preview Container
+  jobPreviewContainer.appendChild(employerNamePreview);
 
   // ---> Listen for the input and add it to the preview
   employerName.addEventListener("input", () => {
@@ -99,7 +101,7 @@ newExperienceButton.addEventListener("click", () => {
 
 
   addJobTitleInput(experienceFormCount, jobContainer, jobPreviewContainer);
-  addEmployerNameInput();
+  addEmployerNameInput(experienceFormCount, jobContainer, jobPreviewContainer);
   addEmployerCityInput();
 
 
