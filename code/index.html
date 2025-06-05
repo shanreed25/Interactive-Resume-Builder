@@ -97,7 +97,7 @@
 
                 <div class="resume-form-experience">
                     <h2 class="form-headings">Experience</h2>
-                    <div id="experience-container">
+                    <div id="all-experience-container">
                         <!-- <input type="checkbox" id="currentPosition" name="currentPosition" value="Present">
                         <label for="currentPosition"> I currently work here</label><br>
                             
@@ -113,7 +113,7 @@
 
                         <input class="med" type="text" name="work-state" id ="work-state" placeholder="State/Province"/> -->
                     </div>
-                    <button type='button' id="addInputBtn">Add Input</button>
+                    <button type='button' id="new-experience-form">Add Input</button>
                 </diV>
 
                 
@@ -145,7 +145,7 @@
                             
                         </div>
 
-                        <div class="preview-section preview-experience">
+                        <div id="all-experience-preview-container" class="preview-section preview-experience">
 
                             <h2>Experience</h2>
                             <div class="experience-details">
@@ -158,7 +158,7 @@
                              <div id="experience-preview-container" class="experience-summary">
                                 <!-- <h4 id="preview-job-title">Driver</h4>
                                 <p id="preview-employer-name">Fed-Ex</p>
-                                <p id="preview-work-city">Chula Vista</p>
+                                <p id="preview-employer-city">Chula Vista</p>
                                 <p id="preview-work-state">CA</p> -->
                              </div>
 
@@ -175,8 +175,8 @@
 
         </div>
 
-            <script src="./experience.js"></script>
-            <script src="./index.js"></script>
+            <script src="./esmodules/experience.js"></script>
+            <script type="module" src="./index.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
     </body>
 </html>

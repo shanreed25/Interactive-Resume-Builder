@@ -66,3 +66,6 @@ ________________________________________________________________________________
 - Used to capture HTML content and convert it into a PDF
 
 ---
+
+# TODO
+- remove InnerHTML
