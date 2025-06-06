@@ -42,7 +42,7 @@ function addEmployerNameInput(formCount, jobContainer, jobPreviewContainer){
   employerName.className = "med";
   employerName.placeholder = "Employer/Company Name";
 
-//---> 2 Create a Job Title Preview Element
+//---> 2 Create a Employer Name Preview Element
   const employerNamePreview = document.createElement('h4');
   employerNamePreview.id = `preview-employer-name- ${formCount}`;
   experiencePreviewsContainer.appendChild(employerNamePreview)
@@ -50,7 +50,7 @@ function addEmployerNameInput(formCount, jobContainer, jobPreviewContainer){
 //---> 3. Add Input Element To Job Container
   jobContainer.appendChild(employerName);
  
-//---> 4. Add The Job Title Preview Element To The Preview Container
+//---> 4. Add The Employer Name Preview Element To The Preview Container
   jobPreviewContainer.appendChild(employerNamePreview);
 
   // ---> Listen for the input and add it to the preview
@@ -59,9 +59,9 @@ function addEmployerNameInput(formCount, jobContainer, jobPreviewContainer){
   })
 }
 
-//EMPLOYER NAME INPUT AND PREVIEW
+//EMPLOYER CITY INPUT AND PREVIEW
 function addEmployerCityInput(formCount, jobContainer, jobPreviewContainer){
-  // ---> Create Job Title Input
+  // ---> Create Employer City Input
   const employerCity = document.createElement("input");
   employerCity.type = "text";
   employerCity.id = "employer-city";
@@ -69,15 +69,15 @@ function addEmployerCityInput(formCount, jobContainer, jobPreviewContainer){
   employerCity.placeholder = "City";
 
 
-//---> 2 Create a Job Title Preview Element
+//---> 2 Create a Employer City Preview Element
   const employerCityPreview = document.createElement('h4');
-  employerCityPreview.id = `preview-employer-name- ${formCount}`;
+  employerCityPreview.id = `preview-employer-city- ${formCount}`;
   experiencePreviewsContainer.appendChild(employerCityPreview)
 
 //---> 3. Add Input Element To Job Container
   jobContainer.appendChild(employerCity);
  
-//---> 4. Add The Job Title Preview Element To The Preview Container
+//---> 4. Add The Employer City Preview Element To The Preview Container
   jobPreviewContainer.appendChild(employerCityPreview);
 
   // ---> Listen for the input and add it to the preview
@@ -86,19 +86,32 @@ function addEmployerCityInput(formCount, jobContainer, jobPreviewContainer){
   })
 }
 
+//EMPLOYER STATE INPUT AND PREVIEW
+function addEmployerStateInput(formCount, jobContainer, jobPreviewContainer){
+  // ---> Create Employer State Input
+  const employerState = document.createElement("input");
+  employerState.type = "text";
+  employerState.id = "employer-state";
+  employerState.className = "med";
+  employerState.placeholder = "State";
 
 
+//---> 2 Create a Employer State Preview Element
+  const employerStatePreview = document.createElement('h4');
+  employerStatePreview.id = `preview-employer-state- ${formCount}`;
+  experiencePreviewsContainer.appendChild(employerStatePreview)
 
+//---> 3. Add Input Element To Job Container
+  jobContainer.appendChild(employerState);
+ 
+//---> 4. Add The Employer State Preview Element To The Preview Container
+  jobPreviewContainer.appendChild(employerStatePreview);
 
-
-
-
-
-
-
-
-
-
+  // ---> Listen for the input and add it to the preview
+  employerState.addEventListener("input", () => {
+    employerStatePreview.textContent = employerState.value;
+  })
+}
 
 
 
@@ -128,6 +141,7 @@ newExperienceButton.addEventListener("click", () => {
   addJobTitleInput(experienceFormCount, jobContainer, jobPreviewContainer);
   addEmployerNameInput(experienceFormCount, jobContainer, jobPreviewContainer);
   addEmployerCityInput(experienceFormCount, jobContainer, jobPreviewContainer);
+  addEmployerStateInput(experienceFormCount, jobContainer, jobPreviewContainer)
 
 
 })
