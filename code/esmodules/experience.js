@@ -168,10 +168,20 @@ function addEndDate(formCount, jobContainer, jobPreviewContainer){
   jobPreviewContainer.appendChild(endDatePreview);
 
   // ---> Listen for the input and add it to the preview
-  endDate.addEventListener("input", () => {
-    endDatePreview.textContent = endDate.value;
-  })
-}
+   endDate.addEventListener("input", () => {
+  //Converts the date format
+    const endDateValue = endDate.value;// e.g., "2010-06"
+    if (endDateValue) {
+    const [year, month] = endDateValue.split("-");
+    const date = new Date(year, month - 1); // Month is zero-based
+    const options = { year: "numeric", month: "long" };
+    endDatePreview.textContent = date.toLocaleDateString("en-US", options);// e.g. June 2010
+
+  } else {
+    endDatePreview.textContent = "";
+  }
+
+})}
 
 export default function addNewExperienceSection(buttonName){
   buttonName.addEventListener("click", () => {
