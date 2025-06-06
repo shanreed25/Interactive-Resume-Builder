@@ -1,7 +1,7 @@
-import { updateContactSection } from "./esmodules/contact.js";
-import { updateSummarySection } from "./esmodules/summary.js";
-import { generatePDF } from "./esmodules/generatepdf.js";
-import addNewExperienceSection from "./esmodules/experience.js";
+import { updateContactSection } from "./es6modules/contact.js";
+import { updateSummarySection } from "./es6modules/summary.js";
+import { generatePDF } from "./es6modules/generatepdf.js";
+import addNewExperienceSection from "./es6modules/experience.js";
 
 //*********START: REVISE CODE THIS LATER************/
 //because the generatePDF() function is attached to the onclick attribute of the button
