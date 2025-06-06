@@ -1,184 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Interactive Resume Builder</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-  </head>
-  <body>
-    <header>
-      <div>
-        <h1>Resume Builder</h1>
-      </div>
-      <div class="menu">
-        <ul class="menu-list">
-          <li>Contact</li>
-          <li>Experience</li>
-          <li>Skills</li>
-          <li>Education</li>
-        </ul>
-      </div>
-    </header>
 
-    <div id="content">
-      <section id="resume-form-section">
-        <form class="form" id="resume-form">
-          <div class="resume-form-contact">
-            <h2>Contact Details</h2>
-            <input
-              class="med contact-item"
-              type="text"
-              name="first-name"
-              id="first-name"
-              placeholder="First Name"
-              required
-            />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+    rel="stylesheet" />
+  <title>Interactive Resume Builder</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
 
-            <input
-              class="med contact-item"
-              type="text"
-              name="last-name"
-              id="last-name"
-              placeholder="Last Name"
-              required
-            />
-
-            <input
-              class="med contact-item"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              required
-            />
-
-            <input
-              class="med contact-item"
-              type="tel"
-              name="phone-number"
-              id="phone-number"
-              placeholder="Phone Number 123-456-789"
-              pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
-            />
-
-            <input
-              class="med contact-item"
-              type="text"
-              name="city"
-              id="city"
-              placeholder="City"
-            />
-
-            <select class="med contact-item" id="state" name="state">
-              <option value="">SELECT STATE</option>
-              <option value="AL">AL</option>
-              <option value="AK">AK</option>
-              <option value="AZ">AZ</option>
-              <option value="AR">AR</option>
-              <option value="CA">CA</option>
-              <option value="CO">CO</option>
-              <option value="CT">CT</option>
-              <option value="DE">DE</option>
-              <option value="FL">FL</option>
-              <option value="GA">GA</option>
-              <option value="HI">HI</option>
-              <option value="ID">ID</option>
-              <option value="IL">IL</option>
-              <option value="IN">IN</option>
-              <option value="IA">IA</option>
-              <option value="KS">KS</option>
-              <option value="KY">KY</option>
-              <option value="LA">LA</option>
-              <option value="ME">ME</option>
-              <option value="MD">MD</option>
-              <option value="MA">MA</option>
-              <option value="MI">MI</option>
-              <option value="MN">MN</option>
-              <option value="MS">MS</option>
-              <option value="MO">MO</option>
-              <option value="MT">MT</option>
-              <option value="NE">NE</option>
-              <option value="NV">NV</option>
-              <option value="NH">NH</option>
-              <option value="NJ">NJ</option>
-              <option value="NM">NM</option>
-              <option value="NY">NY</option>
-              <option value="NC">NC</option>
-              <option value="ND">ND</option>
-              <option value="OH">OH</option>
-              <option value="OK">OK</option>
-              <option value="OR">OR</option>
-              <option value="PA">PA</option>
-              <option value="RI">RI</option>
-              <option value="SC">SC</option>
-              <option value="SD">SD</option>
-              <option value="TN">TN</option>
-              <option value="TX">TX</option>
-              <option value="UT">UT</option>
-              <option value="VT">VT</option>
-              <option value="VA">VA</option>
-              <option value="WA">WA</option>
-              <option value="WV">WV</option>
-              <option value="WI">WI</option>
-              <option value="WY">WY</option>
-            </select>
-          </div>
-
-          <div class="resume-form-experience">
-            <h2 class="form-headings">Experience</h2>
-            <div id="all-experience-container">
-              <!-- Each Job Experience is added here Dynamically using Javascript -->
-            </div>
-            <button type="button" id="new-job-experience">
-              Add Experience
-            </button>
-          </div>
-        </form>
-      </section>
-
-      <section id="resume-preview-section">
-        <div class="preview-container">
-          <h2>Live Preview</h2>
-
-          <div id="preview">
-            <div class="preview-section preview-contact-section">
-              <div class="preview-name">
-                <h1 id="preview-first-name">Lisa</h1>
-                <h1 id="preview-last-name">Jones</h1>
-              </div>
-
-              <div class="preview-contact-info">
-                <p id="preview-email">john@example.com</p>
-                <p id="preview-phone-number">(123) 456-7890</p>
-                <div class="preview-city-state">
-                <p id="preview-city">Las Vegas</p>
-                <span>,&nbsp; </span>
-                <p id="preview-state">Nevada</p>
-                </div>
-              </div>
-            </div>
-
-            <div id="all-experience-preview-container" class="preview-section preview-experience">
-              <h2>Experience</h2>
-
-              <!-- Each Experience Preview is added here Dynamically using Javascript -->
-            </div>
-          </div>
-
-          <button onclick="generatePDF()">Download PDF</button>
-        </div>
-      </section>
+<body>
+  <header>
+    <div>
+      <h1>Resume Builder</h1>
     </div>
+    <div class="menu">
+      <ul class="menu-list">
+        <li>Contact</li>
+        <li>Experience</li>
+        <li>Skills</li>
+        <li>Education</li>
+      </ul>
+    </div>
+  </header>
 
-    <!-- Using ES6 Modules to load Javascript modules -->
-    <script type="module" src="./index.js"></script>
-  </body>
+  <div id="content">
+    <section id="resume-form-section">
+      <form class="form" id="resume-form">
+
+<!-------------------------------------------------- Contact Form -------------------------------------------------------------------------------->
+        <div class="resume-form-contact">
+          <h2>Contact Details</h2>
+          <input class="med contact-item" type="text" name="first-name" id="first-name" placeholder="First Name" required />
+
+          <input class="med contact-item" type="text" name="last-name" id="last-name" placeholder="Last Name" required />
+
+          <input class="med contact-item" type="email" name="email" id="email" placeholder="Email" required />
+
+          <input class="med contact-item" type="tel" name="phone-number" id="phone-number"
+            placeholder="Phone Number 123-456-789" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" />
+
+          <input class="med contact-item" type="text" name="city" id="city" placeholder="City" />
+
+          <select class="med contact-item" id="state" name="state">
+            <option value="">SELECT STATE</option>
+            <option value="AL">AL</option>
+            <option value="AK">AK</option>
+            <option value="AZ">AZ</option>
+            <option value="AR">AR</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="CT">CT</option>
+            <option value="DE">DE</option>
+            <option value="FL">FL</option>
+            <option value="GA">GA</option>
+            <option value="HI">HI</option>
+            <option value="ID">ID</option>
+            <option value="IL">IL</option>
+            <option value="IN">IN</option>
+            <option value="IA">IA</option>
+            <option value="KS">KS</option>
+            <option value="KY">KY</option>
+            <option value="LA">LA</option>
+            <option value="ME">ME</option>
+            <option value="MD">MD</option>
+            <option value="MA">MA</option>
+            <option value="MI">MI</option>
+            <option value="MN">MN</option>
+            <option value="MS">MS</option>
+            <option value="MO">MO</option>
+            <option value="MT">MT</option>
+            <option value="NE">NE</option>
+            <option value="NV">NV</option>
+            <option value="NH">NH</option>
+            <option value="NJ">NJ</option>
+            <option value="NM">NM</option>
+            <option value="NY">NY</option>
+            <option value="NC">NC</option>
+            <option value="ND">ND</option>
+            <option value="OH">OH</option>
+            <option value="OK">OK</option>
+            <option value="OR">OR</option>
+            <option value="PA">PA</option>
+            <option value="RI">RI</option>
+            <option value="SC">SC</option>
+            <option value="SD">SD</option>
+            <option value="TN">TN</option>
+            <option value="TX">TX</option>
+            <option value="UT">UT</option>
+            <option value="VT">VT</option>
+            <option value="VA">VA</option>
+            <option value="WA">WA</option>
+            <option value="WV">WV</option>
+            <option value="WI">WI</option>
+            <option value="WY">WY</option>
+          </select>
+        </div>
+
+<!-------------------------------------------------- Summary Form -------------------------------------------------------------------------------->
+
+        <div class="resume-form-summary">
+          <h2>Summary</h2>
+          <label for="summary">Add Summary</label>
+          <textarea id="summary" rows="4" cols="99"></textarea>
+          <input type="submit" value="Submit">
+        </div>
+
+<!-------------------------------------------------- Experience Form ----------------------------------------------------------------------------->
+
+        <div class="resume-form-experience">
+          <h2 class="form-headings">Experience</h2>
+          <div id="all-experience-container">
+            <!-- Each Job Experience is added here Dynamically using Javascript -->
+          </div>
+          <button type="button" id="new-job-experience">
+            Add Experience
+          </button>
+        </div>
+
+      </form>
+    </section>
+
+    <section id="resume-preview-section">
+      <div class="preview-container">
+        <h2>Live Preview</h2>
+
+        <div id="preview">
+<!-------------------------------------------------- Contact Preview ----------------------------------------------------------------------------->
+          <div class="preview-section preview-contact-section">
+            <div class="preview-name">
+              <h1 id="preview-first-name">Your</h1>
+              <span> &nbsp; &nbsp; </span>
+              <h1 id="preview-last-name">Name</h1>
+            </div>
+
+            <div class="preview-contact-info">
+              <p id="preview-email">email@example.com</p>
+              <p id="preview-phone-number">(123) 456-7890</p>
+              <div class="preview-city-state">
+                <p id="preview-city">City</p>
+                <span>,&nbsp; </span>
+                <p id="preview-state">State</p>
+              </div>
+            </div>
+          </div>
+
+<!-------------------------------------------------- Summary Preview ----------------------------------------------------------------------------->
+
+          <div class="preview-section preview-summary-info">
+              <p id="preview-summary">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Nulla urna diam, semper nec facilisis vel, gravida ut ipsum.
+                Nam accumsan lectus et odio rhoncus, nec interdum neque finibus.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+          </div>
+
+<!-------------------------------------------------- Experience Preview ----------------------------------------------------------------------------->
+          <div id="all-experience-preview-container" class="preview-section preview-experience">
+            <h2>Experience</h2>
+
+            <!-- Each Experience Preview is added here Dynamically using Javascript -->
+          </div>
+        </div>
+
+        <button onclick="generatePDF()">Download PDF</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Using ES6 Modules to load Javascript modules -->
+  <script type="module" src="./index.js"></script>
+</body>
+
 </html>

@@ -4,6 +4,7 @@ let experienceFormCount = 0;
 
 //Creates the Inputs and Previews For Experience Sections-------------------------------------------------------------------------------
 
+ const jobDatesPreviewContainer = document.createElement('div');
 //START DATE------------------------------------------------------------------------------------
 function addStartDate(formCount, jobContainer, jobPreviewContainer){
 // Create Employer Start Date Input
@@ -13,6 +14,10 @@ function addStartDate(formCount, jobContainer, jobPreviewContainer){
   startDate.className = "med";
   startDate.placeholder = "Start Date";
 
+  
+  jobDatesPreviewContainer.id = `job-dates-preview-container-${formCount}`;
+
+  
   //---> 2 Create a Start Date Preview Element
   const startDatePreview = document.createElement('p');
   startDatePreview.id = `preview-start-date- ${formCount}`;
@@ -21,7 +26,7 @@ function addStartDate(formCount, jobContainer, jobPreviewContainer){
 //---> 3. Add Input Element To Job Container
   jobContainer.appendChild(startDate);
  
-//---> 4. Add The Employer State Preview Element To The Preview Container
+//---> 4. Add The Employer Start Date Preview Element To The Preview Container
   jobPreviewContainer.appendChild(startDatePreview);
 
   // ---> Listen for the input and add it to the preview
@@ -194,16 +199,25 @@ export default function addNewExperienceSection(buttonName){
   const jobContainer = document.createElement('div');
   jobContainer.id = `job-form-container-${experienceFormCount}`;
 
-  // 2. One Experience Review Container Is Created
+  // 2. One Experience Review Container with two container inside Is Created
   const jobPreviewContainer = document.createElement('div');
   jobPreviewContainer.id = `job-preview-container-${experienceFormCount}`;
   jobPreviewContainer.className = `experience-details`;
+
+
+ 
+
+  const jobDetailsPreviewContainer = document.createElement('div');
+  jobDetailsPreviewContainer.id = `job-dates-preview-container-${experienceFormCount}`;
 
   // Adds Experience Form Container to Experience Forms Container
   experienceFormsContainer.appendChild(jobContainer);
 
  // Add Experience Preview Container to Experience Previews Container
   experiencePreviewsContainer.appendChild(jobPreviewContainer);
+
+  jobPreviewContainer.appendChild(jobDatesPreviewContainer);
+  jobPreviewContainer.appendChild(jobDetailsPreviewContainer);
 
   //These functions do the owrk of creating the inputs and adding them to the containers
   addStartDate(experienceFormCount, jobContainer, jobPreviewContainer);

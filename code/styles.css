@@ -161,17 +161,18 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .preview-name {
+  width: 90%;
   display: flex;
-}
-#preview-first-name {
-  margin-right: 0.4rem;
+  justify-content: center;
 }
 
+
 .preview-contact-info {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-around;
 }

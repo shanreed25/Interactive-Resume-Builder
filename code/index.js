@@ -1,4 +1,5 @@
 import { updateContactSection } from "./esmodules/contact.js";
+import { updateSummarySection } from "./esmodules/summary.js";
 import { generatePDF } from "./esmodules/generatepdf.js";
 import addNewExperienceSection from "./esmodules/experience.js";
 
@@ -17,6 +18,15 @@ document.querySelectorAll(".contact-item").forEach((input) => {
 //----- invokes the function immediately so the text  in the HTML does not appear
 //updateContactSection(); // initialize preview
 //-----------------------------------------------------------------------------------------------------------------------
+
+
+//SUMMARY SECTION--------------------------------------------------------------------------------------------------------
+const summary = document.getElementById('summary');
+summary.addEventListener('input', () =>{
+  updateSummarySection();
+})
+
+
 
 
 //EXPERIENCE SECTION-----------------------------------------------------------------------------------------------------
