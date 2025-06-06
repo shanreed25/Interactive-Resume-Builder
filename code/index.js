@@ -1,8 +1,16 @@
 import { updateContactSection } from "./esmodules/contact.js";
+import { generatePDF } from "./esmodules/generatepdf.js";
+import addNewExperienceSection from "./esmodules/experience.js";
+window.generatePDF = generatePDF;// assigned to the window object to make it globally accessible
+
 
 
 function updateResume() {
+
+  //CONTACT SECTION
   updateContactSection();
+
+  //EXPERIENCE SECTION
 
 //Converts the Start and End date format from 2024-06 to June 2024, 
 // use querySelectorAll to make this code simpler later---------------------------------------------------------
@@ -50,13 +58,17 @@ function updateResume() {
   //   document.getElementById("work-state").value;
 }
 
-// Attach event listeners
+// Attach event listeners, CONTACT SECTION
 document.querySelectorAll("input, select").forEach((input) => {
   input.addEventListener("input", updateResume);
 });
 
-
 //----- invokes the function immediately so the text  in the HTML does not appear
-updateResume(); // initialize preview
+//updateResume(); // initialize preview
 
 
+
+//EXPERIENCE SECTION-----------------------------------------------------------------------------------------------------
+
+const newExperienceButton = document.getElementById("new-job-experience");
+addNewExperienceSection(newExperienceButton);

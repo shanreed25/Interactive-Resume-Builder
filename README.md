@@ -60,6 +60,7 @@ ________________________________________________________________________________
 
 - Serializing Form Data
 - Local storage
+- ES6 Modules
 
 ### [html2pdf.js CDN](https://cdnjs.com/libraries/html2pdf.js/0.8.0)
 

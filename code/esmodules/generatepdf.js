@@ -1,5 +1,5 @@
 //Generate PDF from Preview-------------------------------------------------------------------------------------------------------------------
-function generatePDF() {
+export function generatePDF() {
   // Choose the element to convert
   const element = document.getElementById("preview");
 
