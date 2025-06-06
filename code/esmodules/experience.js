@@ -132,7 +132,18 @@ function addStartDate(formCount, jobContainer, jobPreviewContainer){
 
   // ---> Listen for the input and add it to the preview
   startDate.addEventListener("input", () => {
-    startDatePreview.textContent = startDate.value;
+  //Converts the date format
+    const startDateValue = startDate.value;// e.g., "2010-06"
+    if (startDateValue) {
+    const [year, month] = startDateValue.split("-");
+    const date = new Date(year, month - 1); // Month is zero-based
+    const options = { year: "numeric", month: "long" };
+    startDatePreview.textContent = date.toLocaleDateString("en-US", options);// e.g. June 2010
+
+  } else {
+    startDatePreview.textContent = "";
+  }
+    
   })
 }
 
