@@ -1,4 +1,4 @@
-# Sprint 1
+# Sprint 2
 
 ## Sprint Goal:
 - [x] Create the initial version of the form and review sections. 

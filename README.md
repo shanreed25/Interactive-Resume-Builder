@@ -1,4 +1,39 @@
-# Interactive-Resume-Builder
+# Interactive-Resume-Builder - Sprint 2
+
+## Sprint Goal:
+- [ ] Make the work history section dynamic
+    - The user needs to be able to add new work history form to be able to add all their work history
+- [x] 
+- [x] 
+
+## User Stories:
+
+| User Story | Priority | Estimated Effort (Story Points) | Status |
+|---|---|---|---|
+| As a user, I want to be able to add all my work history. | High | L | TODO |
+| As a user, I want to be able to . | High | M | Complete |
+| As a user, I want to be able to | High | L | Complete |
+| As a user, I want to be able to  | High | S | Complete |
+
+
+## Tasks
+
+| Task | User Story | Status |
+|---|---|---|
+| Implement a dynamic work history form, where the user can request additional forms to add more work history| As a user, I want to be able to add all my work history. | TODO |
+| Implement the logic to  |  As a user, I want to be able to | TODO |
+| Implement the logic to  | As a user, I want to be able to | TODO |
+| Implement | As a user, I want to | TODO |
+
+
+## Notes:
+
+
+## Glossary:
+
+
+___________________________________________________________________________________________________________________________________________
+#
 **Interactive Resume Builder (No FrameWorks)**
 
 - User can view the form and resume/view sections on the same page
@@ -25,6 +60,7 @@
 
 - Serializing Form Data
 - Local storage
+- ES6 Modules
 
 ### [html2pdf.js CDN](https://cdnjs.com/libraries/html2pdf.js/0.8.0)
 
@@ -32,53 +68,5 @@
 
 ---
 
-
-
-
-
-
-
-<!-- 
-    <button onclick="addForm()">Add Form</button>
-    <div id="formsContainer">
-        <form id="resume-form">
-
-        </form>
-    </div>
-
-    <script>
-        let formCount = 0;
-
-        function addForm() {
-            formCount++;
-
-            const form = document.getElementById('resume-form');
-            //form.id = `form-${formCount}`;
-
-
-            const jobTitle = document.createElement('input');
-            jobTitle.type = 'text';
-            jobTitle.id = 'job-title'
-            jobTitle.placeholder = `Job Title`;
-            jobTitle.name = `job-title`;
-            form.appendChild(jobTitle);
-
-
-
-            // const inputField = document.createElement('input');
-            // inputField.type = 'text';
-            // inputField.placeholder = `Enter value for form ${formCount}`;
-            // inputField.name = `form-${formCount}-input`;
-            // form.appendChild(inputField);
-
-            const submitButton = document.createElement('button');
-            submitButton.type = 'submit';
-            submitButton.textContent = 'Submit';
-            form.appendChild(submitButton);
-
-            // const container = document.getElementById('formsContainer');
-            // container.appendChild(form);
-        }
-    </script>
-</body>
-</html> -->
+# TODO
+- remove InnerHTML
