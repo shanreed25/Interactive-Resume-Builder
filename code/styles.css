@@ -147,7 +147,7 @@ textarea {
   box-sizing: border-box;
 }
 
-h2 {
+.section-headers {
   border-bottom: 2px solid #2d3436;
   padding-bottom: 5px;
 }
@@ -183,10 +183,42 @@ button {
 /*EXPERIENCE--------------------------------------------------*/
 .experience-details {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
-.experience-date {
+.employer-name-position {
+  display: flex;
+}
+
+.employer-name{
+
+}
+.position-preview{
+ font-size: .9rem;
+ margin-top: .6rem;
+}
+
+.employer-dates-location-preview{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.employer-dates-preview{
+  display: flex;
+  justify-content: space-between;
+  width: 22%;
+}
+
+
+.employer-location-preview{
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+
+/* .experience-date {
   font-size: 0.7rem;
   display: flex;
   margin: 0;
@@ -199,7 +231,7 @@ button {
 
 .experience-summary {
   width: 70%;
-}
+} */
 
 /* #experience-title-date{
     display: flex;
