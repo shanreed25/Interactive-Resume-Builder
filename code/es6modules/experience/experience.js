@@ -149,10 +149,14 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
       const jobDutyButton = addJobDutyButton(formCount, jobFormContainer);
       jobFormContainer.appendChild(jobDutyButton);
 
+      const jobDutyULPreviewElement = document.createElement('ul');
+      jobDutyULPreviewElement.id = `job-duty-list-${formCount}`;
+      employerDetailsPreviewContainer.appendChild(jobDutyULPreviewElement);
+
       jobDutyButton.addEventListener('click', () => {
         jobDutyCount++;
         const dutyInput = addjobDutyInput(formCount, jobDutyCount, jobFormContainer);
-        const jobDutyPreviewElement = addJobDutyListitemPreviewElement(formCount, employerDetailsPreviewContainer);
+        const jobDutyPreviewElement = addJobDutyListitemPreviewElement(formCount, employerDetailsPreviewContainer, jobDutyULPreviewElement);
 
         
         // employerDetailsPreviewContainer.appendChild(jobDutyPreviewElement);

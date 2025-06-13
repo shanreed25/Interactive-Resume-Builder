@@ -105,10 +105,7 @@ export function addEmployerStatePreviewElement(employerStatePreviewElementCount)
 
 
 //JOB DUTIES 
-export function addJobDutyListitemPreviewElement(jobDutyPreviewElementCount, employerDetailsPreviewContainer){
-  const jobDutyULPreviewElement = document.createElement('ul');
-  jobDutyULPreviewElement.id = `job-duty-list-${jobDutyPreviewElementCount}`;
-  employerDetailsPreviewContainer.appendChild(jobDutyULPreviewElement);
+export function addJobDutyListitemPreviewElement(jobDutyPreviewElementCount, employerDetailsPreviewContainer, jobDutyULPreviewElement){
 
   const jobDutyListItemPreviewElement = document.createElement('li');
   jobDutyULPreviewElement.append(jobDutyListItemPreviewElement);
