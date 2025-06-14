@@ -16,8 +16,8 @@ import {
   addPositionPreviewElement,
   addEmployerCityPreviewElement,
   addEmployerStatePreviewElement,
-  addJobDutyListitemPreviewElement
-  // addJobDutyListitemPreview
+  addJobDutyULPreviewElement,
+  addJobDutyLIPreviewElement
 } from "./experiencePreview.js";
 
 //Passed down to resume-sections.js
@@ -144,26 +144,33 @@ export function addEmployerState(formCount, jobFormContainer, employerLocationPr
 }
 
 
-let jobDutyCount = 0;
+//Job Duty
 export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewContainer){
-      const jobDutyButton = addJobDutyButton(formCount, jobFormContainer);
+      let jobDutyCount = 0;
+
+      //Create and add Job Duty Button to form
+      const jobDutyButton = addJobDutyButton(formCount);
       jobFormContainer.appendChild(jobDutyButton);
 
-      const jobDutyULPreviewElement = document.createElement('ul');
-      jobDutyULPreviewElement.id = `job-duty-list-${formCount}`;
+      //Create and add Unordered List to the preview
+      const jobDutyULPreviewElement = addJobDutyULPreviewElement(formCount)
       employerDetailsPreviewContainer.appendChild(jobDutyULPreviewElement);
 
       jobDutyButton.addEventListener('click', () => {
-        jobDutyCount++;
+        jobDutyCount++;//count of the number of list item added to each unordered list
+
+        //Create and add job duty input to form container
         const dutyInput = addjobDutyInput(formCount, jobDutyCount, jobFormContainer);
-        const jobDutyPreviewElement = addJobDutyListitemPreviewElement(formCount, employerDetailsPreviewContainer, jobDutyULPreviewElement);
+        jobFormContainer.appendChild(dutyInput);
 
-        
-        // employerDetailsPreviewContainer.appendChild(jobDutyPreviewElement);
+        //Create and add job duty list item to preview container
+        const jobDutyLIPreviewElement = addJobDutyLIPreviewElement(formCount, jobDutyCount);
+        jobDutyULPreviewElement.append(jobDutyLIPreviewElement);
 
+        // ---> Listen for the input and add the value to the preview
         dutyInput.addEventListener("input", () => {
 
-        jobDutyPreviewElement.textContent = dutyInput.value
+        jobDutyLIPreviewElement.textContent = dutyInput.value
         })
       })
 }

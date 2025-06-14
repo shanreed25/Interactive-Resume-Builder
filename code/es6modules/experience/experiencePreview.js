@@ -1,5 +1,4 @@
 //Preview Elements passed down to experience.js
-
 const experiencePreviewsContainer = document.getElementById("all-experience-preview-container");//Container for all experience review
 
 export function addExperiencePreviewContainer(experienceFormCount){
@@ -12,7 +11,6 @@ export function addExperiencePreviewContainer(experienceFormCount){
     return workExperienceMainPreviewContainer;
 }
 
-
 //EMPLOYER NAME AND POSITION PREVIEW---------------------------------------------------------------------------------------------
 //Container
 export function addEmployerNamePositionPreviewContainer(experienceFormCount){
@@ -21,8 +19,8 @@ export function addEmployerNamePositionPreviewContainer(experienceFormCount){
     employerNamePositionPreviewContainer.className = 'employer-name-position';
 
     return employerNamePositionPreviewContainer;
-    // workExperienceMainPreviewContainer.appendChild(employerNamePositionPreviewContainer);
 }
+
 //EMPLOYER NAME--------------------------------------------------------------------------
 export function addEmployerNamePreviewElement(employerNamePreviewElementCount) {
   const employerNamePreviewElement = document.createElement("h2");
@@ -40,9 +38,7 @@ export function addPositionPreviewElement(positionPreviewCount) {
   return positionPreviewElement;
 }
 
-
-
-//START AND END DATES AND EMPLOYER CITY AND STATE PREVIEW---------------------------------------------------------------------------------------------
+//START AND END DATES AND EMPLOYER CITY AND STATE PREVIEW
 //Container
 export function addemployerDatesLocationPreviewContainer(experienceFormCount){
     const employerDatesLocationPreviewContainer = document.createElement("div");
@@ -59,7 +55,8 @@ export function addemployerDatesPreviewContainer(experienceFormCount){
 
     return employerDatesPreviewContainer;
 }
-//START DATE PREVIEW---------------------------------------------------------------------------------
+
+//START DATE PREVIEW
 export function addStartDatePreviewElement(startDatePreviewElementCount) {
   const startDatePreviewElement = document.createElement("p");
   startDatePreviewElement.id = `preview-start-date- ${startDatePreviewElementCount}`;
@@ -67,14 +64,13 @@ export function addStartDatePreviewElement(startDatePreviewElementCount) {
   return startDatePreviewElement;
 }
 
-//END DATE PREVIEW---------------------------------------------------------------------------------
+//END DATE PREVIEW
 export function addEndDatePreviewElement(endDatePreviewElementCount) {
   const endDatePreviewElement = document.createElement("p");
   endDatePreviewElement.id = `preview-end-date- ${endDatePreviewElementCount}`;
 
   return endDatePreviewElement;
 }
-
 
 //Location Preview Container
 export function addemployerLocationPreviewContainer(experienceFormCount){
@@ -85,7 +81,7 @@ export function addemployerLocationPreviewContainer(experienceFormCount){
     return employerLocationPreviewContainer;
 }
 
-///EMPLOYER CITY ------------------------------------------------------------------------
+///EMPLOYER CITY
 export function addEmployerCityPreviewElement(employerCityPreviewElementCount) {
   const employerCityPreviewElement = document.createElement("p");
   employerCityPreviewElement.id = `preview-employer-city- ${employerCityPreviewElementCount}`;
@@ -94,7 +90,7 @@ export function addEmployerCityPreviewElement(employerCityPreviewElementCount) {
   return employerCityPreviewElement;
 }
 
-///EMPLOYER STATE------------------------------------------------------------------------
+///EMPLOYER STATE
 export function addEmployerStatePreviewElement(employerStatePreviewElementCount) {
   const employerStatePreviewElement = document.createElement("p");
   employerStatePreviewElement.id = `preview-employer-state- ${employerStatePreviewElementCount}`;
@@ -103,13 +99,19 @@ export function addEmployerStatePreviewElement(employerStatePreviewElementCount)
   return employerStatePreviewElement;
 }
 
+//JOB DUTIES: Unorderd List
+export function addJobDutyULPreviewElement(formCount){
+    const jobDutyULPreviewElement = document.createElement('ul');
+    jobDutyULPreviewElement.id = `job-duty-list-${formCount}`;
 
-//JOB DUTIES 
-export function addJobDutyListitemPreviewElement(jobDutyPreviewElementCount, employerDetailsPreviewContainer, jobDutyULPreviewElement){
+    return jobDutyULPreviewElement ;
+}
 
+//JOB DUTIES: List Item
+export function addJobDutyLIPreviewElement(formCount, jobDutyCount){
   const jobDutyListItemPreviewElement = document.createElement('li');
-  jobDutyULPreviewElement.append(jobDutyListItemPreviewElement);
+  jobDutyListItemPreviewElement.id = `job-duty-li-preview-${jobDutyCount}-for-experience-${formCount}`;
+  jobDutyListItemPreviewElement.className = 'job-duty-li-preview';
 
   return jobDutyListItemPreviewElement;
-
 }

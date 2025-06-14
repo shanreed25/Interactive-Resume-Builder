@@ -1,9 +1,4 @@
-
-
-
 //Inputs passed down to experience.js
-
-
 
 const experienceFormsContainer = document.getElementById("all-experience-container");//Container for all experience forms
 
@@ -18,11 +13,8 @@ export function addExperienceFormContainer(experienceFormCount){
 
 }
 //FORM----------------------------------------------------------------------------------------------------------------
-    
-   
 
-
-//START DATE INPUT---------------------------------------------------------------------------------
+//START DATE INPUT
 export function addStartDateInput(startDateInputCount) {
   const startDateInput = document.createElement("input");
   startDateInput.type = "month";
@@ -33,7 +25,7 @@ export function addStartDateInput(startDateInputCount) {
   return startDateInput;
 }
 
-//END DATE INPUT---------------------------------------------------------------------------------
+//END DATE INPUT
 export function addEndDateInput(endDateInputCount) {
   const endDateInput = document.createElement("input");
   endDateInput.type = "month";
@@ -44,7 +36,7 @@ export function addEndDateInput(endDateInputCount) {
   return endDateInput;
 }
 
-//EMPLOYER NAME INPUT---------------------------------------------------------------------------------
+//EMPLOYER NAME INPUT
 export function addEmployerNameInput(employerNameInputCount) {
   const employerNameInput = document.createElement("input");
   employerNameInput.type = "text";
@@ -55,7 +47,7 @@ export function addEmployerNameInput(employerNameInputCount) {
   return employerNameInput;
 }
 
-//POSITION INPUT-------------------------------------------------------------------------------------
+//POSITION INPUT
 export function addPositionInput(positionInputCount) {
   const positionInput = document.createElement("input");
   positionInput.type = "text";
@@ -66,7 +58,7 @@ export function addPositionInput(positionInputCount) {
   return positionInput;
 }
 
-//EMPLOYER CITY INPUT---------------------------------------------------------------------------------
+//EMPLOYER CITY INPUT
 export function addEmployerCityInput(cityInputCount) {
   const employerCityInput = document.createElement("input");
   employerCityInput.type = "text";
@@ -77,7 +69,7 @@ export function addEmployerCityInput(cityInputCount) {
   return employerCityInput;
 }
 
-//EMPLOYER STATE INPUT---------------------------------------------------------------------------------
+//EMPLOYER STATE INPUT
 export function addEmployerStateInput(stateInputCount) {
   const employerStateInput = document.createElement("input");
   employerStateInput.type = "text";
@@ -88,28 +80,20 @@ export function addEmployerStateInput(stateInputCount) {
   return employerStateInput;
 }
 
-let jobDutyCount = 0;
-//JOB DUTIES--------------------------------------------------------------------------------------------
-export function addJobDutyButton(jobformCount, jobFormContainer ){
-    // const dutyInput = document.createElement('input');
-    // dutyInput.id = `duty-input-${jobDutyCount}`
-
+//ADD JOB DUTY BUTTON
+export function addJobDutyButton(jobformCount){
     const jobDutyButton = document.createElement('button');
-    jobDutyButton.id = `job-duties-${jobDutyCount}`;
+    jobDutyButton.id = `job-duties-${jobformCount}`;
     jobDutyButton.type = 'button';
     jobDutyButton.textContent = 'Add Job Description'
   
-    
-
     return jobDutyButton;
-  
 }
 
-
-export function addjobDutyInput(formCount, jobDutyCount, jobFormContainer){
+//JOB DUTY INPUT
+export function addjobDutyInput(formCount, jobDutyCount){
      const dutyInput = document.createElement('input');
      dutyInput.id = `duty-input-${jobDutyCount}-for-experience-${formCount}`
-     jobFormContainer.appendChild(dutyInput);
-
+     
      return dutyInput;
 };
