@@ -6,7 +6,8 @@ import {
   addEmployerCityInput,
   addEmployerStateInput,
   addJobDutyButton,
-  addjobDutyInput
+  addjobDutyInput,
+  addJobDutyInputsContainer
  } from "./experienceInputs.js";
  
 import {
@@ -148,6 +149,10 @@ export function addEmployerState(formCount, jobFormContainer, employerLocationPr
 export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewContainer){
       let jobDutyCount = 0;
 
+      //Create and add container for job duty inputs to form
+      const jobDutyInputsContainer = addJobDutyInputsContainer(formCount)
+      jobFormContainer.appendChild(jobDutyInputsContainer);
+
       //Create and add Job Duty Button to form
       const jobDutyButton = addJobDutyButton(formCount);
       jobFormContainer.appendChild(jobDutyButton);
@@ -161,7 +166,7 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
 
         //Create and add job duty input to form container
         const dutyInput = addjobDutyInput(formCount, jobDutyCount, jobFormContainer);
-        jobFormContainer.appendChild(dutyInput);
+        jobDutyInputsContainer.appendChild(dutyInput);
 
         //Create and add job duty list item to preview container
         const jobDutyLIPreviewElement = addJobDutyLIPreviewElement(formCount, jobDutyCount);

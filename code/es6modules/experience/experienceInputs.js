@@ -1,11 +1,12 @@
 //Inputs passed down to experience.js
 
-const experienceFormsContainer = document.getElementById("all-experience-container");//Container for all experience forms
+const experienceFormsContainer = document.getElementById('all-experience-forms-container');//Container for all experience forms
 
 //Container For Each Experience Form------------------------------------------------------------------------------------------
 export function addExperienceFormContainer(experienceFormCount){
    const jobFormContainer = document.createElement("div");
-    jobFormContainer.id = `job-form-container-${experienceFormCount}`;
+    jobFormContainer.id = `experience-form-container-${experienceFormCount}`;
+    jobFormContainer.className = 'experience-form-container';
     experienceFormsContainer.appendChild(jobFormContainer);
 
     return jobFormContainer;
@@ -80,20 +81,31 @@ export function addEmployerStateInput(stateInputCount) {
   return employerStateInput;
 }
 
+//ADD JOB DUTY INPUT CONTAINER
+export function addJobDutyInputsContainer(containerCount){
+      const jobDutyInputsContainer = document.createElement('div');
+      jobDutyInputsContainer.id = `job-duties-input-container-${containerCount}`;
+      jobDutyInputsContainer.className = 'job-duties-input-container'; 
+
+      return jobDutyInputsContainer
+}
+
 //ADD JOB DUTY BUTTON
 export function addJobDutyButton(jobformCount){
     const jobDutyButton = document.createElement('button');
-    jobDutyButton.id = `job-duties-${jobformCount}`;
+    jobDutyButton.id = `add-job-duty-button-${jobformCount}`;
+    jobDutyButton.className = 'add-job-duty-button';
     jobDutyButton.type = 'button';
     jobDutyButton.textContent = 'Add Job Description'
   
     return jobDutyButton;
 }
 
+
 //JOB DUTY INPUT
 export function addjobDutyInput(formCount, jobDutyCount){
-     const dutyInput = document.createElement('input');
-     dutyInput.id = `duty-input-${jobDutyCount}-for-experience-${formCount}`
-     
-     return dutyInput;
+    const dutyInput = document.createElement('input');
+    dutyInput.id = `duty-input-${jobDutyCount}-for-experience-${formCount}`
+
+    return dutyInput;
 };

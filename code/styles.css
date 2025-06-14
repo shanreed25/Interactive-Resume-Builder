@@ -181,6 +181,17 @@ button {
   display: flex;
 }
 /*EXPERIENCE--------------------------------------------------*/
+
+.all-experience-forms-container{
+  
+}
+
+.experience-form-container{
+  border: 2px solid red;
+  margin: 1rem 0;
+}
+
+
 .experience-details {
   display: flex;
   flex-direction: column;
@@ -215,6 +226,10 @@ button {
   display: flex;
   justify-content: flex-end;
   width: 50%;
+}
+
+.add-job-duty-button{
+  margin: 1rem 0;
 }
 
 
