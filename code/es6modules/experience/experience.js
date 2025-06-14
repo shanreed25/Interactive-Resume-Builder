@@ -1,19 +1,19 @@
-import { 
+import {
   addStartDateInput,
   addEndDateInput,
-  addEmployerNameInput, 
+  addEmployerNameInput,
   addPositionInput,
   addEmployerCityInput,
   addEmployerStateInput,
   addJobDutyButton,
   addjobDutyInput,
   addJobDutyInputsContainer
- } from "./experienceInputs.js";
- 
+} from "./experienceInputs.js";
+
 import {
   addStartDatePreviewElement,
   addEndDatePreviewElement,
-  addEmployerNamePreviewElement, 
+  addEmployerNamePreviewElement,
   addPositionPreviewElement,
   addEmployerCityPreviewElement,
   addEmployerStatePreviewElement,
@@ -24,15 +24,15 @@ import {
 //Passed down to resume-sections.js
 
 //EMPLOYER NAME---------------------------------------------------------------------------------
-export function addEmployerName(formCount, jobFormContainer, employerNamePositionContainer){
+export function addEmployerName(formCount, jobFormContainer, employerNamePositionContainer) {
   //Create a Employer Name Input 
   const employerNameInput = addEmployerNameInput(formCount);
-    jobFormContainer.appendChild(employerNameInput);
+  jobFormContainer.appendChild(employerNameInput);
 
   //Create a Employer Name Preview Element
   const employerNamePreviewElement = addEmployerNamePreviewElement(formCount)
-    employerNamePositionContainer.appendChild(employerNamePreviewElement);
- 
+  employerNamePositionContainer.appendChild(employerNamePreviewElement);
+
   // ---> Listen for the input and add the value to the preview
   employerNameInput.addEventListener("input", () => {
     employerNamePreviewElement.textContent = employerNameInput.value;
@@ -40,14 +40,14 @@ export function addEmployerName(formCount, jobFormContainer, employerNamePositio
 }
 
 //POSITION-------------------------------------------------------------------------------------
-export function addPosition(formCount, jobFormContainer, employerNamePositionContainer){
+export function addPosition(formCount, jobFormContainer, employerNamePositionContainer) {
   // Create a Position Input 
   const positionInput = addPositionInput(formCount)
   jobFormContainer.appendChild(positionInput);
 
   //Create a Position Preview Element
   const positionPreviewElement = addPositionPreviewElement(formCount);
-    employerNamePositionContainer.appendChild(positionPreviewElement);
+  employerNamePositionContainer.appendChild(positionPreviewElement);
 
   //Listen for the input and add it to the preview
   positionInput.addEventListener("input", () => {
@@ -56,8 +56,8 @@ export function addPosition(formCount, jobFormContainer, employerNamePositionCon
 }
 
 //START DATE------------------------------------------------------------------------------------
-export function addStartDate(formCount, jobFormContainer, employerDatesPreviewContainer){
-// Create Employer Start Date Input and adds it to the Job Form Container
+export function addStartDate(formCount, jobFormContainer, employerDatesPreviewContainer) {
+  // Create Employer Start Date Input and adds it to the Job Form Container
   const startDateInput = addStartDateInput(formCount);
   jobFormContainer.appendChild(startDateInput);
 
@@ -66,27 +66,27 @@ export function addStartDate(formCount, jobFormContainer, employerDatesPreviewCo
   employerDatesPreviewContainer.appendChild(startDatePreviewElement);
 
   const dateSeparator = document.createElement('p');
-   employerDatesPreviewContainer.appendChild(dateSeparator);
+  employerDatesPreviewContainer.appendChild(dateSeparator);
 
   // ---> Listen for the input and add it to the preview
   startDateInput.addEventListener("input", () => {
-  //Converts the date format
+    //Converts the date format
     const startDateValue = startDateInput.value;// e.g., "2010-06"
     if (startDateValue) {
-    const [year, month] = startDateValue.split("-");
-    const date = new Date(year, month - 1); // Month is zero-based
-    const options = { year: "numeric", month: "long" };
-    startDatePreviewElement.textContent = date.toLocaleDateString("en-US", options);// e.g. June 2010
-    dateSeparator.textContent = "to";
+      const [year, month] = startDateValue.split("-");
+      const date = new Date(year, month - 1); // Month is zero-based
+      const options = { year: "numeric", month: "long" };
+      startDatePreviewElement.textContent = date.toLocaleDateString("en-US", options);// e.g. June 2010
+      dateSeparator.textContent = "to";
 
-  } else {
-    startDatePreviewElement.textContent = "";
-  }
+    } else {
+      startDatePreviewElement.textContent = "";
+    }
   })
 }
 
 //END DATE--------------------------------------------------------------------------------------
-export function addEndDate(formCount, jobFormContainer, employerDatesPreviewContainer){
+export function addEndDate(formCount, jobFormContainer, employerDatesPreviewContainer) {
   // Create Employer End Date Input and adds it to the Job Form Container
   const endDateInput = addEndDateInput(formCount);
   jobFormContainer.appendChild(endDateInput);
@@ -94,33 +94,33 @@ export function addEndDate(formCount, jobFormContainer, employerDatesPreviewCont
   //---> 2 Create a End Date Preview Element and adds it to the Job Dates Preview Container
   const endDatePreviewElement = addEndDatePreviewElement(formCount);
   employerDatesPreviewContainer.appendChild(endDatePreviewElement)
-  
+
   // ---> Listen for the input and add it to the preview
-   endDateInput.addEventListener("input", () => {
-  //Converts the date format
+  endDateInput.addEventListener("input", () => {
+    //Converts the date format
     const endDateValue = endDateInput.value;// e.g., "2010-06"
     if (endDateValue) {
-    const [year, month] = endDateValue.split("-");
-    const date = new Date(year, month - 1); // Month is zero-based
-    const options = { year: "numeric", month: "long" };
-    endDatePreviewElement.textContent = date.toLocaleDateString("en-US", options);// e.g. June 2010
+      const [year, month] = endDateValue.split("-");
+      const date = new Date(year, month - 1); // Month is zero-based
+      const options = { year: "numeric", month: "long" };
+      endDatePreviewElement.textContent = date.toLocaleDateString("en-US", options);// e.g. June 2010
 
-  } else {
-    endDatePreviewElement.textContent = "";
-  }
+    } else {
+      endDatePreviewElement.textContent = "";
+    }
 
-})
+  })
 }
 
 //EMPLOYER CITY---------------------------------------------------------------------------------
-export function addEmployerCity(formCount, jobFormContainer,  employerLocationPreviewContainer){
+export function addEmployerCity(formCount, jobFormContainer, employerLocationPreviewContainer) {
   // ---> Create Employer City Input
   const employerCityInput = addEmployerCityInput(formCount);
-    jobFormContainer.appendChild(employerCityInput);
+  jobFormContainer.appendChild(employerCityInput);
 
-    //Create a Employer City Preview Element
+  //Create a Employer City Preview Element
   const employerCityPreviewElement = addEmployerCityPreviewElement(formCount);
-    employerLocationPreviewContainer.appendChild(employerCityPreviewElement)
+  employerLocationPreviewContainer.appendChild(employerCityPreviewElement)
 
   // ---> Listen for the input and add it to the preview
   employerCityInput.addEventListener("input", () => {
@@ -129,12 +129,12 @@ export function addEmployerCity(formCount, jobFormContainer,  employerLocationPr
 }
 
 //EMPLOYER STATE--------------------------------------------------------------------------------
-export function addEmployerState(formCount, jobFormContainer, employerLocationPreviewContainer){
+export function addEmployerState(formCount, jobFormContainer, employerLocationPreviewContainer) {
   // ---> Create Employer State Input
   const employerStateInput = addEmployerStateInput(formCount);
-    jobFormContainer.appendChild(employerStateInput);
+  jobFormContainer.appendChild(employerStateInput);
 
-      const employerStatePreviewElement = addEmployerStatePreviewElement(formCount);
+  const employerStatePreviewElement = addEmployerStatePreviewElement(formCount);
   employerLocationPreviewContainer.appendChild(employerStatePreviewElement)
 
 
@@ -146,37 +146,38 @@ export function addEmployerState(formCount, jobFormContainer, employerLocationPr
 
 
 //Job Duty
-export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewContainer){
-      let jobDutyCount = 0;
+export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewContainer) {
+  let jobDutyCount = 0;
 
-      //Create and add container for job duty inputs to form
-      const jobDutyInputsContainer = addJobDutyInputsContainer(formCount)
-      jobFormContainer.appendChild(jobDutyInputsContainer);
+  //Create and add container for job duty inputs to form
+  const jobDutyInputsContainer = addJobDutyInputsContainer(formCount)
+  jobFormContainer.appendChild(jobDutyInputsContainer);
 
-      //Create and add Job Duty Button to form
-      const jobDutyButton = addJobDutyButton(formCount);
-      jobFormContainer.appendChild(jobDutyButton);
+  //Create and add Job Duty Button to form
+  const jobDutyButton = addJobDutyButton(formCount);
+  jobFormContainer.appendChild(jobDutyButton);
 
-      //Create and add Unordered List to the preview
-      const jobDutyULPreviewElement = addJobDutyULPreviewElement(formCount)
-      employerDetailsPreviewContainer.appendChild(jobDutyULPreviewElement);
+  //Create and add Unordered List to the preview
+  const jobDutyULPreviewElement = addJobDutyULPreviewElement(formCount)
+  employerDetailsPreviewContainer.appendChild(jobDutyULPreviewElement);
 
-      jobDutyButton.addEventListener('click', () => {
-        jobDutyCount++;//count of the number of list item added to each unordered list
+  //Listen for Button
+  jobDutyButton.addEventListener('click', () => {
+    jobDutyCount++;//count of the number of list item added to each unordered list
 
-        //Create and add job duty input to form container
-        const dutyInput = addjobDutyInput(formCount, jobDutyCount, jobFormContainer);
-        jobDutyInputsContainer.appendChild(dutyInput);
+    //Create and add job duty input to form container
+    const dutyInput = addjobDutyInput(formCount, jobDutyCount, jobFormContainer);
+    jobDutyInputsContainer.appendChild(dutyInput);
 
-        //Create and add job duty list item to preview container
-        const jobDutyLIPreviewElement = addJobDutyLIPreviewElement(formCount, jobDutyCount);
-        jobDutyULPreviewElement.append(jobDutyLIPreviewElement);
+    //Create and add job duty list item to preview container
+    const jobDutyLIPreviewElement = addJobDutyLIPreviewElement(formCount, jobDutyCount);
+    jobDutyULPreviewElement.append(jobDutyLIPreviewElement);
 
-        // ---> Listen for the input and add the value to the preview
-        dutyInput.addEventListener("input", () => {
+    // ---> Listen for the input and add the value to the preview
+    dutyInput.addEventListener("input", () => {
 
-        jobDutyLIPreviewElement.textContent = dutyInput.value
-        })
-      })
+      jobDutyLIPreviewElement.textContent = dutyInput.value
+    })
+  })
 }
 

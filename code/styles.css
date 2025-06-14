@@ -156,7 +156,37 @@ button {
   background-color: #1abc9c;
 }
 
-/*CONTACT-----------------------------------------------------*/
+/* RESUME FORM_________________________________________________________________________________________________________________ */
+
+/*CONTACT*/
+
+/*EXPERIENCE*/
+
+.all-experience-forms-container{
+  
+}
+
+.experience-form-container{
+  border: 2px solid red;
+  margin: 1rem 0;
+}
+
+.experience-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-job-duty-button{
+  margin: 1rem 0;
+}
+
+.job-duties-input-container{
+  display: flex;
+  flex-direction: column;
+}
+
+/* PREVIEW_________________________________________________________________________________________________________________ */
+/*CONTACT*/
 .preview-contact-section {
   display: flex;
   flex-direction: column;
@@ -180,30 +210,14 @@ button {
 .preview-city-state{
   display: flex;
 }
-/*EXPERIENCE--------------------------------------------------*/
-
-.all-experience-forms-container{
-  
-}
-
-.experience-form-container{
-  border: 2px solid red;
-  margin: 1rem 0;
-}
 
 
-.experience-details {
-  display: flex;
-  flex-direction: column;
-}
+/*EXPERIENCE*/
 
-.employer-name-position {
+.employer-name-position-preview {
   display: flex;
 }
 
-.employer-name{
-
-}
 .position-preview{
  font-size: .9rem;
  margin-top: .6rem;
@@ -218,7 +232,7 @@ button {
 .employer-dates-preview{
   display: flex;
   justify-content: space-between;
-  width: 22%;
+  width: 42%;
 }
 
 
@@ -228,30 +242,5 @@ button {
   width: 50%;
 }
 
-.add-job-duty-button{
-  margin: 1rem 0;
-}
 
 
-/* .experience-date {
-  font-size: 0.7rem;
-  display: flex;
-  margin: 0;
-}
-
-.experience-date p,
-.experience-summary h4 {
-  margin: 0;
-}
-
-.experience-summary {
-  width: 70%;
-} */
-
-/* #experience-title-date{
-    display: flex;
-}
-
-.start, .end{
-    font-size: .6rem;
-} */

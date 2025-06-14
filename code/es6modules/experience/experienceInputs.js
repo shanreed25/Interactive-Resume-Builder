@@ -105,7 +105,8 @@ export function addJobDutyButton(jobformCount){
 //JOB DUTY INPUT
 export function addjobDutyInput(formCount, jobDutyCount){
     const dutyInput = document.createElement('input');
-    dutyInput.id = `duty-input-${jobDutyCount}-for-experience-${formCount}`
+    dutyInput.id = `duty-input-${jobDutyCount}-for-experience-${formCount}`;
+    
 
     return dutyInput;
 };

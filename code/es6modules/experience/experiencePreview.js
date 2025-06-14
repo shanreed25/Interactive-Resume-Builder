@@ -16,7 +16,7 @@ export function addExperiencePreviewContainer(experienceFormCount){
 export function addEmployerNamePositionPreviewContainer(experienceFormCount){
     const employerNamePositionPreviewContainer = document.createElement('div');
     employerNamePositionPreviewContainer.id = `employer-name-position-preview-container-${experienceFormCount}`;
-    employerNamePositionPreviewContainer.className = 'employer-name-position';
+    employerNamePositionPreviewContainer.className = 'employer-name-position-preview';
 
     return employerNamePositionPreviewContainer;
 }
