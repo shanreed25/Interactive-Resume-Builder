@@ -1,5 +1,4 @@
 import { addExperienceFormContainer, } from "./experience/experienceInputs.js";
-import {addSkillInputContainer} from './skills/skillsInputs.js';
 import { 
   addExperiencePreviewContainer, 
   addEmployerNamePositionPreviewContainer, 
@@ -19,7 +18,8 @@ import {
 } from "./experience/experience.js";
 
 
-import {addSkill} from './skills/skills.js';
+import addSkill from './skills/skills.js';
+import addEducation from './education/education.js';
 
 //CONTACT----------------------------------------------------------------------------------------------------
 
@@ -82,9 +82,22 @@ export function addNewSkillInput(buttonName){
   buttonName.addEventListener('click', () => {
     skillInputCount++
 
-    //CONTAINER FOR EACH SKILL INPUT-------------------------------------------------------------------------------------------
-    
-    const skillInputContainer = addSkillInputContainer(skillInputCount);
-    addSkill(skillInputCount, skillInputContainer)
+    //SKILL INPUT AND REVIEW ELEMENT-------------------------------------------------------------------------------------------
+    addSkill(skillInputCount)
+  })
+}
+
+
+//Education----------------------------------------------------------------------------------------------------
+let educationFormCount = 0;
+export function addNewEducationForm(buttonName){
+  buttonName.addEventListener('click', () => {
+    educationFormCount++
+
+//EDUCATION INPUT AND REVIEW ELEMENT-------------------------------------------------------------------------------------------    
+    addEducation(educationFormCount);
+    // const educationFormContainer = addNewEducationFormSection(educationFormCount);
+    // const educationPreviewContainer = addEducationPreviewSection(educationFormCount);
+    //  console.log(educationPreviewContainer);
   })
 }

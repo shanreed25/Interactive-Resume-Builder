@@ -1,7 +1,7 @@
 import { updateContactSection } from "./es6modules/contact.js";
 import { updateSummarySection } from "./es6modules/summary.js";
 import { generatePDF } from "./es6modules/generatepdf.js";
-import {addNewExperienceSection, addNewSkillInput} from './es6modules/resume-sections.js';
+import {addNewExperienceSection, addNewSkillInput, addNewEducationForm} from './es6modules/resume-sections.js';
 
 //*********START: REVISE CODE THIS LATER************/
 //because the generatePDF() function is attached to the onclick attribute of the button
@@ -40,4 +40,9 @@ addNewExperienceSection(newExperienceButton);
 
 const newSkillButton = document.getElementById("new-skill");
 addNewSkillInput(newSkillButton);
+
+//SKILLS SECTION-----------------------------------------------------------------------------------------------------
+
+const newEducationButton = document.getElementById("new-education");
+addNewEducationForm(newEducationButton);
 //-----------------------------------------------------------------------------------------------------------------------
