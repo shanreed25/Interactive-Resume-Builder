@@ -1,4 +1,5 @@
 import { addExperienceFormContainer, } from "./experience/experienceInputs.js";
+import {addSkillInputContainer} from './skills/skillsInputs.js';
 import { 
   addExperiencePreviewContainer, 
   addEmployerNamePositionPreviewContainer, 
@@ -6,7 +7,7 @@ import {
   addemployerDatesPreviewContainer,
   addemployerLocationPreviewContainer
  } from "./experience/experiencePreview.js";
- 
+//  import {addSkillPreviewULElement} from './skills/skillsPreview.js';
 import {
   addStartDate,
   addEndDate,
@@ -17,9 +18,8 @@ import {
   addJobDuty
 } from "./experience/experience.js";
 
-import {addSkillInputContainer, addSkillInput} from './skills/skillsInputs.js';
 
-import {addSkillPreviewULElement} from './skills/skillsPreview.js';
+import {addSkill} from './skills/skills.js';
 
 //CONTACT----------------------------------------------------------------------------------------------------
 
@@ -86,10 +86,8 @@ export function addNewSkillInput(buttonName){
     //SKILL INPUT
     const skillInputContainer = addSkillInputContainer(skillInputCount);
 
-    const skillPreviewLIElement = addSkillPreviewULElement(skillInputCount);
 
-    const skillInput = addSkillInput(skillInputCount);
-    skillInputContainer.appendChild(skillInput);
-    console.log(skillPreviewLIElement);
+    addSkill(skillInputCount, skillInputContainer)
+    // console.log(skillPreviewLIElement);
   })
 }

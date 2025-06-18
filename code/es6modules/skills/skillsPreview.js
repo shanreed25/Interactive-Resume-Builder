@@ -1,7 +1,7 @@
 const allSkillsPreviewList = document.getElementById('all-skills-preview-list');
 
 
-export function addSkillPreviewULElement(skillCount){
+export function addSkillPreviewLIElement(skillCount){
     const skillPreviewLIElement = document.createElement('li');
     skillPreviewLIElement.id = `skills-list-${skillCount}`;
     allSkillsPreviewList.appendChild(skillPreviewLIElement);
