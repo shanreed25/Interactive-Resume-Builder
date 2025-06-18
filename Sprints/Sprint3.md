@@ -1,8 +1,8 @@
 # Sprint 3
 
 ## Sprint Goal:
-- [x] Create the Skills and Education Sections.  
-- [x] Allow users to complete the skills and education sections of the form, while being able to review and change the information that they have entered without navigating away from the current page. 
+- [ ] Create the Skills and Education Sections.  
+- [ ] Allow users to complete the skills and education sections of the form, while being able to review and change the information that they have entered without navigating away from the current page. 
 
 ## User Stories:
 
