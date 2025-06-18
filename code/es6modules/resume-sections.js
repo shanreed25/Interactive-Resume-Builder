@@ -19,6 +19,8 @@ import {
 
 import {addSkillInputContainer, addSkillInput} from './skills/skillsInputs.js';
 
+import {addSkillPreviewULElement} from './skills/skillsPreview.js';
+
 //CONTACT----------------------------------------------------------------------------------------------------
 
 //SUMMARY----------------------------------------------------------------------------------------------------
@@ -84,8 +86,10 @@ export function addNewSkillInput(buttonName){
     //SKILL INPUT
     const skillInputContainer = addSkillInputContainer(skillInputCount);
 
+    const skillPreviewLIElement = addSkillPreviewULElement(skillInputCount);
+
     const skillInput = addSkillInput(skillInputCount);
     skillInputContainer.appendChild(skillInput);
-    console.log(skillInputContainer);
+    console.log(skillPreviewLIElement);
   })
 }
