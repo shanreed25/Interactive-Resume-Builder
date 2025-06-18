@@ -17,6 +17,8 @@ import {
   addJobDuty
 } from "./experience/experience.js";
 
+import {addSkillInputContainer} from './skills/skillsInputs.js';
+
 //CONTACT----------------------------------------------------------------------------------------------------
 
 //SUMMARY----------------------------------------------------------------------------------------------------
@@ -73,8 +75,14 @@ export function addNewExperienceSection(buttonName) {
 
 
 //SKILLS----------------------------------------------------------------------------------------------------
+let skillInputCount = 0;
 export function addNewSkillInput(buttonName){
   buttonName.addEventListener('click', () => {
-    alert('New Skill Button Clicked');
+    skillInputCount++
+
+    //CONTAINER FOR EACH INPUT-------------------------------------------------------------------------------------------
+    //SKILL INPUT
+    const skillInputContainer = addSkillInputContainer(skillInputCount)
+    console.log(skillInputContainer)
   })
 }
