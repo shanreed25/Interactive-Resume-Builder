@@ -25,7 +25,7 @@ import {
 let experienceFormCount = 0;
 
 //Adds a new experience form and review section and appends it to the main container everytime the button is clicked
-export default function addNewExperienceSection(buttonName) {
+export function addNewExperienceSection(buttonName) {
   buttonName.addEventListener("click", () => {
     experienceFormCount++; //counts the number of forms and experience sections created
 
@@ -72,4 +72,9 @@ export default function addNewExperienceSection(buttonName) {
 
 
 
-//EDUCATION----------------------------------------------------------------------------------------------------
+//SKILLS----------------------------------------------------------------------------------------------------
+export function addNewSkillInput(buttonName){
+  buttonName.addEventListener('click', () => {
+    alert('New Skill Button Clicked');
+  })
+}
