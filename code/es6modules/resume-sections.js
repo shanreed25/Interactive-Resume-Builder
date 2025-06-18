@@ -7,7 +7,7 @@ import {
   addemployerDatesPreviewContainer,
   addemployerLocationPreviewContainer
  } from "./experience/experiencePreview.js";
-//  import {addSkillPreviewULElement} from './skills/skillsPreview.js';
+
 import {
   addStartDate,
   addEndDate,
@@ -83,11 +83,8 @@ export function addNewSkillInput(buttonName){
     skillInputCount++
 
     //CONTAINER FOR EACH SKILL INPUT-------------------------------------------------------------------------------------------
-    //SKILL INPUT
+    
     const skillInputContainer = addSkillInputContainer(skillInputCount);
-
-
     addSkill(skillInputCount, skillInputContainer)
-    // console.log(skillPreviewLIElement);
   })
 }

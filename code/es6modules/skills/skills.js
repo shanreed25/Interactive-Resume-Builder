@@ -6,11 +6,12 @@ export function addSkill(skillInputCount, skillInputContainer){
      const skillInput = addSkillInput(skillInputCount);
      skillInputContainer.appendChild(skillInput);
 
+     //Create Skill Preview Element
      const skillPreviewLIElement = addSkillPreviewLIElement(skillInputCount);
 
+     // ---> Listen for the input and add the value to the preview
      skillInput.addEventListener('input', () => {
         skillPreviewLIElement.textContent = skillInput.value
-        console.log(skillInput.value);
      })
 
 }
