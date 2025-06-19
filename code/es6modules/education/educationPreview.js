@@ -7,18 +7,30 @@ export function addEducationPreviewContainer(educationFormCount){
     educationPreviewContainer.className = `education-preview-container`;
 
     //Container for School Degree Input
-    const schoolDegreeContainer = document.createElement("div");
-    schoolDegreeContainer .id = `school-degree-container-${educationFormCount}`;
-    schoolDegreeContainer .className = `school-degree-container`;
+    const schoolDegreePreviewContainer = document.createElement("div");
+    schoolDegreePreviewContainer .id = `school-degree-preview-container-${educationFormCount}`;
+    schoolDegreePreviewContainer .className = `school-degree-preview-container`;
 
     //School Degree Input Review
     const schoolDegreeInputPreview = document.createElement("h4");
     schoolDegreeInputPreview.id = `school-info-preview-container-${educationFormCount}`;
     schoolDegreeInputPreview.className = `school-info-preview-container`;
 
+
+    //Container for School Name and date Input
+    const schoolNameDatesPreviewContainer = document.createElement("div");
+    schoolNameDatesPreviewContainer .id = `school-name-dates-preview-container-${educationFormCount}`;
+    schoolNameDatesPreviewContainer .className = `school-name-dates-preview-container`;
+
+    //School Name Preview
+    const schoolNameInputPreview = document.createElement("h5");
+    schoolNameInputPreview .id = `school-name-dates-preview-container-${educationFormCount}`;
+    schoolNameInputPreview .className = `school-name-dates-preview-container`;
+
+
     allEducationPreviewContainer.append(educationPreviewContainer);
-    educationPreviewContainer.append(schoolDegreeContainer);
-    schoolDegreeContainer.append(schoolDegreeInputPreview);
+    educationPreviewContainer.append(schoolDegreePreviewContainer);
+    schoolDegreePreviewContainer.append(schoolDegreeInputPreview);
     
     return educationPreviewContainer;
 
