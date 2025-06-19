@@ -9,17 +9,33 @@ function addInputValueToPreview(formInput, previewElement){
         previewElement.textContent = formInput.value;
      });
 }
+
+
+/**
+ * Selects a single DOM element based on a CSS selector.
+ *
+ * @param {string} selector - The CSS selector string (e.g., '#myId', '.myClass', 'div p').
+ * @param {Element} [scope=document] - The element within which to search for the selector. Defaults to `document`.
+ * @returns {Element|null} The first matching DOM element, or null if no element is found.
+ */
+
+
+function selectPreviewElement(selector, scope = document) {
+  return scope.querySelector(selector);
+}
+
+
 export default function addEducation(educationFormCount){
     //Add education form container-------------------------------------------------------------------------------->
     const educationFormContainer = addEducationFormContainer(educationFormCount);
     //Get The Degree Input
-    const degreeInput = educationFormContainer.querySelector(`#degree-input-${educationFormCount}`);
+    const degreeInput = selectPreviewElement(`#degree-input-${educationFormCount}`);
 
-    const schoolNameInput = educationFormContainer.querySelector(`#school-name-input-${educationFormCount}`);
+    const schoolNameInput = selectPreviewElement(`#school-name-input-${educationFormCount}`);
     
-    const schoolStartDateInput = educationFormContainer.querySelector(`#school-start-date-input-${educationFormCount}`);
+    const schoolStartDateInput = selectPreviewElement(`#school-start-date-input-${educationFormCount}`);
     
-    const schoolEndDateInput = educationFormContainer.querySelector(`#school-end-date-input-${educationFormCount}`);
+    const schoolEndDateInput = selectPreviewElement(`#school-end-date-input-${educationFormCount}`);
     
     //Add education preview container----------------------------------------------------------------------------------------------->
     const educationPreviewContainer = addEducationPreviewContainer(educationFormCount);
@@ -34,6 +50,8 @@ export default function addEducation(educationFormCount){
 
      //Get The School Name h5 element
     const schoolEndDateH5 = educationPreviewContainer.querySelector(`#school-end-date-input-preview-${educationFormCount}`);
+
+
     console.log(educationFormContainer, educationPreviewContainer);
 
 
