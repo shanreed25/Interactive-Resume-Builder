@@ -34,8 +34,6 @@ summary.addEventListener('input', () =>{
 const newExperienceButton = document.getElementById("new-job-experience");
 addNewExperienceSection(newExperienceButton);
 
-
-
 //SKILLS SECTION-----------------------------------------------------------------------------------------------------
 
 const newSkillButton = document.getElementById("new-skill");

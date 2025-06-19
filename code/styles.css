@@ -244,3 +244,7 @@ button {
 
 
 
+/* EDUCATION */
+.school-dates-preview-container{
+  display: flex;
+}

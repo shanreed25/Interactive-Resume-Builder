@@ -2,6 +2,13 @@ import {addEducationFormContainer} from './educationInputs.js';
 import { addEducationPreviewContainer} from './educationPreview.js';
 
 
+
+function addInputValueToPreview(formInput, previewElement){
+       // ---> Listen for the degree input and add the value to the preview
+     formInput.addEventListener('input', () => {
+        previewElement.textContent = formInput.value;
+     });
+}
 export default function addEducation(educationFormCount){
     //Add education form container-------------------------------------------------------------------------------->
     const educationFormContainer = addEducationFormContainer(educationFormCount);
@@ -29,23 +36,11 @@ export default function addEducation(educationFormCount){
     const schoolEndDateH5 = educationPreviewContainer.querySelector(`#school-end-date-input-preview-${educationFormCount}`);
     console.log(educationFormContainer, educationPreviewContainer);
 
-     // ---> Listen for the degree input and add the value to the preview
-     degreeInput.addEventListener('input', () => {
-        educationDegreeH4.textContent = degreeInput.value;
-     });
 
-
-      // ---> Listen for the input and add the value to the preview
-     schoolNameInput.addEventListener('input', () => {
-        schoolNameH5.textContent = schoolNameInput.value;
-     });
-
-     schoolStartDateInput.addEventListener('input', () => {
-         schoolStartDateH5.textContent = schoolStartDateInput.value;
-     });
-
-     schoolEndDateInput.addEventListener('input', () => {
-         schoolEndDateH5.textContent = schoolEndDateInput.value;
-     })
+    //Listen for Inputs--------------------------------------------------------------------------------------->
+    addInputValueToPreview(degreeInput, educationDegreeH4 ); //DEGREE INPUT
+    addInputValueToPreview(schoolNameInput, schoolNameH5 ); //SCHOOL NAME INPUT
+    addInputValueToPreview(schoolStartDateInput, schoolStartDateH5 ); //SCHOOL START DATE
+    addInputValueToPreview(schoolEndDateInput, schoolEndDateH5 ); //SCHOOL END DATE
 
 }
