@@ -1,11 +1,4 @@
-import {
-  addContainer,
-  addInput,
-  addJobDutyButton,
-  addjobDutyInput,
-
-} from "./experienceInputs.js";
-
+import { addContainer, addInput, addJobDutyButton,} from "./experienceInputs.js";
 import {
   addStartDatePreviewElement,
   addEndDatePreviewElement,
@@ -163,7 +156,9 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
     jobDutyCount++;//count of the number of list item added to each unordered list
 
     //Create and add job duty input to form container
-    const dutyInput = addjobDutyInput(formCount, jobDutyCount, jobFormContainer);
+    // const dutyInput = addjobDutyInput(formCount, jobDutyCount, jobFormContainer);
+
+     const dutyInput = addInput("text", `duty-input-${jobDutyCount}-for-experience-${formCount}`, "duty-input", "Add Job Duty/Description");
     jobDutyInputsContainer.appendChild(dutyInput);
 
     //Create and add job duty list item to preview container

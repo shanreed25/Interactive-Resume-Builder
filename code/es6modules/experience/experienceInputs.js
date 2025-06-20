@@ -29,7 +29,7 @@ export function addInput(inputType, inputID, inputClassName, inputPlaceholder){
 }
 
 
-//ADD JOB DUTY BUTTON
+//ADD BUTTON
 export function addJobDutyButton(jobformCount){
     const jobDutyButton = document.createElement('button');
     jobDutyButton.id = `add-job-duty-button-${jobformCount}`;
@@ -39,13 +39,3 @@ export function addJobDutyButton(jobformCount){
   
     return jobDutyButton;
 }
-
-
-//JOB DUTY INPUT
-export function addjobDutyInput(formCount, jobDutyCount){
-    const dutyInput = document.createElement('input');
-    dutyInput.id = `duty-input-${jobDutyCount}-for-experience-${formCount}`;
-    
-
-    return dutyInput;
-};
