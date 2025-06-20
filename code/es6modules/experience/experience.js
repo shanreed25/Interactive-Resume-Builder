@@ -1,14 +1,5 @@
 import { addContainer, addInput, addJobDutyButton,} from "./experienceInputs.js";
-import {
-  addStartDatePreviewElement,
-  addEndDatePreviewElement,
-  addEmployerNamePreviewElement,
-  addPositionPreviewElement,
-  addEmployerCityPreviewElement,
-  addEmployerStatePreviewElement,
-  addJobDutyULPreviewElement,
-  addJobDutyLIPreviewElement
-} from "./experiencePreview.js";
+import {addPreviewElement} from "./experiencePreview.js";
 
 //Passed down to resume-sections.js
 
@@ -19,7 +10,7 @@ export function addEmployerName(formCount, jobFormContainer, employerNamePositio
   jobFormContainer.appendChild(employerNameInput);
 
   //Create a Employer Name Preview Element
-  const employerNamePreviewElement = addEmployerNamePreviewElement(formCount)
+  const employerNamePreviewElement = addPreviewElement("h2", `employer-name-preview-${formCount}`, "employer-name-preview");
   employerNamePositionContainer.appendChild(employerNamePreviewElement);
 
   // ---> Listen for the input and add the value to the preview
@@ -35,7 +26,7 @@ export function addPosition(formCount, jobFormContainer, employerNamePositionCon
   jobFormContainer.appendChild(positionInput);
 
   //Create a Position Preview Element
-  const positionPreviewElement = addPositionPreviewElement(formCount);
+  const positionPreviewElement = addPreviewElement("h2", `position-preview-${formCount}`, "position-preview");
   employerNamePositionContainer.appendChild(positionPreviewElement);
 
   //Listen for the input and add it to the preview
@@ -51,7 +42,7 @@ export function addStartDate(formCount, jobFormContainer, employerDatesPreviewCo
   jobFormContainer.appendChild(startDateInput);
 
   //Create a Start Date Preview Element and adds it to the Job Dates Preview Container
-  const startDatePreviewElement = addStartDatePreviewElement(formCount);
+  const startDatePreviewElement = addPreviewElement("p", `start-date-preview-${formCount}`, "start-date-preview");
   employerDatesPreviewContainer.appendChild(startDatePreviewElement);
 
   const dateSeparator = document.createElement('p');
@@ -81,7 +72,7 @@ export function addEndDate(formCount, jobFormContainer, employerDatesPreviewCont
   jobFormContainer.appendChild(endDateInput);
 
   //---> 2 Create a End Date Preview Element and adds it to the Job Dates Preview Container
-  const endDatePreviewElement = addEndDatePreviewElement(formCount);
+  const endDatePreviewElement =  addPreviewElement("p", `end-date-preview-${formCount}`, "end-date-preview");
   employerDatesPreviewContainer.appendChild(endDatePreviewElement)
 
   // ---> Listen for the input and add it to the preview
@@ -108,7 +99,7 @@ export function addEmployerCity(formCount, jobFormContainer, employerLocationPre
   jobFormContainer.appendChild(employerCityInput);
 
   //Create a Employer City Preview Element
-  const employerCityPreviewElement = addEmployerCityPreviewElement(formCount);
+  const employerCityPreviewElement =  addPreviewElement("p", `employer-city-preview-${formCount}`, "employer-city-preview");
   employerLocationPreviewContainer.appendChild(employerCityPreviewElement)
 
   // ---> Listen for the input and add it to the preview
@@ -123,7 +114,7 @@ export function addEmployerState(formCount, jobFormContainer, employerLocationPr
   const employerStateInput = addInput("text", `employer-state-input-${formCount}`, "med", "State");
   jobFormContainer.appendChild(employerStateInput);
 
-  const employerStatePreviewElement = addEmployerStatePreviewElement(formCount);
+  const employerStatePreviewElement = addPreviewElement("p", `employer-state-preview-${formCount}`, "employer-state-preview");
   employerLocationPreviewContainer.appendChild(employerStatePreviewElement)
 
 
@@ -148,7 +139,7 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
   jobFormContainer.appendChild(jobDutyButton);
 
   //Create and add Unordered List to the preview
-  const jobDutyULPreviewElement = addJobDutyULPreviewElement(formCount)
+  const jobDutyULPreviewElement = addPreviewElement("ul", `job-duty-list-preview-${formCount}`, "job-duty-list-preview");
   employerDetailsPreviewContainer.appendChild(jobDutyULPreviewElement);
 
   //Listen for Button
@@ -162,7 +153,7 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
     jobDutyInputsContainer.appendChild(dutyInput);
 
     //Create and add job duty list item to preview container
-    const jobDutyLIPreviewElement = addJobDutyLIPreviewElement(formCount, jobDutyCount);
+    const jobDutyLIPreviewElement = addPreviewElement("li", `job-duty-li-preview-${jobDutyCount}-for-experience-${formCount}`, "job-duty-li-preview");
     jobDutyULPreviewElement.append(jobDutyLIPreviewElement);
 
     // ---> Listen for the input and add the value to the preview

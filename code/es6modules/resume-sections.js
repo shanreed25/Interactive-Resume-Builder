@@ -1,11 +1,5 @@
 import {addContainer} from "./experience/experienceInputs.js";
-import { 
-  addExperiencePreviewContainer, 
-  addEmployerNamePositionPreviewContainer, 
-  addemployerDatesLocationPreviewContainer,
-  addemployerDatesPreviewContainer,
-  addemployerLocationPreviewContainer
- } from "./experience/experiencePreview.js";
+import { addPreviewContainer, addExperiencePreviewContainer, } from "./experience/experiencePreview.js";
 
 import {
   addStartDate,
@@ -42,19 +36,19 @@ export function addNewExperienceSection(buttonName) {
     const workExperienceMainPreviewContainer = addExperiencePreviewContainer(experienceFormCount); 
 
     //EMPLOYER NAME AND POSITION
-    const employerNamePositionPreviewContainer = addEmployerNamePositionPreviewContainer(experienceFormCount)
+    const employerNamePositionPreviewContainer = addPreviewContainer('div',`employer-name-position-preview-container-${experienceFormCount}`, 'employer-name-position-preview-container')
     workExperienceMainPreviewContainer.appendChild(employerNamePositionPreviewContainer);
 
     //JOB DATES AND LOCATION
-    const employerDatesLocationPreviewContainer = addemployerDatesLocationPreviewContainer(experienceFormCount);
+    const employerDatesLocationPreviewContainer = addPreviewContainer('div',`employer-dates-location-preview-container-${experienceFormCount}`, 'employer-dates-location-preview-container')
     workExperienceMainPreviewContainer.appendChild(employerDatesLocationPreviewContainer);
 
     //JOB DATES
-    const employerDatesPreviewContainer = addemployerDatesPreviewContainer(experienceFormCount)
+    const employerDatesPreviewContainer = addPreviewContainer('div',`employer-dates-preview-container-${experienceFormCount}`, 'employer-dates-preview-container')
     employerDatesLocationPreviewContainer.appendChild(employerDatesPreviewContainer);
 
     //JOB LOCATION
-    const employerLocationPreviewContainer = addemployerLocationPreviewContainer(experienceFormCount)
+    const employerLocationPreviewContainer = addPreviewContainer('div',`employer-location-preview-container-${experienceFormCount}`, 'employer-location-preview-container')
     employerDatesLocationPreviewContainer.appendChild(employerLocationPreviewContainer);
 
     //Second container hold experience preview details----------------------------------------

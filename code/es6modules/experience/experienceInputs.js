@@ -1,12 +1,10 @@
-//Passed down to experience.js
-
 const experienceFormsContainer = document.getElementById('all-experience-forms-container');//Container for all experience forms
 
-
+//Passed down to resume-sections.js
 //Adds Containers----------------------------------------------------------------
-export function addContainer(formContainerID, formContainerClass){
+export function addContainer(formContainerId, formContainerClass){
   const formContainer = document.createElement("div");
-  formContainer.id = formContainerID;
+  formContainer.id = formContainerId;
   formContainer.className = formContainerClass;
   experienceFormsContainer.appendChild(formContainer);
 
@@ -16,20 +14,20 @@ export function addContainer(formContainerID, formContainerClass){
 
 
 
-//FORM----------------------------------------------------------------------------------------------------------------
 
-//Add Inputs
-export function addInput(inputType, inputID, inputClassName, inputPlaceholder){
+//Passed down to resume-sections.js
+//ADD FORM INPUTS
+export function addInput(inputType, inputId, inputClassName, inputPlaceholder){
     const inputName = document.createElement("input");
     inputName.type = inputType;
-    inputName.id = inputID
+    inputName.id = inputId
     inputName.className = inputClassName;
     inputName.placeholder = inputPlaceholder;
     return inputName;
 }
 
-
-//ADD BUTTON
+//Passed down to resume-sections.js
+//ADD FORM BUTTON
 export function addJobDutyButton(jobformCount){
     const jobDutyButton = document.createElement('button');
     jobDutyButton.id = `add-job-duty-button-${jobformCount}`;
