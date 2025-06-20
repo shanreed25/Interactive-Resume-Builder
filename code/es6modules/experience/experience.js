@@ -7,7 +7,7 @@ import {
   addEmployerStateInput,
   addJobDutyButton,
   addjobDutyInput,
-  addJobDutyInputsContainer
+  addContainer
 } from "./experienceInputs.js";
 
 import {
@@ -54,6 +54,10 @@ export function addPosition(formCount, jobFormContainer, employerNamePositionCon
     positionPreviewElement.textContent = `  - ${positionInput.value}`;
   });
 }
+
+
+
+
 
 //START DATE------------------------------------------------------------------------------------
 export function addStartDate(formCount, jobFormContainer, employerDatesPreviewContainer) {
@@ -150,7 +154,9 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
   let jobDutyCount = 0;
 
   //Create and add container for job duty inputs to form
-  const jobDutyInputsContainer = addJobDutyInputsContainer(formCount)
+  // const jobDutyInputsContainer = addJobDutyInputsContainer(formCount)
+  const jobDutyInputsContainer = addContainer(`job-duties-input-container-${formCount}`, 'job-duties-input-container')
+  console.log(jobDutyInputsContainer)
   jobFormContainer.appendChild(jobDutyInputsContainer);
 
   //Create and add Job Duty Button to form

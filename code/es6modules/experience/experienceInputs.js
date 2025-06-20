@@ -2,17 +2,46 @@
 
 const experienceFormsContainer = document.getElementById('all-experience-forms-container');//Container for all experience forms
 
-//Container For Each Experience Form------------------------------------------------------------------------------------------
-export function addExperienceFormContainer(experienceFormCount){
-   const jobFormContainer = document.createElement("div");
-    jobFormContainer.id = `experience-form-container-${experienceFormCount}`;
-    jobFormContainer.className = 'experience-form-container';
-    experienceFormsContainer.appendChild(jobFormContainer);
 
-    return jobFormContainer;
+//Adds Containers----------------------------------------------------------------
+export function addContainer(formContainerID, formContainerClass){
+  const formContainer = document.createElement("div");
+  formContainer.id = formContainerID;
+  formContainer.className = formContainerClass;
+  experienceFormsContainer.appendChild(formContainer);
 
-
+  console.log(formContainer)
+  return formContainer;
 }
+//REPLACED WITH addContainer()------------------------------------------------------------------------
+// //ADD JOB DUTY INPUT CONTAINER
+// export function addJobDutyInputsContainer(containerCount){
+//       const jobDutyInputsContainer = document.createElement('div');
+//       jobDutyInputsContainer.id = `job-duties-input-container-${containerCount}`;
+//       jobDutyInputsContainer.className = 'job-duties-input-container'; 
+
+//       return jobDutyInputsContainer
+// }
+
+// //Container For Each Experience Form------------------------------------------------------------------------------------------
+// export function addExperienceFormContainer(experienceFormCount){
+//    const jobFormContainer = document.createElement("div");
+//     jobFormContainer.id = `experience-form-container-${experienceFormCount}`;
+//     jobFormContainer.className = 'experience-form-container';
+//     experienceFormsContainer.appendChild(jobFormContainer);
+
+//     return jobFormContainer;
+
+
+// }
+//REPLACED WITH addContainer()------------------------------------------------------------------------
+
+
+
+
+
+
+
 //FORM----------------------------------------------------------------------------------------------------------------
 
 //START DATE INPUT
@@ -81,14 +110,7 @@ export function addEmployerStateInput(stateInputCount) {
   return employerStateInput;
 }
 
-//ADD JOB DUTY INPUT CONTAINER
-export function addJobDutyInputsContainer(containerCount){
-      const jobDutyInputsContainer = document.createElement('div');
-      jobDutyInputsContainer.id = `job-duties-input-container-${containerCount}`;
-      jobDutyInputsContainer.className = 'job-duties-input-container'; 
 
-      return jobDutyInputsContainer
-}
 
 //ADD JOB DUTY BUTTON
 export function addJobDutyButton(jobformCount){

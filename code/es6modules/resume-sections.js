@@ -1,4 +1,4 @@
-import { addExperienceFormContainer, } from "./experience/experienceInputs.js";
+import {addContainer} from "./experience/experienceInputs.js";
 import { 
   addExperiencePreviewContainer, 
   addEmployerNamePositionPreviewContainer, 
@@ -36,7 +36,7 @@ export function addNewExperienceSection(buttonName) {
 
     //CONTAINERS-------------------------------------------------------------------------------------------
     //WORK EXPERIENCE FORM
-    const jobFormContainer = addExperienceFormContainer(experienceFormCount)
+    const jobFormContainer = addContainer(`experience-form-container-${experienceFormCount}`, 'experience-form-container' );
 
     //WORK EXPERIENCE PREVIEW
     const workExperienceMainPreviewContainer = addExperiencePreviewContainer(experienceFormCount); 

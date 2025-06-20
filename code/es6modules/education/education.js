@@ -10,8 +10,8 @@ function addInputValueToPreview(formInput, previewElement){
      });
 }
 
-
-/**
+// -----------------------------------------------------come Back and review this code--------------------------------------------------------------------------------
+/**                                                                                                                                                     
  * Selects a single DOM element based on a CSS selector.
  *
  * @param {string} selector - The CSS selector string (e.g., '#myId', '.myClass', 'div p').
@@ -23,7 +23,7 @@ function addInputValueToPreview(formInput, previewElement){
 function selectPreviewElement(selector, scope = document) {
   return scope.querySelector(selector);
 }
-
+// -----------------------------------------------------come Back and review this code--------------------------------------------------------------------------------
 
 export default function addEducation(educationFormCount){
     //Add education form container-------------------------------------------------------------------------------->
