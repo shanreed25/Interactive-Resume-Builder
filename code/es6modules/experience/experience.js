@@ -1,13 +1,9 @@
 import {
-  addStartDateInput,
-  addEndDateInput,
-  addEmployerNameInput,
-  addPositionInput,
-  addEmployerCityInput,
-  addEmployerStateInput,
+  addContainer,
+  addInput,
   addJobDutyButton,
   addjobDutyInput,
-  addContainer
+
 } from "./experienceInputs.js";
 
 import {
@@ -26,7 +22,7 @@ import {
 //EMPLOYER NAME---------------------------------------------------------------------------------
 export function addEmployerName(formCount, jobFormContainer, employerNamePositionContainer) {
   //Create a Employer Name Input 
-  const employerNameInput = addEmployerNameInput(formCount);
+  const employerNameInput = addInput("text", `employer-name-input-${formCount}`, "med", "Employer/Company Name" );
   jobFormContainer.appendChild(employerNameInput);
 
   //Create a Employer Name Preview Element
@@ -42,7 +38,7 @@ export function addEmployerName(formCount, jobFormContainer, employerNamePositio
 //POSITION-------------------------------------------------------------------------------------
 export function addPosition(formCount, jobFormContainer, employerNamePositionContainer) {
   // Create a Position Input 
-  const positionInput = addPositionInput(formCount)
+  const positionInput = addInput("text", `position-input-${formCount}`, "med", "Position" );
   jobFormContainer.appendChild(positionInput);
 
   //Create a Position Preview Element
@@ -55,14 +51,10 @@ export function addPosition(formCount, jobFormContainer, employerNamePositionCon
   });
 }
 
-
-
-
-
 //START DATE------------------------------------------------------------------------------------
 export function addStartDate(formCount, jobFormContainer, employerDatesPreviewContainer) {
   // Create Employer Start Date Input and adds it to the Job Form Container
-  const startDateInput = addStartDateInput(formCount);
+  const startDateInput = addInput("month", `start-date-input-${formCount}`, "med", "Start Date" );
   jobFormContainer.appendChild(startDateInput);
 
   //Create a Start Date Preview Element and adds it to the Job Dates Preview Container
@@ -92,7 +84,7 @@ export function addStartDate(formCount, jobFormContainer, employerDatesPreviewCo
 //END DATE--------------------------------------------------------------------------------------
 export function addEndDate(formCount, jobFormContainer, employerDatesPreviewContainer) {
   // Create Employer End Date Input and adds it to the Job Form Container
-  const endDateInput = addEndDateInput(formCount);
+  const endDateInput = addInput("month", `end-date-input-${formCount}`, "med", "End Date" );
   jobFormContainer.appendChild(endDateInput);
 
   //---> 2 Create a End Date Preview Element and adds it to the Job Dates Preview Container
@@ -119,7 +111,7 @@ export function addEndDate(formCount, jobFormContainer, employerDatesPreviewCont
 //EMPLOYER CITY---------------------------------------------------------------------------------
 export function addEmployerCity(formCount, jobFormContainer, employerLocationPreviewContainer) {
   // ---> Create Employer City Input
-  const employerCityInput = addEmployerCityInput(formCount);
+  const employerCityInput = addInput("text", `employer-city-input-${formCount}`, "med", "City");
   jobFormContainer.appendChild(employerCityInput);
 
   //Create a Employer City Preview Element
@@ -135,7 +127,7 @@ export function addEmployerCity(formCount, jobFormContainer, employerLocationPre
 //EMPLOYER STATE--------------------------------------------------------------------------------
 export function addEmployerState(formCount, jobFormContainer, employerLocationPreviewContainer) {
   // ---> Create Employer State Input
-  const employerStateInput = addEmployerStateInput(formCount);
+  const employerStateInput = addInput("text", `employer-state-input-${formCount}`, "med", "State");
   jobFormContainer.appendChild(employerStateInput);
 
   const employerStatePreviewElement = addEmployerStatePreviewElement(formCount);
@@ -154,7 +146,6 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
   let jobDutyCount = 0;
 
   //Create and add container for job duty inputs to form
-  // const jobDutyInputsContainer = addJobDutyInputsContainer(formCount)
   const jobDutyInputsContainer = addContainer(`job-duties-input-container-${formCount}`, 'job-duties-input-container')
   console.log(jobDutyInputsContainer)
   jobFormContainer.appendChild(jobDutyInputsContainer);

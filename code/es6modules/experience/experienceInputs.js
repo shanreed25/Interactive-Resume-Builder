@@ -1,4 +1,4 @@
-//Inputs passed down to experience.js
+//Passed down to experience.js
 
 const experienceFormsContainer = document.getElementById('all-experience-forms-container');//Container for all experience forms
 
@@ -13,103 +13,20 @@ export function addContainer(formContainerID, formContainerClass){
   console.log(formContainer)
   return formContainer;
 }
-//REPLACED WITH addContainer()------------------------------------------------------------------------
-// //ADD JOB DUTY INPUT CONTAINER
-// export function addJobDutyInputsContainer(containerCount){
-//       const jobDutyInputsContainer = document.createElement('div');
-//       jobDutyInputsContainer.id = `job-duties-input-container-${containerCount}`;
-//       jobDutyInputsContainer.className = 'job-duties-input-container'; 
-
-//       return jobDutyInputsContainer
-// }
-
-// //Container For Each Experience Form------------------------------------------------------------------------------------------
-// export function addExperienceFormContainer(experienceFormCount){
-//    const jobFormContainer = document.createElement("div");
-//     jobFormContainer.id = `experience-form-container-${experienceFormCount}`;
-//     jobFormContainer.className = 'experience-form-container';
-//     experienceFormsContainer.appendChild(jobFormContainer);
-
-//     return jobFormContainer;
-
-
-// }
-//REPLACED WITH addContainer()------------------------------------------------------------------------
-
-
-
-
 
 
 
 //FORM----------------------------------------------------------------------------------------------------------------
 
-//START DATE INPUT
-export function addStartDateInput(startDateInputCount) {
-  const startDateInput = document.createElement("input");
-  startDateInput.type = "month";
-  startDateInput.id = `start-date-input-${startDateInputCount}`;
-  startDateInput.className = "med";
-  startDateInput.placeholder = "Start Date";
-
-  return startDateInput;
+//Add Inputs
+export function addInput(inputType, inputID, inputClassName, inputPlaceholder){
+    const inputName = document.createElement("input");
+    inputName.type = inputType;
+    inputName.id = inputID
+    inputName.className = inputClassName;
+    inputName.placeholder = inputPlaceholder;
+    return inputName;
 }
-
-//END DATE INPUT
-export function addEndDateInput(endDateInputCount) {
-  const endDateInput = document.createElement("input");
-  endDateInput.type = "month";
-  endDateInput.id = `end-date-input-${endDateInputCount}`;
-  endDateInput.className = "med";
-  endDateInput.placeholder = "End Date";
-
-  return endDateInput;
-}
-
-//EMPLOYER NAME INPUT
-export function addEmployerNameInput(employerNameInputCount) {
-  const employerNameInput = document.createElement("input");
-  employerNameInput.type = "text";
-  employerNameInput.id = `employer-name-input-${employerNameInputCount}`;
-  employerNameInput.className = "med";
-  employerNameInput.placeholder = "Employer/Company Name";
-
-  return employerNameInput;
-}
-
-//POSITION INPUT
-export function addPositionInput(positionInputCount) {
-  const positionInput = document.createElement("input");
-  positionInput.type = "text";
-  positionInput.id = `position-input-${positionInputCount}`;
-  positionInput.className = "med";
-  positionInput.placeholder = "Position";
-
-  return positionInput;
-}
-
-//EMPLOYER CITY INPUT
-export function addEmployerCityInput(cityInputCount) {
-  const employerCityInput = document.createElement("input");
-  employerCityInput.type = "text";
-  employerCityInput.id = `employer-city-input-${cityInputCount}`;
-  employerCityInput.className = "med";
-  employerCityInput.placeholder = "City";
-
-  return employerCityInput;
-}
-
-//EMPLOYER STATE INPUT
-export function addEmployerStateInput(stateInputCount) {
-  const employerStateInput = document.createElement("input");
-  employerStateInput.type = "text";
-  employerStateInput.id = `employer-state-input-${stateInputCount}`;
-  employerStateInput.className = "med";
-  employerStateInput.placeholder = "State";
-
-  return employerStateInput;
-}
-
 
 
 //ADD JOB DUTY BUTTON
