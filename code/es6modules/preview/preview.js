@@ -1,7 +1,5 @@
-
-
-//Passed down to resume-sections.js
 const experiencePreviewsContainer = document.getElementById("all-experience-preview-container");//Container for all experience review
+//Passed down to resume-sections.js
 export function addExperiencePreviewContainer(experienceFormCount){
       //EXPERIENCE PREVIEW--------------------------------------------------------------------------------------------------- 
     //Main container for each work experience preview
@@ -23,8 +21,7 @@ export function addPreviewContainer(elementType, elementId, elementClassName){
 
 }
 
-
-//Passed down to experience.js
+//Passed down to formPreviewConnection.js
 // ADD PREVIEW ELEMENT
 export function addPreviewElement(elementType, elementId, elementClassName){
    const previewElement = document.createElement(elementType);
@@ -33,4 +30,15 @@ export function addPreviewElement(elementType, elementId, elementClassName){
 
    return previewElement;
   
+}
+
+//SKILL PREVIEW ELEMENT
+//Passed down to formPreviewConnection.js
+const allSkillsPreviewList = document.getElementById('all-skills-preview-list');
+export function addSkillPreviewLIElement(skillCount){
+    const skillPreviewLIElement = document.createElement('li');
+    skillPreviewLIElement.id = `skills-list-${skillCount}`;
+    allSkillsPreviewList.appendChild(skillPreviewLIElement);
+
+    return skillPreviewLIElement;
 }

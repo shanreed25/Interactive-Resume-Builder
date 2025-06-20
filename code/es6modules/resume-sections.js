@@ -1,28 +1,39 @@
-import {addContainer} from "./experience/experienceInputs.js";
-import { addPreviewContainer, addExperiencePreviewContainer, } from "./experience/experiencePreview.js";
-
+import {addContainer} from "./form/formInputs.js";
+import { addPreviewContainer, addExperiencePreviewContainer, } from "./preview/preview.js";
 import {
+  addEmployerName,  
   addStartDate,
   addEndDate,
   addPosition,
-  addEmployerName,
   addEmployerCity,
-  addEmployerState,
-  addJobDuty
-} from "./experience/experience.js";
+  addEmployerState, addSkill, addJobDuty} from './formPreviewConnection.js'
 
 
-import addSkill from './skills/skills.js';
 import addEducation from './education/education.js';
 
-//CONTACT----------------------------------------------------------------------------------------------------
 
+//Everytime a button is clicked these functions run
+//CONTACT----------------------------------------------------------------------------------------------------
+export function updateContactSection() {
+    //setting the preview value to the value entered into the form----------------------------------------------------------
+  document.getElementById("preview-first-name").innerText =
+    document.getElementById("first-name").value;
+  document.getElementById("preview-last-name").innerText =
+    document.getElementById("last-name").value;
+  document.getElementById("preview-email").innerText =
+    document.getElementById("email").value;
+  document.getElementById("preview-phone-number").innerText =
+    document.getElementById("phone-number").value;
+  document.getElementById("preview-city").innerText =
+    document.getElementById("city").value;
+  document.getElementById("preview-state").innerText =
+    document.getElementById("state").value;
+
+}
 //SUMMARY----------------------------------------------------------------------------------------------------
 
 //WORK EXPERIENCE----------------------------------------------------------------------------------------------------
 let experienceFormCount = 0;
-
-//Adds a new experience form and review section and appends it to the main container everytime the button is clicked
 export function addNewExperienceSection(buttonName) {
   buttonName.addEventListener("click", () => {
     experienceFormCount++; //counts the number of forms and experience sections created
@@ -68,8 +79,6 @@ export function addNewExperienceSection(buttonName) {
   });
 }
 
-
-
 //SKILLS----------------------------------------------------------------------------------------------------
 let skillInputCount = 0;
 export function addNewSkillInput(buttonName){
@@ -81,8 +90,7 @@ export function addNewSkillInput(buttonName){
   })
 }
 
-
-//Education----------------------------------------------------------------------------------------------------
+//EDUCATION----------------------------------------------------------------------------------------------------
 let educationFormCount = 0;
 export function addNewEducationForm(buttonName){
   buttonName.addEventListener('click', () => {

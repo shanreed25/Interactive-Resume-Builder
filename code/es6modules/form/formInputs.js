@@ -1,6 +1,6 @@
 const experienceFormsContainer = document.getElementById('all-experience-forms-container');//Container for all experience forms
 
-//Passed down to resume-sections.js
+//Passed down to formPreviewConnection.js
 //Adds Containers----------------------------------------------------------------
 export function addContainer(formContainerId, formContainerClass){
   const formContainer = document.createElement("div");
@@ -12,10 +12,7 @@ export function addContainer(formContainerId, formContainerClass){
   return formContainer;
 }
 
-
-
-
-//Passed down to resume-sections.js
+//Passed down to formPreviewConnection.js
 //ADD FORM INPUTS
 export function addInput(inputType, inputId, inputClassName, inputPlaceholder){
     const inputName = document.createElement("input");
@@ -26,7 +23,28 @@ export function addInput(inputType, inputId, inputClassName, inputPlaceholder){
     return inputName;
 }
 
-//Passed down to resume-sections.js
+const allSkillsInputContainer = document.getElementById('all-skills-inputs-container');
+
+//Passed down to formPreviewConnection.js
+// ADD SKILL INPUT AND CONTAINER
+export function addSkillInputContainer(skillInputCount){
+    //Container
+        const skillInputContainer = document.createElement('div');
+        skillInputContainer.id = `skill-input-${skillInputCount}-container`;
+        skillInputContainer.className = `skill-input-container`;
+        allSkillsInputContainer.appendChild(skillInputContainer);
+        
+    //Input
+        const skillInput = document.createElement('input');
+        skillInput.id = `skill-input-${skillInputCount}`;
+        skillInput.className = 'skill-input';
+        skillInputContainer.appendChild(skillInput);
+
+    return skillInputContainer;
+
+}
+
+//Passed down to formPreviewConnection.js
 //ADD FORM BUTTON
 export function addJobDutyButton(jobformCount){
     const jobDutyButton = document.createElement('button');

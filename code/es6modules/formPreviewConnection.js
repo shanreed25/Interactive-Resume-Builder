@@ -1,9 +1,8 @@
-import { addContainer, addInput, addJobDutyButton,} from "./experienceInputs.js";
-import {addPreviewElement} from "./experiencePreview.js";
+import {addContainer, addInput, addSkillInputContainer,addJobDutyButton} from './form/formInputs.js';
+import {addPreviewElement, addSkillPreviewLIElement} from './preview/preview.js'
 
-//Passed down to resume-sections.js
-
-//EMPLOYER NAME---------------------------------------------------------------------------------
+//EXPERIENCE----------------------------------------------------------------------------
+//EMPLOYER NAME------------
 export function addEmployerName(formCount, jobFormContainer, employerNamePositionContainer) {
   //Create a Employer Name Input 
   const employerNameInput = addInput("text", `employer-name-input-${formCount}`, "med", "Employer/Company Name" );
@@ -19,7 +18,7 @@ export function addEmployerName(formCount, jobFormContainer, employerNamePositio
   })
 }
 
-//POSITION-------------------------------------------------------------------------------------
+//POSITION------------------
 export function addPosition(formCount, jobFormContainer, employerNamePositionContainer) {
   // Create a Position Input 
   const positionInput = addInput("text", `position-input-${formCount}`, "med", "Position" );
@@ -35,7 +34,7 @@ export function addPosition(formCount, jobFormContainer, employerNamePositionCon
   });
 }
 
-//START DATE------------------------------------------------------------------------------------
+//START DATE----------------
 export function addStartDate(formCount, jobFormContainer, employerDatesPreviewContainer) {
   // Create Employer Start Date Input and adds it to the Job Form Container
   const startDateInput = addInput("month", `start-date-input-${formCount}`, "med", "Start Date" );
@@ -65,7 +64,7 @@ export function addStartDate(formCount, jobFormContainer, employerDatesPreviewCo
   })
 }
 
-//END DATE--------------------------------------------------------------------------------------
+//END DATE------------------
 export function addEndDate(formCount, jobFormContainer, employerDatesPreviewContainer) {
   // Create Employer End Date Input and adds it to the Job Form Container
   const endDateInput = addInput("month", `end-date-input-${formCount}`, "med", "End Date" );
@@ -92,7 +91,7 @@ export function addEndDate(formCount, jobFormContainer, employerDatesPreviewCont
   })
 }
 
-//EMPLOYER CITY---------------------------------------------------------------------------------
+//EMPLOYER CITY-------------
 export function addEmployerCity(formCount, jobFormContainer, employerLocationPreviewContainer) {
   // ---> Create Employer City Input
   const employerCityInput = addInput("text", `employer-city-input-${formCount}`, "med", "City");
@@ -108,7 +107,7 @@ export function addEmployerCity(formCount, jobFormContainer, employerLocationPre
   })
 }
 
-//EMPLOYER STATE--------------------------------------------------------------------------------
+//EMPLOYER STATE-------------
 export function addEmployerState(formCount, jobFormContainer, employerLocationPreviewContainer) {
   // ---> Create Employer State Input
   const employerStateInput = addInput("text", `employer-state-input-${formCount}`, "med", "State");
@@ -124,8 +123,7 @@ export function addEmployerState(formCount, jobFormContainer, employerLocationPr
   })
 }
 
-
-//Job Duty
+//Job Duty--------------------
 export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewContainer) {
   let jobDutyCount = 0;
 
@@ -164,3 +162,23 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
   })
 }
 
+// SKILLS----------------------
+// Passed down to resume-sectionsjs
+export function addSkill(skillInputCount){
+    //Add Skill Input Container
+     const skillInputContainer = addSkillInputContainer(skillInputCount);
+
+     //because the container contains the input we need to
+     //select the input with the specified id
+     const skillInput = skillInputContainer.querySelector(`#skill-input-${skillInputCount}`);
+
+
+     //Create Skill Preview Element
+     const skillPreviewLIElement = addSkillPreviewLIElement(skillInputCount);
+
+     // ---> Listen for the input and add the value to the preview
+     skillInput.addEventListener('input', () => {
+        skillPreviewLIElement.textContent = skillInput.value
+     })
+
+}
