@@ -1,7 +1,7 @@
 import {addPreviewContainer} from './preview.js';
 
 
-//Function to create Preview Containers and elements
+//Functions to create Experience Preview Containers
 
 //CONTAINERS-----------------------------------------------------
 //Preview Container for all work experience

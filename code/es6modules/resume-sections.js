@@ -1,8 +1,4 @@
-import {addContainer} from "./form/formInputs.js";
-import { 
-  addSkill, 
-  addEducation
-} from './formPreviewConnection.js'
+import { addEducation} from './education.js'
 
 
 
@@ -76,16 +72,16 @@ export function updateContactSection() {
 //   });
 // }
 
-//SKILLS - 2----------------------------------------------------------------------------------------------------
-let skillInputCount = 0;
-export function addNewSkillInput(buttonName){
-  buttonName.addEventListener('click', () => {
-    skillInputCount++
+// //SKILLS - 2----------------------------------------------------------------------------------------------------
+// let skillInputCount = 0;
+// export function addNewSkillInput(buttonName){
+//   buttonName.addEventListener('click', () => {
+//     skillInputCount++
 
-    //SKILL INPUT AND REVIEW ELEMENT-------------------------------------------------------------------------------------------
-    addSkill(skillInputCount)
-  })
-}
+//     //SKILL INPUT AND REVIEW ELEMENT-------------------------------------------------------------------------------------------
+//     addSkill(skillInputCount)
+//   })
+// }
 
 //EDUCATION - 2----------------------------------------------------------------------------------------------------
 let educationFormCount = 0;

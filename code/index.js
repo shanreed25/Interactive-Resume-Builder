@@ -1,10 +1,15 @@
 import { updateSummarySection } from "./es6modules/summary.js";
 import { generatePDF } from "./es6modules/generatepdf.js";
-import {updateContactSection, addNewSkillInput, addNewEducationSection} from './es6modules/resume-sections.js';
+import {updateContactSection, addNewEducationSection} from './es6modules/resume-sections.js';
+
+//----- invokes the function immediately so the text  in the HTML does not appear
+//updateContactSection(); // initialize preview
+//-----------------------------------------------------------------------------------------------------------------------
 
 
 
-import {addNewExperienceSection} from './es6modules/formPreviewConnection.js';
+import {addNewExperienceSection} from './es6modules/experience.js';
+import {addNewSkillInput} from './es6modules/skills.js';
 //*********START: REVISE CODE THIS LATER************/
 //because the generatePDF() function is attached to the onclick attribute of the button
 // it is assigned to the window object to make it globally accessible
@@ -16,10 +21,6 @@ window.generatePDF = generatePDF;
 document.querySelectorAll(".contact-item").forEach((input) => {
   input.addEventListener("input", updateContactSection);
 });
-
-//----- invokes the function immediately so the text  in the HTML does not appear
-//updateContactSection(); // initialize preview
-//-----------------------------------------------------------------------------------------------------------------------
 
 
 //SUMMARY SECTION - 1--------------------------------------------------------------------------------------------------------
