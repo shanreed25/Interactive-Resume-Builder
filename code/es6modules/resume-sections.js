@@ -1,15 +1,17 @@
 import {addContainer} from "./form/formInputs.js";
-import { addPreviewContainer, addExperiencePreviewContainer, } from "./preview/preview.js";
+import { addPreviewContainer    } from "./preview/preview.js";
 import {
   addEmployerName,  
   addStartDate,
   addEndDate,
   addPosition,
   addEmployerCity,
-  addEmployerState, addSkill, addJobDuty} from './formPreviewConnection.js'
+  addEmployerState, 
+  addSkill, 
+  addJobDuty,
+  addEducation
+} from './formPreviewConnection.js'
 
-
-import addEducation from './education/education.js';
 
 
 //Everytime a button is clicked these functions run
@@ -19,7 +21,7 @@ export function updateContactSection() {
   document.getElementById("preview-first-name").innerText =
     document.getElementById("first-name").value;
   document.getElementById("preview-last-name").innerText =
-    document.getElementById("last-name").value;
+    document.getElementById("last-name").value;                                 
   document.getElementById("preview-email").innerText =
     document.getElementById("email").value;
   document.getElementById("preview-phone-number").innerText =
@@ -44,8 +46,10 @@ export function addNewExperienceSection(buttonName) {
     const jobFormContainer = addContainer(`experience-form-container-${experienceFormCount}`, 'experience-form-container' );
 
     //WORK EXPERIENCE PREVIEW
-    const workExperienceMainPreviewContainer = addExperiencePreviewContainer(experienceFormCount); 
-
+    const allExperiencePreviewsContainer = document.getElementById("all-experience-preview-container");//Container for all experience review
+    //Main container for each work experience preview
+    const workExperienceMainPreviewContainer = addPreviewContainer('div', `work-experience-main-preview-container-${experienceFormCount}`, 'work-experience-main-preview-container'); 
+    allExperiencePreviewsContainer.appendChild(workExperienceMainPreviewContainer)
     //EMPLOYER NAME AND POSITION
     const employerNamePositionPreviewContainer = addPreviewContainer('div',`employer-name-position-preview-container-${experienceFormCount}`, 'employer-name-position-preview-container')
     workExperienceMainPreviewContainer.appendChild(employerNamePositionPreviewContainer);
@@ -79,7 +83,7 @@ export function addNewExperienceSection(buttonName) {
   });
 }
 
-//SKILLS----------------------------------------------------------------------------------------------------
+//SKILLS - 2----------------------------------------------------------------------------------------------------
 let skillInputCount = 0;
 export function addNewSkillInput(buttonName){
   buttonName.addEventListener('click', () => {
@@ -90,16 +94,13 @@ export function addNewSkillInput(buttonName){
   })
 }
 
-//EDUCATION----------------------------------------------------------------------------------------------------
+//EDUCATION - 2----------------------------------------------------------------------------------------------------
 let educationFormCount = 0;
-export function addNewEducationForm(buttonName){
+export function addNewEducationSection(buttonName){
   buttonName.addEventListener('click', () => {
     educationFormCount++
 
 //EDUCATION INPUT AND REVIEW ELEMENT-------------------------------------------------------------------------------------------    
     addEducation(educationFormCount);
-    // const educationFormContainer = addNewEducationFormSection(educationFormCount);
-    // const educationPreviewContainer = addEducationPreviewSection(educationFormCount);
-    //  console.log(educationPreviewContainer);
   })
 }

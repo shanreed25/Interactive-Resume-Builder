@@ -1,6 +1,6 @@
 import { updateSummarySection } from "./es6modules/summary.js";
 import { generatePDF } from "./es6modules/generatepdf.js";
-import {updateContactSection, addNewExperienceSection, addNewSkillInput, addNewEducationForm} from './es6modules/resume-sections.js';
+import {updateContactSection, addNewExperienceSection, addNewSkillInput, addNewEducationSection} from './es6modules/resume-sections.js';
 
 //*********START: REVISE CODE THIS LATER************/
 //because the generatePDF() function is attached to the onclick attribute of the button
@@ -25,21 +25,15 @@ summary.addEventListener('input', () =>{
   updateSummarySection();
 })
 
-
-
-
 //EXPERIENCE SECTION-----------------------------------------------------------------------------------------------------
-
 const newExperienceButton = document.getElementById("new-job-experience");
 addNewExperienceSection(newExperienceButton);
 
-//SKILLS SECTION-----------------------------------------------------------------------------------------------------
-
+//SKILLS SECTION - 1-----------------------------------------------------------------------------------------------------
 const newSkillButton = document.getElementById("new-skill");
 addNewSkillInput(newSkillButton);
 
-//SKILLS SECTION-----------------------------------------------------------------------------------------------------
-
+//EDUCATION SECTION - 1-----------------------------------------------------------------------------------------------------
 const newEducationButton = document.getElementById("new-education");
-addNewEducationForm(newEducationButton);
+addNewEducationSection(newEducationButton);
 //-----------------------------------------------------------------------------------------------------------------------
