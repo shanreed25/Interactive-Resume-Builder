@@ -1,7 +1,10 @@
 import { updateSummarySection } from "./es6modules/summary.js";
 import { generatePDF } from "./es6modules/generatepdf.js";
-import {updateContactSection, addNewExperienceSection, addNewSkillInput, addNewEducationSection} from './es6modules/resume-sections.js';
+import {updateContactSection, addNewSkillInput, addNewEducationSection} from './es6modules/resume-sections.js';
 
+
+
+import {addNewExperienceSection} from './es6modules/formPreviewConnection.js';
 //*********START: REVISE CODE THIS LATER************/
 //because the generatePDF() function is attached to the onclick attribute of the button
 // it is assigned to the window object to make it globally accessible
@@ -9,7 +12,7 @@ window.generatePDF = generatePDF;
 //*********END: REVISE CODE THIS LATER************/
 
 
-//Contact SECTION--------------------------------------------------------------------------------------------------------
+//Contact SECTION - 1--------------------------------------------------------------------------------------------------------
 document.querySelectorAll(".contact-item").forEach((input) => {
   input.addEventListener("input", updateContactSection);
 });
@@ -19,13 +22,13 @@ document.querySelectorAll(".contact-item").forEach((input) => {
 //-----------------------------------------------------------------------------------------------------------------------
 
 
-//SUMMARY SECTION--------------------------------------------------------------------------------------------------------
+//SUMMARY SECTION - 1--------------------------------------------------------------------------------------------------------
 const summary = document.getElementById('summary');
 summary.addEventListener('input', () =>{
   updateSummarySection();
 })
 
-//EXPERIENCE SECTION-----------------------------------------------------------------------------------------------------
+//EXPERIENCE SECTION - 1-----------------------------------------------------------------------------------------------------
 const newExperienceButton = document.getElementById("new-job-experience");
 addNewExperienceSection(newExperienceButton);
 
