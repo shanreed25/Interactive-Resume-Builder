@@ -11,6 +11,9 @@ import {
   employerDetailsPreviewContainer
 } from './preview/experiencePreview.js';
 
+
+
+//Connects the Inputs to the Review Elements and Updates then accordingly--------------------------------------------------------------------------------------------------
 export function createInputAndPreview(
   formContainer, previewContainer, 
   inputType, inputId, inputClassName, inputPlaceholder, 
@@ -30,63 +33,33 @@ export function createInputAndPreview(
 };
 
 
-
-
-
-//START DATE----------------
-export function addStartDate(formCount, jobFormContainer, employerDatesPreviewContainer) {
+//Connects the Date Inputs to the Review Elements and Updates then accordingly--------------------------------------------------------------------------------------------------
+export function createDateInputAndReview(formContainer, datesPreviewContainer, inputType, inputId, inputClassName, inputPlaceholder, elementType, elementId, elementClassName) {
   // Create Employer Start Date Input and adds it to the Job Form Container
-  const startDateInput = addInput("month", `start-date-input-${formCount}`, "med", "Start Date" );
-  jobFormContainer.appendChild(startDateInput);
+  const dateInput = addInput(inputType, inputId, inputClassName, inputPlaceholder);
+  formContainer.appendChild(dateInput);
 
   //Create a Start Date Preview Element and adds it to the Job Dates Preview Container
-  const startDatePreviewElement = createPreviewElement("p", `start-date-preview-${formCount}`, "start-date-preview");
-  employerDatesPreviewContainer.appendChild(startDatePreviewElement);
+  const datePreviewElement = createPreviewElement(elementType, elementId, elementClassName);
+  datesPreviewContainer.appendChild(datePreviewElement);
 
   const dateSeparator = document.createElement('p');
-  employerDatesPreviewContainer.appendChild(dateSeparator);
+  datesPreviewContainer.appendChild(dateSeparator);
 
   // ---> Listen for the input and add it to the preview
-  startDateInput.addEventListener("input", () => {
+  dateInput.addEventListener("input", () => {
     //Converts the date format
-    const startDateValue = startDateInput.value;// e.g., "2010-06"
-    if (startDateValue) {
-      const [year, month] = startDateValue.split("-");
+    const dateValue = dateInput.value;// e.g., "2010-06"
+    if (dateValue) {
+      const [year, month] = dateValue.split("-");
       const date = new Date(year, month - 1); // Month is zero-based
       const options = { year: "numeric", month: "long" };
-      startDatePreviewElement.textContent = date.toLocaleDateString("en-US", options);// e.g. June 2010
+      datePreviewElement.textContent = date.toLocaleDateString("en-US", options);// e.g. June 2010
       dateSeparator.textContent = "to";
 
     } else {
-      startDatePreviewElement.textContent = "";
+      datePreviewElement.textContent = "";
     }
-  })
-}
-
-//END DATE------------------
-export function addEndDate(formCount, jobFormContainer, employerDatesPreviewContainer) {
-  // Create Employer End Date Input and adds it to the Job Form Container
-  const endDateInput = addInput("month", `end-date-input-${formCount}`, "med", "End Date" );
-  jobFormContainer.appendChild(endDateInput);
-
-  //---> 2 Create a End Date Preview Element and adds it to the Job Dates Preview Container
-  const endDatePreviewElement =  createPreviewElement("p", `end-date-preview-${formCount}`, "end-date-preview");
-  employerDatesPreviewContainer.appendChild(endDatePreviewElement)
-
-  // ---> Listen for the input and add it to the preview
-  endDateInput.addEventListener("input", () => {
-    //Converts the date format
-    const endDateValue = endDateInput.value;// e.g., "2010-06"
-    if (endDateValue) {
-      const [year, month] = endDateValue.split("-");
-      const date = new Date(year, month - 1); // Month is zero-based
-      const options = { year: "numeric", month: "long" };
-      endDatePreviewElement.textContent = date.toLocaleDateString("en-US", options);// e.g. June 2010
-
-    } else {
-      endDatePreviewElement.textContent = "";
-    }
-
   })
 }
 
@@ -96,6 +69,8 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
   let jobDutyCount = 0;
   const experienceFormsContainer = document.getElementById('all-experience-forms-container');//Container for all experience forms
   experienceFormsContainer.appendChild(jobFormContainer);
+
+  
   //Create and add container for job duty inputs to form
   const jobDutyInputsContainer = addContainer(`job-duties-input-container-${formCount}`, 'job-duties-input-container');
   jobFormContainer.appendChild(jobDutyInputsContainer);
@@ -158,8 +133,16 @@ export function addNewExperienceSection(buttonName) {
       "h2", `position-preview-${experienceFormCount}`, "position-preview"
     );
 
-    addStartDate(experienceFormCount,jobFormContainer, jobDatesPreviewContainer(experienceFormCount));
-    addEndDate(experienceFormCount,jobFormContainer, jobDatesPreviewContainer(experienceFormCount));
+    //JOB START DATE
+    createDateInputAndReview(jobFormContainer, jobDatesPreviewContainer(experienceFormCount), 
+    "month", `start-date-input-${experienceFormCount}`, "med", "Start Date", 
+    "p", `start-date-preview-${experienceFormCount}`, "start-date-preview");
+
+    //JOB END DATE
+    createDateInputAndReview(jobFormContainer, jobDatesPreviewContainer(experienceFormCount), 
+    "month", `end-date-input-${experienceFormCount}`, "med", "End Date" , 
+    "p", `end-date-preview-${experienceFormCount}`, "end-date-preview");
+
 
     //EMPLOYER CITY
     createInputAndPreview(

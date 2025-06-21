@@ -1,10 +1,6 @@
 import {addContainer} from "./form/formInputs.js";
 import { 
-  createInputAndPreview,  
-  addStartDate,
-  addEndDate,
   addSkill, 
-  addJobDuty,
   addEducation
 } from './formPreviewConnection.js'
 
