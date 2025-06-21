@@ -1,11 +1,30 @@
-import {addContainer, addInput} from './form/formInputs.js';
+import {addContainer, addInput, addButton} from './form/formInputs.js';
 import {addPreviewElement} from './preview/preview.js';
-import {addJobDutyButton} from './form/experience.js';
-import {addEducationPreviewContainer} from './preview/educationPreview.js'
+import {addEducationPreviewContainer} from './preview/educationPreview.js';
 import {addEducationForm} from './form/education.js'
 
 //EXPERIENCE----------------------------------------------------------------------------
 //EMPLOYER NAME------------
+
+export function addInputAndPreview(
+  jobFormContainer, employerNamePositionContainer, 
+  inputType, inputId, inputClassName, inputPlaceholder, 
+elementType, elementId, elementClassName ) {
+  //Create a Employer Name Input 
+  const formInput = addInput(inputType, inputId, inputClassName, inputPlaceholder);
+  jobFormContainer.appendChild(formInput);
+
+  //Create a Employer Name Preview Element
+  const inputPreview = addPreviewElement(elementType, elementId, elementClassName);
+  employerNamePositionContainer.appendChild(inputPreview);
+
+  // ---> Listen for the input and add the value to the preview
+  formInput.addEventListener("input", () => {
+    inputPreview.textContent = formInput.value;
+  })
+};
+
+
 export function addEmployerName(formCount, jobFormContainer, employerNamePositionContainer) {
   //Create a Employer Name Input 
   const employerNameInput = addInput("text", `employer-name-input-${formCount}`, "med", "Employer/Company Name" );
@@ -20,7 +39,6 @@ export function addEmployerName(formCount, jobFormContainer, employerNamePositio
     employerNamePreviewElement.textContent = employerNameInput.value;
   })
 }
-
 //POSITION------------------
 export function addPosition(formCount, jobFormContainer, employerNamePositionContainer) {
   // Create a Position Input 
@@ -132,12 +150,11 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
   const experienceFormsContainer = document.getElementById('all-experience-forms-container');//Container for all experience forms
   experienceFormsContainer.appendChild(jobFormContainer);
   //Create and add container for job duty inputs to form
-  const jobDutyInputsContainer = addContainer(`job-duties-input-container-${formCount}`, 'job-duties-input-container')
-  console.log(jobDutyInputsContainer)
+  const jobDutyInputsContainer = addContainer(`job-duties-input-container-${formCount}`, 'job-duties-input-container');
   jobFormContainer.appendChild(jobDutyInputsContainer);
 
   //Create and add Job Duty Button to form
-  const jobDutyButton = addJobDutyButton(formCount);
+  const jobDutyButton = addButton('button', `add-job-duty-button-${formCount}`, "add-job-duty-button", "Add Job Description" );
   jobFormContainer.appendChild(jobDutyButton);
 
   //Create and add Unordered List to the preview

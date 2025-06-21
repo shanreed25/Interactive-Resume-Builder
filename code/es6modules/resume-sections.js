@@ -1,6 +1,6 @@
 import {addContainer} from "./form/formInputs.js";
 import { addPreviewContainer    } from "./preview/preview.js";
-import {
+import { addInputAndPreview,
   addEmployerName,  
   addStartDate,
   addEndDate,
@@ -72,7 +72,18 @@ export function addNewExperienceSection(buttonName) {
     workExperienceMainPreviewContainer.appendChild(employerDetailsPreviewContainer);
 
     //CREATE INPUTS AND ADD THEM TO CONTAINERS
-    addEmployerName(experienceFormCount, jobFormContainer, employerNamePositionPreviewContainer);
+    //Employer Name
+    addInputAndPreview(
+      jobFormContainer, employerNamePositionPreviewContainer,
+      "text", `employer-name-input-${experienceFormCount}`, "med", "Employer/Company Name",
+      "h2", `employer-name-preview-${experienceFormCount}`, "employer-name-preview"
+    );
+
+
+
+
+
+    // addEmployerName(experienceFormCount, jobFormContainer, employerNamePositionPreviewContainer);
     addPosition(experienceFormCount, jobFormContainer, employerNamePositionPreviewContainer);
     addStartDate(experienceFormCount,jobFormContainer, employerDatesPreviewContainer);
     addEndDate(experienceFormCount,jobFormContainer,employerDatesPreviewContainer);

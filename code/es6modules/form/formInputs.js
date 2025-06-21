@@ -21,3 +21,13 @@ export function addInput(inputType, inputId, inputClassName, inputPlaceholder){
 
 
 
+export function addButton(buttonType, buttonId, buttonClassName, buttonTextContent){
+  const actionButton = document.createElement('button');
+  actionButton.type = buttonType;
+  actionButton.id = buttonId;
+  actionButton.className = buttonClassName;
+  actionButton.textContent = buttonTextContent;
+
+  return actionButton;
+}
+
