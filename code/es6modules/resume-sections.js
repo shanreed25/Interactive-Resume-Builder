@@ -1,12 +1,9 @@
 import {addContainer} from "./form/formInputs.js";
-import { addPreviewContainer    } from "./preview/preview.js";
-import { addInputAndPreview,
-  addEmployerName,  
+import { addPreviewContainer} from "./preview/preview.js";
+import { 
+  addInputAndPreview,  
   addStartDate,
   addEndDate,
-  addPosition,
-  addEmployerCity,
-  addEmployerState, 
   addSkill, 
   addJobDuty,
   addEducation
@@ -79,16 +76,31 @@ export function addNewExperienceSection(buttonName) {
       "h2", `employer-name-preview-${experienceFormCount}`, "employer-name-preview"
     );
 
+    //JOB POSITION
+    addInputAndPreview(
+      jobFormContainer, employerNamePositionPreviewContainer,
+      "text", `position-input-${experienceFormCount}`, "med", "Position",
+      "h2", `position-preview-${experienceFormCount}`, "position-preview"
+    );
 
-
-
-
-    // addEmployerName(experienceFormCount, jobFormContainer, employerNamePositionPreviewContainer);
-    addPosition(experienceFormCount, jobFormContainer, employerNamePositionPreviewContainer);
     addStartDate(experienceFormCount,jobFormContainer, employerDatesPreviewContainer);
     addEndDate(experienceFormCount,jobFormContainer,employerDatesPreviewContainer);
-    addEmployerCity(experienceFormCount, jobFormContainer, employerLocationPreviewContainer);
-    addEmployerState(experienceFormCount,jobFormContainer, employerLocationPreviewContainer);
+
+    //EMPLOYER CITY
+    addInputAndPreview(
+      jobFormContainer, employerLocationPreviewContainer,
+      "text", `employer-city-input-${experienceFormCount}`, "med", "City",
+      "p", `employer-city-preview-${experienceFormCount}`, "employer-city-preview"
+    );
+
+
+    //EMPLOYER STATE
+    addInputAndPreview(
+      jobFormContainer, employerLocationPreviewContainer,
+      "text", `employer-state-input-${experienceFormCount}`, "med", "State",
+      "p", `employer-state-preview-${experienceFormCount}`, "employer-state-preview"
+    );
+
     addJobDuty(experienceFormCount, jobFormContainer, employerDetailsPreviewContainer);
     
   });

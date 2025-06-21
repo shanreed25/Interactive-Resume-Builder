@@ -25,35 +25,35 @@ elementType, elementId, elementClassName ) {
 };
 
 
-export function addEmployerName(formCount, jobFormContainer, employerNamePositionContainer) {
-  //Create a Employer Name Input 
-  const employerNameInput = addInput("text", `employer-name-input-${formCount}`, "med", "Employer/Company Name" );
-  jobFormContainer.appendChild(employerNameInput);
+// export function addEmployerName(formCount, jobFormContainer, employerNamePositionContainer) {
+//   //Create a Employer Name Input 
+//   const employerNameInput = addInput("text", `employer-name-input-${formCount}`, "med", "Employer/Company Name" );
+//   jobFormContainer.appendChild(employerNameInput);
 
-  //Create a Employer Name Preview Element
-  const employerNamePreviewElement = addPreviewElement("h2", `employer-name-preview-${formCount}`, "employer-name-preview");
-  employerNamePositionContainer.appendChild(employerNamePreviewElement);
+//   //Create a Employer Name Preview Element
+//   const employerNamePreviewElement = addPreviewElement("h2", `employer-name-preview-${formCount}`, "employer-name-preview");
+//   employerNamePositionContainer.appendChild(employerNamePreviewElement);
 
-  // ---> Listen for the input and add the value to the preview
-  employerNameInput.addEventListener("input", () => {
-    employerNamePreviewElement.textContent = employerNameInput.value;
-  })
-}
-//POSITION------------------
-export function addPosition(formCount, jobFormContainer, employerNamePositionContainer) {
-  // Create a Position Input 
-  const positionInput = addInput("text", `position-input-${formCount}`, "med", "Position" );
-  jobFormContainer.appendChild(positionInput);
+//   // ---> Listen for the input and add the value to the preview
+//   employerNameInput.addEventListener("input", () => {
+//     employerNamePreviewElement.textContent = employerNameInput.value;
+//   })
+// }
+// //POSITION------------------
+// export function addPosition(formCount, jobFormContainer, employerNamePositionContainer) {
+//   // Create a Position Input 
+//   const positionInput = addInput("text", `position-input-${formCount}`, "med", "Position" );
+//   jobFormContainer.appendChild(positionInput);
 
-  //Create a Position Preview Element
-  const positionPreviewElement = addPreviewElement("h2", `position-preview-${formCount}`, "position-preview");
-  employerNamePositionContainer.appendChild(positionPreviewElement);
+//   //Create a Position Preview Element
+//   const positionPreviewElement = addPreviewElement("h2", `position-preview-${formCount}`, "position-preview");
+//   employerNamePositionContainer.appendChild(positionPreviewElement);
 
-  //Listen for the input and add it to the preview
-  positionInput.addEventListener("input", () => {
-    positionPreviewElement.textContent = `  - ${positionInput.value}`;
-  });
-}
+//   //Listen for the input and add it to the preview
+//   positionInput.addEventListener("input", () => {
+//     positionPreviewElement.textContent = `  - ${positionInput.value}`;
+//   });
+// }
 
 //START DATE----------------
 export function addStartDate(formCount, jobFormContainer, employerDatesPreviewContainer) {
