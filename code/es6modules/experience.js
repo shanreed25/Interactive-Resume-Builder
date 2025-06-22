@@ -1,12 +1,6 @@
 import {addContainer, addInputContainer, addInput, addButton} from './form/formInputs.js';
 import {addPreviewContainer, createPreviewElement} from './preview/previewElements.js';
 import {createInputAndPreview, createDateInputAndReview} from './inputPreviewConnection.js'
-import {
-
-  jobLocationPreviewContainer,
-  jobDatesPreviewContainer,
-  employerDetailsPreviewContainer
-} from './preview/experiencePreview.js';
 
 
 //Job Duty--------------------

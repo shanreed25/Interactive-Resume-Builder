@@ -1,21 +1,18 @@
 import {createPreviewContainer, addPreviewContainer} from './previewElements.js';
 
-//Preview Container for each degree and gpa 
+//Preview Container for each degree
 export function degreePreviewContainer(educationFormCount, parentContainer){
-    //Main container for each education preview
     const degreePreviewContainer = addPreviewContainer(
         'div', `degree-preview-container-${educationFormCount}`, 
         'degree-preview-container', 
         parentContainer
     )
-    // console.log(degreeGpaPreviewContainer)
     return degreePreviewContainer;
 }
 
 
-//Preview Container for each degree
+//Preview Container for each GPA
 export function gpaPreviewContainer(educationFormCount, parentContainer){
-    //Main container for each education preview
     const gpaPreviewContainer = addPreviewContainer(
         'div', `gpa-preview-container-${educationFormCount}`, 
         'gpa-preview-container',
@@ -24,6 +21,33 @@ export function gpaPreviewContainer(educationFormCount, parentContainer){
     
     return gpaPreviewContainer;
 }
+
+
+//Preview Container for each School Name
+export function schoolNamePreviewContainer(educationFormCount, parentContainer){
+    const schoolNamePreviewContainer = addPreviewContainer(
+        'div', `school-name-preview-container-${educationFormCount}`, 
+        'school-name-preview-container',
+        parentContainer
+    );
+    
+    return schoolNamePreviewContainer;
+}
+
+//Preview Container for each School Location
+export function schoolLocationPreviewContainer(educationFormCount, parentContainer){
+    const schoolLocationPreviewContainer = addPreviewContainer(
+        'div', `school-location-preview-container-${educationFormCount}`, 
+        'school-location-preview-container',
+        parentContainer
+    );
+    
+    return schoolLocationPreviewContainer;
+}
+
+
+
+
 
 
 export function addEducationPreviewContainer(educationFormCount){

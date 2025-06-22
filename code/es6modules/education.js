@@ -1,5 +1,5 @@
 import {addContainer, addInput, addButton} from './form/formInputs.js';
-import {addEducationPreviewContainer, degreePreviewContainer, gpaPreviewContainer} from './preview/educationPreview.js';
+import { degreePreviewContainer, gpaPreviewContainer, schoolNamePreviewContainer, schoolLocationPreviewContainer} from './preview/educationPreview.js';
 import {addEducationForm} from './form/education.js';
 import { createInputAndPreview } from './inputPreviewConnection.js';
 import {createPreviewContainer, addPreviewContainer} from './preview/previewElements.js';
@@ -20,21 +20,38 @@ export function addNewEducationSection(buttonName){
 
     const allEducationPreviewsContainer = document.getElementById('all-education-preview-container');
     const educationPreviewContainer = addPreviewContainer('div',`education-preview-container-${educationFormCount}`, 'education-preview-container', allEducationPreviewsContainer)
-    const degreeGpaPreviewContainer = addPreviewContainer('div',`degree-gpa-preview-container-${educationFormCount}`, 'degree-gpa-preview-container', educationPreviewContainer)
     
+    //Degree and GPA
+    const degreeGpaPreviewContainer = addPreviewContainer('div',`degree-gpa-preview-container-${educationFormCount}`, 'degree-gpa-preview-container', educationPreviewContainer);
     createInputAndPreview(
       educationFormContainer, degreePreviewContainer(educationFormCount, degreeGpaPreviewContainer),
        "text", `degree-input-${educationFormCount}`, "med", "Degree",
        'h4', `degree-preview-${educationFormCount}`, 'degree-preview'
     );
 
-        createInputAndPreview(
+    createInputAndPreview(
       educationFormContainer,  gpaPreviewContainer(educationFormCount, degreeGpaPreviewContainer),
        "text", `gpa-input-${educationFormCount}`, "med", "GPA",
        'h5', `gpa-preview-${educationFormCount}`, 'gpa-preview'
     );
 
+    const schoolNameLocationPreviewContainer = addPreviewContainer('div',`degree-gpa-preview-container-${educationFormCount}`, 'degree-gpa-preview-container', educationPreviewContainer);
+     createInputAndPreview(
+      educationFormContainer,  schoolNamePreviewContainer(educationFormCount, schoolNameLocationPreviewContainer),
+       "text", `school-name-input-${educationFormCount}`, "med", "School Name",
+       'h5', `school-name-preview-${educationFormCount}`, 'school-name-preview'
+    );
+    //School Name and Location
+
+    createInputAndPreview(
+      educationFormContainer,  schoolLocationPreviewContainer(educationFormCount, schoolNameLocationPreviewContainer),
+       "text", `school-location-input-${educationFormCount}`, "med", "School Location",
+       'h5', `school-location-preview-${educationFormCount}`, 'school-location-preview'
+    );
+
   });
+
+  
 };
 
 
