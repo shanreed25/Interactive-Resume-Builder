@@ -1,6 +1,6 @@
 import { updateSummarySection } from "./es6modules/summary.js";
 import { generatePDF } from "./es6modules/generatepdf.js";
-import {updateContactSection} from './es6modules/resume-sections.js';
+import {updateContactSection} from './es6modules/contact.js';
 
 //----- invokes the function immediately so the text  in the HTML does not appear
 //updateContactSection(); // initialize preview
