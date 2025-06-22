@@ -1,8 +1,8 @@
-import {addContainer} from './formInputs.js';
-import {allSkillsPreviewList} from './previewElements.js'
-import {allSkillsInputsContainer} from './formInputs.js';
+import {allSkillsInputsContainer, allSkillsPreviewList} from './functions/getElement.js';
 
-import {createInputAndPreview} from './inputPreviewConnection.js'
+import {createAppendContainer} from './functions/createAppendContainer.js';
+
+import {createInputAndPreview} from './functions/inputPreviewConnection.js'
 
 
 //SKILLS SECTION - 2-----------------------------------------------------------------------------------------------------
@@ -13,8 +13,7 @@ export function addNewSkillInput(buttonName){
     skillInputCount++
 
     //Skill Input Container
-    const skillInputContainer = addContainer(`skill-input-container-${skillInputCount}`, `skill-input-container` );
-    allSkillsInputsContainer.appendChild(skillInputContainer);
+    const skillInputContainer = createAppendContainer(`skill-input-container-${skillInputCount}`, `skill-input-container`, allSkillsInputsContainer );
 
     createInputAndPreview(
         skillInputContainer, allSkillsPreviewList,

@@ -1,6 +1,8 @@
-import {addContainer, addInputContainer, addInput, addButton} from './formInputs.js';
-import {addPreviewContainer, createPreviewElement} from './previewElements.js';
-import {createInputAndPreview, createDateInputAndReview} from './inputPreviewConnection.js'
+import {createAppendContainer} from './functions/createAppendContainer.js';
+import {createInput} from './functions/createInput.js';
+import {addButton} from './functions/addButton.js';
+import {createPreviewElement} from './functions/previewElements.js';
+import {createInputAndPreview, createDateInputAndReview} from './functions/inputPreviewConnection.js';
 
 
 //Job Duty--------------------
@@ -8,12 +10,11 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
   let jobDutyCount = 0;
   
   //Create and add container for job duty inputs to form
-  const jobDutyInputsContainer = addContainer(`job-duties-input-container-${formCount}`, 'job-duties-input-container');
-  jobFormContainer.appendChild(jobDutyInputsContainer);
+  const jobDutyInputsContainer = createAppendContainer(`job-duties-input-container-${formCount}`, 'job-duties-input-container', jobFormContainer);
 
   //Create and add Job Duty Button to form
-  const jobDutyButton = addButton('button', `add-job-duty-button-${formCount}`, "add-job-duty-button", "Add Job Description" );
-  jobFormContainer.appendChild(jobDutyButton);
+  const jobDutyButton = addButton('button', `add-job-duty-button-${formCount}`, "add-job-duty-button", "Add Job Description", jobFormContainer );
+  // jobFormContainer.appendChild(jobDutyButton);
 
   //Create and add Unordered List to the preview
   const jobDutyULPreviewElement = createPreviewElement("ul", `job-duty-list-preview-${formCount}`, "job-duty-list-preview");
@@ -26,7 +27,7 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
     //Create and add job duty input to form container
     // const dutyInput = addjobDutyInput(formCount, jobDutyCount, jobFormContainer);
 
-     const dutyInput = addInput("text", `duty-input-${jobDutyCount}-for-experience-${formCount}`, "duty-input", "Add Job Duty/Description");
+     const dutyInput = createInput("text", `duty-input-${jobDutyCount}-for-experience-${formCount}`, "duty-input", "Add Job Duty/Description");
     jobDutyInputsContainer.appendChild(dutyInput);
 
     //Create and add job duty list item to preview container
@@ -39,7 +40,7 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
       jobDutyLIPreviewElement.textContent = dutyInput.value
     })
   })
-}
+};
 
 //WORK EXPERIENCE - 2----------------------------------------------------------------------------------------------------
 let experienceFormCount = 0;
@@ -50,18 +51,18 @@ export function addNewExperienceSection(buttonName) {
     const experienceFormsContainer = document.getElementById('all-experience-forms-container');//Container for all experience forms
   
     //Experience Form
-    const jobFormContainer = addInputContainer(`experience-form-container-${experienceFormCount}`, 'experience-form-container', experienceFormsContainer );
+    const jobFormContainer = createAppendContainer(`experience-form-container-${experienceFormCount}`, 'experience-form-container', experienceFormsContainer );
 
     //Experience Previews Container
     const allExperiencePreviewsContainer = document.getElementById('all-experience-preview-container');
 
     //Experience Preview Container
-    const experiencePreviewContainer = addPreviewContainer('div',`experience-preview-container-${experienceFormCount}`, 'experience-preview-container', allExperiencePreviewsContainer);
+    const experiencePreviewContainer = createAppendContainer(`experience-preview-container-${experienceFormCount}`, 'experience-preview-container', allExperiencePreviewsContainer);
     
     
 
     //Employer Name and Position Preview Container
-    const employerNamePositionPreviewContainer = addPreviewContainer('div', `employer-name-position-preview-container-${experienceFormCount}`, 'employer-name-position-preview-container', experiencePreviewContainer);
+    const employerNamePositionPreviewContainer = createAppendContainer( `employer-name-position-preview-container-${experienceFormCount}`, 'employer-name-position-preview-container', experiencePreviewContainer);
 
     //Employer Name
     createInputAndPreview(
@@ -78,10 +79,10 @@ export function addNewExperienceSection(buttonName) {
     );
 
     //Employer Dates And Location Preview Container
-    const employerDatesLocationPreviewContainer = addPreviewContainer('div',`employer-dates-location-preview-container-${experienceFormCount}`, 'employer-dates-location-preview-container', experiencePreviewContainer);
+    const employerDatesLocationPreviewContainer = createAppendContainer(`employer-dates-location-preview-container-${experienceFormCount}`, 'employer-dates-location-preview-container', experiencePreviewContainer);
     
     //Employer Dates Preview Container
-    const employerDatesPreviewContainer = addPreviewContainer('div',`employer-dates-preview-container-${experienceFormCount}`, 'employer-dates-preview-container', employerDatesLocationPreviewContainer)
+    const employerDatesPreviewContainer = createAppendContainer(`employer-dates-preview-container-${experienceFormCount}`, 'employer-dates-preview-container', employerDatesLocationPreviewContainer)
  
     //JOB START DATE
     createDateInputAndReview(jobFormContainer, employerDatesPreviewContainer, 
@@ -95,7 +96,7 @@ export function addNewExperienceSection(buttonName) {
 
 
     //Employer Location Preview Container
-    const employerLocationPreviewContainer = addPreviewContainer('div',`employer-location-preview-container-${experienceFormCount}`, 'employer-location-preview-container', employerDatesLocationPreviewContainer)
+    const employerLocationPreviewContainer = createAppendContainer(`employer-location-preview-container-${experienceFormCount}`, 'employer-location-preview-container', employerDatesLocationPreviewContainer)
     
     //EMPLOYER CITY
     createInputAndPreview(
@@ -115,5 +116,5 @@ export function addNewExperienceSection(buttonName) {
     addJobDuty(experienceFormCount, jobFormContainer, experiencePreviewContainer);
     
   });
-}
+};
 

@@ -1,4 +1,5 @@
-                                                                                                       
+// EDUCATION PREVIEW------------------------------------------------------------------
+
 //Creates Preview Container
 export function createPreviewContainer(elementType, elementId, elementClassName){
   const previewContainerElement = document.createElement(elementType);
@@ -17,26 +18,6 @@ export function addPreviewContainer(elementType, elementId, elementClassName, pa
     return previewContainer;
 
 };
-
-
-// ADD PREVIEW ELEMENT
-export function createPreviewElement(elementType, elementId, elementClassName){
-   const previewElement = document.createElement(elementType);
-   previewElement.id = elementId;
-   previewElement.className = elementClassName;
-   //parentPreviewContainer.appendChild(previewElement)
-   
-
-   return previewElement;
-  
-};
-
-
-  //Get Skill UL Element
-  export const allSkillsPreviewList = document.getElementById('all-skills-preview-list');
-
-
-// EDUCATION PREVIEW------------------------------------------------------------------
 
 //Preview Container for each degree
 export function degreePreviewContainer(educationFormCount, parentContainer){
@@ -82,8 +63,3 @@ export function schoolLocationPreviewContainer(educationFormCount, parentContain
     
     return schoolLocationPreviewContainer;
 }
-
-
-
-
-
