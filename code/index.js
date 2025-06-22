@@ -25,11 +25,8 @@ document.querySelectorAll(".contact-item").forEach((input) => {
 
 
 //SUMMARY SECTION - 1--------------------------------------------------------------------------------------------------------
-const summary = document.getElementById('summary');
-summary.addEventListener('input', () =>{
-  updateSummarySection();
-})
-
+const summaryInput = document.getElementById("summary");
+updateSummarySection(summaryInput);
 //EXPERIENCE SECTION - 1-----------------------------------------------------------------------------------------------------
 const newExperienceButton = document.getElementById("new-job-experience");
 addNewExperienceSection(newExperienceButton);
