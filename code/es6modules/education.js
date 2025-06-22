@@ -1,7 +1,6 @@
 import {addContainer} from './form/formInputs.js';
-import { degreePreviewContainer, gpaPreviewContainer, schoolNamePreviewContainer, schoolLocationPreviewContainer} from './preview/educationPreview.js';
+import { addPreviewContainer, degreePreviewContainer, gpaPreviewContainer, schoolNamePreviewContainer, schoolLocationPreviewContainer} from './preview/previewElements.js';
 import { createInputAndPreview } from './inputPreviewConnection.js';
-import {addPreviewContainer} from './preview/previewElements.js';
 
 
 //EDUCATION - 2----------------------------------------------------------------------------------------------------
