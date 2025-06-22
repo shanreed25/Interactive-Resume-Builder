@@ -1,4 +1,4 @@
-import {addPreviewContainer} from './preview.js';
+import {addPreviewContainer} from './previewElements.js';
 
 
 //Functions to create Experience Preview Containers

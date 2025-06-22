@@ -1,5 +1,30 @@
-import {createPreviewContainer} from './preview.js';
-const allEducationPreviewContainer = document.getElementById('all-education-preview-container');
+import {createPreviewContainer, addPreviewContainer} from './previewElements.js';
+
+//Preview Container for each degree and gpa 
+export function degreePreviewContainer(educationFormCount, parentContainer){
+    //Main container for each education preview
+    const degreePreviewContainer = addPreviewContainer(
+        'div', `degree-preview-container-${educationFormCount}`, 
+        'degree-preview-container', 
+        parentContainer
+    )
+    // console.log(degreeGpaPreviewContainer)
+    return degreePreviewContainer;
+}
+
+
+//Preview Container for each degree
+export function gpaPreviewContainer(educationFormCount, parentContainer){
+    //Main container for each education preview
+    const gpaPreviewContainer = addPreviewContainer(
+        'div', `gpa-preview-container-${educationFormCount}`, 
+        'gpa-preview-container',
+        parentContainer
+    );
+    
+    return gpaPreviewContainer;
+}
+
 
 export function addEducationPreviewContainer(educationFormCount){
 

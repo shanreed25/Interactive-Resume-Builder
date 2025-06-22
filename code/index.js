@@ -1,6 +1,6 @@
 import { updateSummarySection } from "./es6modules/summary.js";
 import { generatePDF } from "./es6modules/generatepdf.js";
-import {updateContactSection, addNewEducationSection} from './es6modules/resume-sections.js';
+import {updateContactSection} from './es6modules/resume-sections.js';
 
 //----- invokes the function immediately so the text  in the HTML does not appear
 //updateContactSection(); // initialize preview
@@ -10,6 +10,7 @@ import {updateContactSection, addNewEducationSection} from './es6modules/resume-
 
 import {addNewExperienceSection} from './es6modules/experience.js';
 import {addNewSkillInput} from './es6modules/skills.js';
+import {addNewEducationSection} from './es6modules/education.js'
 //*********START: REVISE CODE THIS LATER************/
 //because the generatePDF() function is attached to the onclick attribute of the button
 // it is assigned to the window object to make it globally accessible

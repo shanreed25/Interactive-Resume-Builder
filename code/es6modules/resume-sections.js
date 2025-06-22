@@ -1,4 +1,4 @@
-import { addEducation} from './education.js'
+// import { addEducation} from './education.js'
 
 
 
@@ -83,13 +83,13 @@ export function updateContactSection() {
 //   })
 // }
 
-//EDUCATION - 2----------------------------------------------------------------------------------------------------
-let educationFormCount = 0;
-export function addNewEducationSection(buttonName){
-  buttonName.addEventListener('click', () => {
-    educationFormCount++
+// //EDUCATION - 2----------------------------------------------------------------------------------------------------
+// let educationFormCount = 0;
+// export function addNewEducationSection(buttonName){
+//   buttonName.addEventListener('click', () => {
+//     educationFormCount++
 
-//EDUCATION INPUT AND REVIEW ELEMENT-------------------------------------------------------------------------------------------    
-    addEducation(educationFormCount);
-  })
-}
+// //EDUCATION INPUT AND REVIEW ELEMENT-------------------------------------------------------------------------------------------    
+//     addEducation(educationFormCount);
+//   })
+// }
