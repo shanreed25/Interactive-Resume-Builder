@@ -9,6 +9,16 @@ export function addContainer(formContainerId, formContainerClassName){
   return formContainer;
 }
 
+//Adds Containers----------------------------------------------------------------
+export function addInputContainer(formContainerId, formContainerClassName, parentContainer){
+  const formContainer = document.createElement("div");
+  formContainer.id = formContainerId;
+  formContainer.className = formContainerClassName;
+  parentContainer.appendChild(formContainer)
+
+  return formContainer;
+}
+
 
 //Used In formPreviewConnection.js
 //ADD FORM INPUTS

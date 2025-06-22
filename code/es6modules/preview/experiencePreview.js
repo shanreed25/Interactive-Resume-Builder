@@ -19,13 +19,14 @@ import {addPreviewContainer} from './previewElements.js';
 //     return experiencePreviewContainer;
 // }
 
-// //Preview Container for employer name and position
+//Preview Container for employer name and position
 // export function employerNamePositionPreviewContainer(experienceFormCount, parentContainer){
 //     //EMPLOYER NAME AND POSITION CONTAINER
 //     const employerNamePositionPreviewContainer = addPreviewContainer(
 //         'div', `employer-name-position-preview-container-${experienceFormCount}`, 
 //         'employer-name-position-preview-container', 
-//         parentContainer);
+//         parentContainer
+//     );
     
 //     return employerNamePositionPreviewContainer;
 // };
