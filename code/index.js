@@ -19,10 +19,8 @@ window.generatePDF = generatePDF;
 
 
 //Contact SECTION - 1--------------------------------------------------------------------------------------------------------
-document.querySelectorAll(".contact-item").forEach((input) => {
-  input.addEventListener("input", updateContactSection);
-});
-
+const contactInputs = document.querySelectorAll(".contact-item");
+updateContactSection(contactInputs)
 
 //SUMMARY SECTION - 1--------------------------------------------------------------------------------------------------------
 const summaryInput = document.getElementById("summary");
