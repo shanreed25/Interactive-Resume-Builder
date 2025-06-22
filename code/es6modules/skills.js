@@ -1,6 +1,6 @@
-import {addContainer} from './form/formInputs.js';
-import {allSkillsPreviewList} from './preview/previewElements.js'
-import {allSkillsInputsContainer} from './form/skillsInput.js';
+import {addContainer} from './formInputs.js';
+import {allSkillsPreviewList} from './previewElements.js'
+import {allSkillsInputsContainer} from './formInputs.js';
 
 import {createInputAndPreview} from './inputPreviewConnection.js'
 

@@ -1,5 +1,5 @@
-import {addInput} from './form/formInputs.js';
-import {createPreviewElement} from './preview/previewElements.js';
+import {addInput} from './formInputs.js';
+import {createPreviewElement} from './previewElements.js';
 
 
 //Connects the Inputs to the Preview Elements and Updates then accordingly--------------------------------------------------------------------------------------------------

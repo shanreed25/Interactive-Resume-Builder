@@ -1,5 +1,5 @@
-import {addContainer, addInputContainer, addInput, addButton} from './form/formInputs.js';
-import {addPreviewContainer, createPreviewElement} from './preview/previewElements.js';
+import {addContainer, addInputContainer, addInput, addButton} from './formInputs.js';
+import {addPreviewContainer, createPreviewElement} from './previewElements.js';
 import {createInputAndPreview, createDateInputAndReview} from './inputPreviewConnection.js'
 
 

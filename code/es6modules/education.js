@@ -1,5 +1,5 @@
-import {addContainer} from './form/formInputs.js';
-import { addPreviewContainer, degreePreviewContainer, gpaPreviewContainer, schoolNamePreviewContainer, schoolLocationPreviewContainer} from './preview/previewElements.js';
+import {addContainer} from './formInputs.js';
+import { addPreviewContainer, degreePreviewContainer, gpaPreviewContainer, schoolNamePreviewContainer, schoolLocationPreviewContainer} from './previewElements.js';
 import { createInputAndPreview } from './inputPreviewConnection.js';
 
 

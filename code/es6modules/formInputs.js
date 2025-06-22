@@ -1,5 +1,4 @@
 
-//Passed down to education.js, 
 //Adds Containers----------------------------------------------------------------
 export function addContainer(formContainerId, formContainerClassName){
   const formContainer = document.createElement("div");
@@ -20,7 +19,6 @@ export function addInputContainer(formContainerId, formContainerClassName, paren
 }
 
 
-//Used In formPreviewConnection.js
 //ADD FORM INPUTS
 export function addInput(inputType, inputId, inputClassName, inputPlaceholder){
     const inputName = document.createElement("input");
@@ -30,8 +28,6 @@ export function addInput(inputType, inputId, inputClassName, inputPlaceholder){
     inputName.placeholder = inputPlaceholder;
     return inputName;
 }
-
-
 
 export function addButton(buttonType, buttonId, buttonClassName, buttonTextContent){
   const actionButton = document.createElement('button');
@@ -43,3 +39,7 @@ export function addButton(buttonType, buttonId, buttonClassName, buttonTextConte
   return actionButton;
 }
 
+
+
+//Container For all Skills Inputs
+  export const allSkillsInputsContainer = document.getElementById('all-skills-inputs-container');
