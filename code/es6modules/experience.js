@@ -1,8 +1,8 @@
 import {addContainer, addInput, addButton} from './form/formInputs.js';
-import {createPreviewElement} from './preview/previewElements.js';
+import {addPreviewContainer, createPreviewElement} from './preview/previewElements.js';
 import {createInputAndPreview, createDateInputAndReview} from './inputPreviewConnection.js'
 import {
-  employerNamePositionPreviewContainer,
+
   jobLocationPreviewContainer,
   jobDatesPreviewContainer,
   employerDetailsPreviewContainer
@@ -58,49 +58,54 @@ export function addNewExperienceSection(buttonName) {
     //WORK EXPERIENCE FORM Container
     const jobFormContainer = addContainer(`experience-form-container-${experienceFormCount}`, 'experience-form-container' );
     experienceFormsContainer.appendChild(jobFormContainer);
+
+    const allExperiencePreviewsContainer = document.getElementById('all-experience-preview-container');
+    const experiencePreviewContainer = addPreviewContainer('div',`experience-preview-container-${experienceFormCount}`, 'experience-preview-container', allExperiencePreviewsContainer)
+    const employerNamePositionPreviewContainer = addPreviewContainer('div', `employer-name-position-preview-container-${experienceFormCount}`, 'employer-name-position-preview-container', experiencePreviewContainer)
+
  
     //CREATE INPUTS AND ADD THEM TO CONTAINERS
     //Employer Name
     createInputAndPreview(
-      jobFormContainer, employerNamePositionPreviewContainer(experienceFormCount),
+      jobFormContainer, employerNamePositionPreviewContainer,
       "text", `employer-name-input-${experienceFormCount}`, "med", "Employer/Company Name",
       "h2", `employer-name-preview-${experienceFormCount}`, "employer-name-preview"
     );
 
     //JOB POSITION
     createInputAndPreview(
-      jobFormContainer, employerNamePositionPreviewContainer(experienceFormCount),
+      jobFormContainer, employerNamePositionPreviewContainer,
       "text", `position-input-${experienceFormCount}`, "med", "Position",
       "h2", `position-preview-${experienceFormCount}`, "position-preview"
     );
 
-    //JOB START DATE
-    createDateInputAndReview(jobFormContainer, jobDatesPreviewContainer(experienceFormCount), 
-    "month", `start-date-input-${experienceFormCount}`, "med", "Start Date", 
-    "p", `start-date-preview-${experienceFormCount}`, "start-date-preview");
+    // //JOB START DATE
+    // createDateInputAndReview(jobFormContainer, jobDatesPreviewContainer(experienceFormCount), 
+    // "month", `start-date-input-${experienceFormCount}`, "med", "Start Date", 
+    // "p", `start-date-preview-${experienceFormCount}`, "start-date-preview");
 
-    //JOB END DATE
-    createDateInputAndReview(jobFormContainer, jobDatesPreviewContainer(experienceFormCount), 
-    "month", `end-date-input-${experienceFormCount}`, "med", "End Date" , 
-    "p", `end-date-preview-${experienceFormCount}`, "end-date-preview");
-
-
-    //EMPLOYER CITY
-    createInputAndPreview(
-      jobFormContainer, jobLocationPreviewContainer(experienceFormCount),
-      "text", `employer-city-input-${experienceFormCount}`, "med", "City",
-      "p", `employer-city-preview-${experienceFormCount}`, "employer-city-preview"
-    );
+    // //JOB END DATE
+    // createDateInputAndReview(jobFormContainer, jobDatesPreviewContainer(experienceFormCount), 
+    // "month", `end-date-input-${experienceFormCount}`, "med", "End Date" , 
+    // "p", `end-date-preview-${experienceFormCount}`, "end-date-preview");
 
 
-    //EMPLOYER STATE
-    createInputAndPreview(
-      jobFormContainer, jobLocationPreviewContainer(experienceFormCount),
-      "text", `employer-state-input-${experienceFormCount}`, "med", "State",
-      "p", `employer-state-preview-${experienceFormCount}`, "employer-state-preview"
-    );
+    // //EMPLOYER CITY
+    // createInputAndPreview(
+    //   jobFormContainer, jobLocationPreviewContainer(experienceFormCount),
+    //   "text", `employer-city-input-${experienceFormCount}`, "med", "City",
+    //   "p", `employer-city-preview-${experienceFormCount}`, "employer-city-preview"
+    // );
 
-    addJobDuty(experienceFormCount, jobFormContainer, employerDetailsPreviewContainer(experienceFormCount));
+
+    // //EMPLOYER STATE
+    // createInputAndPreview(
+    //   jobFormContainer, jobLocationPreviewContainer(experienceFormCount),
+    //   "text", `employer-state-input-${experienceFormCount}`, "med", "State",
+    //   "p", `employer-state-preview-${experienceFormCount}`, "employer-state-preview"
+    // );
+
+    // addJobDuty(experienceFormCount, jobFormContainer, employerDetailsPreviewContainer(experienceFormCount));
     
   });
 }
