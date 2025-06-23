@@ -1,9 +1,9 @@
 import {createAppendContainer} from './functions/createAppendContainer.js';
 import {createAppendInput} from './functions/createAppendInput.js';
 import {addButton} from './functions/addButton.js';
-import {createInputAndPreview, createDateInputAndReview} from './functions/inputPreviewConnection.js';
+import {createInputAndPreview, createPositionInputAndPreview, createDateInputAndReview, createEndDateInputAndReview} from './functions/inputPreviewConnection.js';
 import {experienceFormsContainer, allExperiencePreviewsContainer} from './functions/getElement.js'
-import {createAppendPreviewElement} from './functions/createAppendPreviewElement.js'
+import { createAppendPreviewElement } from './functions/createAppendPreviewElement.js'
 
 //Job Duty--------------------
 export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewContainer) {
@@ -36,6 +36,8 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
   })
 };
 
+
+
 //WORK EXPERIENCE - 2----------------------------------------------------------------------------------------------------
 let experienceFormCount = 0;
 export function addNewExperienceSection(buttonName) {
@@ -57,9 +59,9 @@ export function addNewExperienceSection(buttonName) {
       "text", `employer-name-input-${experienceFormCount}`, "med", "Employer/Company Name",
       "h2", `employer-name-preview-${experienceFormCount}`, "employer-name-preview"
     );
-
+    
     //JOB POSITION
-    createInputAndPreview(
+    createPositionInputAndPreview(
       jobFormContainer, employerNamePositionPreviewContainer,
       "text", `position-input-${experienceFormCount}`, "med", "Position",
       "h2", `position-preview-${experienceFormCount}`, "position-preview"
@@ -77,7 +79,7 @@ export function addNewExperienceSection(buttonName) {
     "p", `start-date-preview-${experienceFormCount}`, "start-date-preview");
 
     //JOB END DATE
-    createDateInputAndReview(jobFormContainer, employerDatesPreviewContainer, 
+    createEndDateInputAndReview(jobFormContainer, employerDatesPreviewContainer, 
     "month", `end-date-input-${experienceFormCount}`, "med", "End Date" , 
     "p", `end-date-preview-${experienceFormCount}`, "end-date-preview");
 
