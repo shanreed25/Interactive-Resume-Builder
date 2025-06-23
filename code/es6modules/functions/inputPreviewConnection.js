@@ -1,5 +1,5 @@
-import {createInput} from './createInput.js';
-import {createPreviewElement} from './previewElements.js';
+import {createAppendInput} from './createAppendInput.js';
+import {createAppendPreviewElement} from './createAppendPreviewElement.js'
 
 
 //Connects the Inputs to the Preview Elements and Updates then accordingly--------------------------------------------------------------------------------------------------
@@ -7,13 +7,13 @@ export function createInputAndPreview(
   formContainer, previewContainer, 
   inputType, inputId, inputClassName, inputPlaceholder, 
   elementType, elementId, elementClassName ) {
+    
   //Create a Employer Name Input 
-  const formInput = createInput(inputType, inputId, inputClassName, inputPlaceholder);
-  formContainer.appendChild(formInput);
+  const formInput = createAppendInput(inputType, inputId, inputClassName, inputPlaceholder, formContainer);
+  // formContainer.appendChild(formInput);
 
   //Create a Employer Name Preview Element
-  const inputPreview = createPreviewElement(elementType, elementId, elementClassName);
-  previewContainer.appendChild(inputPreview);
+  const inputPreview = createAppendPreviewElement(elementType, elementId, elementClassName, previewContainer);
 
   // ---> Listen for the input and add the value to the preview
   formInput.addEventListener("input", () => {
@@ -24,12 +24,11 @@ export function createInputAndPreview(
 //Connects the Date Inputs to the Date Preview Elements and Updates then accordingly--------------------------------------------------------------------------------------------------
 export function createDateInputAndReview(formContainer, datesPreviewContainer, inputType, inputId, inputClassName, inputPlaceholder, elementType, elementId, elementClassName) {
   // Create Employer Start Date Input and adds it to the Job Form Container
-  const dateInput = createInput(inputType, inputId, inputClassName, inputPlaceholder);
-  formContainer.appendChild(dateInput);
+  const dateInput = createAppendInput(inputType, inputId, inputClassName, inputPlaceholder, formContainer);
+  // formContainer.appendChild(dateInput);
 
   //Create a Start Date Preview Element and adds it to the Job Dates Preview Container
-  const datePreviewElement = createPreviewElement(elementType, elementId, elementClassName);
-  datesPreviewContainer.appendChild(datePreviewElement);
+  const datePreviewElement = createAppendPreviewElement(elementType, elementId, elementClassName, datesPreviewContainer);
 
   const dateSeparator = document.createElement('p');
   datesPreviewContainer.appendChild(dateSeparator);
@@ -49,4 +48,4 @@ export function createDateInputAndReview(formContainer, datesPreviewContainer, i
       datePreviewElement.textContent = "";
     }
   })
-}
+};

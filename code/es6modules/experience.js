@@ -1,9 +1,9 @@
 import {createAppendContainer} from './functions/createAppendContainer.js';
-import {createInput} from './functions/createInput.js';
+import {createAppendInput} from './functions/createAppendInput.js';
 import {addButton} from './functions/addButton.js';
-import {createPreviewElement} from './functions/previewElements.js';
 import {createInputAndPreview, createDateInputAndReview} from './functions/inputPreviewConnection.js';
-
+import {experienceFormsContainer, allExperiencePreviewsContainer} from './functions/getElement.js'
+import {createAppendPreviewElement} from './functions/createAppendPreviewElement.js'
 
 //Job Duty--------------------
 export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewContainer) {
@@ -14,11 +14,10 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
 
   //Create and add Job Duty Button to form
   const jobDutyButton = addButton('button', `add-job-duty-button-${formCount}`, "add-job-duty-button", "Add Job Description", jobFormContainer );
-  // jobFormContainer.appendChild(jobDutyButton);
 
   //Create and add Unordered List to the preview
-  const jobDutyULPreviewElement = createPreviewElement("ul", `job-duty-list-preview-${formCount}`, "job-duty-list-preview");
-  employerDetailsPreviewContainer.appendChild(jobDutyULPreviewElement);
+  const jobDutyULPreviewElement = createAppendPreviewElement("ul", `job-duty-list-preview-${formCount}`, "job-duty-list-preview", employerDetailsPreviewContainer);
+  // employerDetailsPreviewContainer.appendChild(jobDutyULPreviewElement);
 
   //Listen for Button
   jobDutyButton.addEventListener('click', () => {
@@ -27,12 +26,12 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
     //Create and add job duty input to form container
     // const dutyInput = addjobDutyInput(formCount, jobDutyCount, jobFormContainer);
 
-     const dutyInput = createInput("text", `duty-input-${jobDutyCount}-for-experience-${formCount}`, "duty-input", "Add Job Duty/Description");
-    jobDutyInputsContainer.appendChild(dutyInput);
+     const dutyInput = createAppendInput("text", `duty-input-${jobDutyCount}-for-experience-${formCount}`, "duty-input", "Add Job Duty/Description", jobDutyInputsContainer);
+    // jobDutyInputsContainer.appendChild(dutyInput);
 
     //Create and add job duty list item to preview container
-    const jobDutyLIPreviewElement = createPreviewElement("li", `job-duty-li-preview-${jobDutyCount}-for-experience-${formCount}`, "job-duty-li-preview");
-    jobDutyULPreviewElement.append(jobDutyLIPreviewElement);
+    const jobDutyLIPreviewElement = createAppendPreviewElement("li", `job-duty-li-preview-${jobDutyCount}-for-experience-${formCount}`, "job-duty-li-preview", jobDutyULPreviewElement);
+    // jobDutyULPreviewElement.append(jobDutyLIPreviewElement);
 
     // ---> Listen for the input and add the value to the preview
     dutyInput.addEventListener("input", () => {
@@ -47,20 +46,13 @@ let experienceFormCount = 0;
 export function addNewExperienceSection(buttonName) {
   buttonName.addEventListener("click", () => {
     experienceFormCount++; //counts the number of forms and experience sections created
-    //Experience Forms Container
-    const experienceFormsContainer = document.getElementById('all-experience-forms-container');//Container for all experience forms
   
     //Experience Form
     const jobFormContainer = createAppendContainer(`experience-form-container-${experienceFormCount}`, 'experience-form-container', experienceFormsContainer );
 
-    //Experience Previews Container
-    const allExperiencePreviewsContainer = document.getElementById('all-experience-preview-container');
-
     //Experience Preview Container
     const experiencePreviewContainer = createAppendContainer(`experience-preview-container-${experienceFormCount}`, 'experience-preview-container', allExperiencePreviewsContainer);
     
-    
-
     //Employer Name and Position Preview Container
     const employerNamePositionPreviewContainer = createAppendContainer( `employer-name-position-preview-container-${experienceFormCount}`, 'employer-name-position-preview-container', experiencePreviewContainer);
 
