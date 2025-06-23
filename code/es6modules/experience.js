@@ -17,21 +17,16 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
 
   //Create and add Unordered List to the preview
   const jobDutyULPreviewElement = createAppendPreviewElement("ul", `job-duty-list-preview-${formCount}`, "job-duty-list-preview", employerDetailsPreviewContainer);
-  // employerDetailsPreviewContainer.appendChild(jobDutyULPreviewElement);
 
   //Listen for Button
   jobDutyButton.addEventListener('click', () => {
     jobDutyCount++;//count of the number of list item added to each unordered list
-
-    //Create and add job duty input to form container
-    // const dutyInput = addjobDutyInput(formCount, jobDutyCount, jobFormContainer);
 
      const dutyInput = createAppendInput("text", `duty-input-${jobDutyCount}-for-experience-${formCount}`, "duty-input", "Add Job Duty/Description", jobDutyInputsContainer);
     // jobDutyInputsContainer.appendChild(dutyInput);
 
     //Create and add job duty list item to preview container
     const jobDutyLIPreviewElement = createAppendPreviewElement("li", `job-duty-li-preview-${jobDutyCount}-for-experience-${formCount}`, "job-duty-li-preview", jobDutyULPreviewElement);
-    // jobDutyULPreviewElement.append(jobDutyLIPreviewElement);
 
     // ---> Listen for the input and add the value to the preview
     dutyInput.addEventListener("input", () => {
@@ -86,7 +81,6 @@ export function addNewExperienceSection(buttonName) {
     "month", `end-date-input-${experienceFormCount}`, "med", "End Date" , 
     "p", `end-date-preview-${experienceFormCount}`, "end-date-preview");
 
-
     //Employer Location Preview Container
     const employerLocationPreviewContainer = createAppendContainer(`employer-location-preview-container-${experienceFormCount}`, 'employer-location-preview-container', employerDatesLocationPreviewContainer)
     
@@ -96,7 +90,6 @@ export function addNewExperienceSection(buttonName) {
       "text", `employer-city-input-${experienceFormCount}`, "med", "City",
       "p", `employer-city-preview-${experienceFormCount}`, "employer-city-preview"
     );
-
 
     //EMPLOYER STATE
     createInputAndPreview(

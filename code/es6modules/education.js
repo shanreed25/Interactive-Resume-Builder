@@ -55,10 +55,7 @@ export function addNewEducationSection(buttonName){
        "text", `school-location-input-${educationFormCount}`, "med", "School Location",
        'h5', `school-location-preview-${educationFormCount}`, 'school-location-preview'
     );
-
   });
-
-  
 };
 
 
