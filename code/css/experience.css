@@ -1,16 +1,9 @@
 /*EXPERIENCE FORM*/
-
 .all-experience-forms-container{
   
 }
-
 .experience-form-container{
   margin: 1rem 0;
-}
-
-.experience-details {
-  display: flex;
-  flex-direction: column;
 }
 
 .add-job-duty-button{

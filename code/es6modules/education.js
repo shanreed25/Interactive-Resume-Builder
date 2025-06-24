@@ -27,7 +27,7 @@ export function addNewEducationSection(buttonName){
     //DEGREE TYPE
     createInputAndPreview(
       educationFormContainer, degreePreviewContainer,
-       "text", `degree-input-${educationFormCount}`, "med", "Degree",
+       "text", `degree-input-${educationFormCount}`, "med gap-input", "Degree",
        'h3', `degree-preview-${educationFormCount}`, 'preview-info-1'
     );
 
@@ -47,7 +47,7 @@ export function addNewEducationSection(buttonName){
     const schoolDatesPreviewContainer = createAppendContainer(`school-dates-preview-container-${educationFormCount}`, 'dates-preview-container', schoolDatesLocationPreviewContainer)
     //SCHOOL START DATE
     createDateInputAndReview(educationFormContainer, schoolDatesPreviewContainer, 
-    "month", `school-start-date-input-${educationFormCount}`, "med", "Start Date", 
+    "month", `school-start-date-input-${educationFormCount}`, "med gap-input", "Start Date", 
      "p", `school-start-date-preview-${educationFormCount}`, "start-date-preview");
     
     //SCHOOL END DATE
@@ -60,7 +60,7 @@ export function addNewEducationSection(buttonName){
     //SCHOOL LOCATION
     createInputAndPreview(
       educationFormContainer,  schoolLocationPreviewContainer,
-       "text", `school-location-input-${educationFormCount}`, "med", "School Location",
+       "text", `school-location-input-${educationFormCount}`, "large", "School Location",
        'p', `school-location-preview-${educationFormCount}`, 'school-location-preview'
     );
 //----------------------------------------------------------------------------------------------------------------------

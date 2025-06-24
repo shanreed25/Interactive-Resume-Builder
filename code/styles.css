@@ -68,6 +68,16 @@ header {
 }
 
 /* Form Inputs */
+.large{
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 .med {
   width: 45%;
   padding: 12px 20px;
@@ -86,6 +96,10 @@ header {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.gap-input{
+  margin-right: .3rem;
 }
 
 button {

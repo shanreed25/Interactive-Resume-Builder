@@ -57,7 +57,7 @@ export function addNewExperienceSection(buttonName) {
     //EMPLOYER NAME
     createInputAndPreview(
       jobFormContainer, employerNamePositionPreviewContainer,
-      "text", `employer-name-input-${experienceFormCount}`, "med", "Employer/Company Name",
+      "text", `employer-name-input-${experienceFormCount}`, "med gap-input", "Employer/Company Name",
       "h3", `employer-name-preview-${experienceFormCount}`, " preview-info-1"
     );
     
@@ -76,7 +76,7 @@ export function addNewExperienceSection(buttonName) {
  
     //JOB START DATE
     createDateInputAndReview(jobFormContainer, employerDatesPreviewContainer, 
-    "month", `start-date-input-${experienceFormCount}`, "med", "Start Date", 
+    "month", `start-date-input-${experienceFormCount}`, "med gap-input", "Start Date", 
     "p", `start-date-preview-${experienceFormCount}`, "start-date-preview");
 
     //JOB END DATE
@@ -90,7 +90,7 @@ export function addNewExperienceSection(buttonName) {
     //EMPLOYER Location
     createInputAndPreview(
       jobFormContainer, employerLocationPreviewContainer,
-      "text", `employer-location-input-${experienceFormCount}`, "med", "Location",
+      "text", `employer-location-input-${experienceFormCount}`, "large", "Location",
       "p", `employer-location-preview-${experienceFormCount}`, "employer-location-preview"
     );
 
