@@ -18,31 +18,33 @@ export function addNewEducationSection(buttonName){
   
     //Container for each education preview
     const educationPreviewContainer = createAppendContainer(`education-preview-container-${educationFormCount}`, 'education-preview-container', allEducationPreviewsContainer)
-    
-    //Degree and School Name
-    const degreeSchoolNamePreviewContainer = createAppendContainer(`degree-school-name-preview-container-${educationFormCount}`, 'degree-school-name-preview-container', educationPreviewContainer);
+//----------------------------------------------------------------------------------------------------------------------
+    //Degree and School Name Preview Container
+    const degreeSchoolNamePreviewContainer = createAppendContainer(`degree-school-name-preview-container-${educationFormCount}`, 'preview-info-1-container', educationPreviewContainer);
 
-    //Degree
+    //Degree Type Preview Container
     const degreePreviewContainer = createAppendContainer(`degree-preview-container-${educationFormCount}`, 'degree-preview-container', degreeSchoolNamePreviewContainer);
+    //DEGREE TYPE
     createInputAndPreview(
       educationFormContainer, degreePreviewContainer,
        "text", `degree-input-${educationFormCount}`, "med", "Degree",
-       'h4', `degree-preview-${educationFormCount}`, 'degree-preview'
+       'h3', `degree-preview-${educationFormCount}`, 'preview-info-1'
     );
 
-    //School Name Container
+    //School Name Preview Container
     const schoolNamePreviewContainer = createAppendContainer(`school-name-preview-container-${educationFormCount}`, 'school-name-preview-container', degreeSchoolNamePreviewContainer);
+    //SCHOOL NAME
     createDashedInputAndPreview(
       educationFormContainer,  schoolNamePreviewContainer,
        "text", `school-name-input-${educationFormCount}`, "med", "School Name",
-       'p', `school-name-preview-${educationFormCount}`, 'school-name-preview'
+       'h3', `school-name-preview-${educationFormCount}`, 'preview-info-2'
     );
     
-
-    //Degree and School Name
-    const schoolDatesLocationPreviewContainer = createAppendContainer(`school-dates-location-preview-container-${educationFormCount}`, 'school-dates-location-preview-container', educationPreviewContainer);
+//----------------------------------------------------------------------------------------------------------------------
+    //School Dates and Location
+    const schoolDatesLocationPreviewContainer = createAppendContainer(`school-dates-location-preview-container-${educationFormCount}`, 'dates-location-preview-container', educationPreviewContainer);
     //School Dates Preview Container
-    const schoolDatesPreviewContainer = createAppendContainer(`school-dates-preview-container-${educationFormCount}`, 'school-dates-preview-container', schoolDatesLocationPreviewContainer)
+    const schoolDatesPreviewContainer = createAppendContainer(`school-dates-preview-container-${educationFormCount}`, 'dates-preview-container', schoolDatesLocationPreviewContainer)
     //SCHOOL START DATE
     createDateInputAndReview(educationFormContainer, schoolDatesPreviewContainer, 
     "month", `school-start-date-input-${educationFormCount}`, "med", "Start Date", 
@@ -53,8 +55,15 @@ export function addNewEducationSection(buttonName){
     "month", `school-end-date-input-${educationFormCount}`, "med", "End Date" , 
     "p", `school-end-date-preview-${educationFormCount}`, "school-end-date-preview");
 
-
-
+    //School Location Container
+    const schoolLocationPreviewContainer = createAppendContainer(`school-location-preview-container-${educationFormCount}`, 'school-location-preview-container', schoolDatesLocationPreviewContainer);
+    //SCHOOL LOCATION
+    createInputAndPreview(
+      educationFormContainer,  schoolLocationPreviewContainer,
+       "text", `school-location-input-${educationFormCount}`, "med", "School Location",
+       'p', `school-location-preview-${educationFormCount}`, 'school-location-preview'
+    );
+//----------------------------------------------------------------------------------------------------------------------
 
 
     // //GPA

@@ -50,28 +50,29 @@ export function addNewExperienceSection(buttonName) {
     //Experience Preview Container
     const experiencePreviewContainer = createAppendContainer(`experience-preview-container-${experienceFormCount}`, 'experience-preview-container', allExperiencePreviewsContainer);
     
+//----------------------------------------------------------------------------------------------------------------------
     //Employer Name and Position Preview Container
-    const employerNamePositionPreviewContainer = createAppendContainer( `employer-name-position-preview-container-${experienceFormCount}`, 'employer-name-position-preview-container', experiencePreviewContainer);
+    const employerNamePositionPreviewContainer = createAppendContainer( `employer-name-position-preview-container-${experienceFormCount}`, 'preview-info-1-container', experiencePreviewContainer);
 
-    //Employer Name
+    //EMPLOYER NAME
     createInputAndPreview(
       jobFormContainer, employerNamePositionPreviewContainer,
       "text", `employer-name-input-${experienceFormCount}`, "med", "Employer/Company Name",
-      "h3", `employer-name-preview-${experienceFormCount}`, "employer-name-preview"
+      "h3", `employer-name-preview-${experienceFormCount}`, " preview-info-1"
     );
     
     //JOB POSITION
     createDashedInputAndPreview(
       jobFormContainer, employerNamePositionPreviewContainer,
       "text", `position-input-${experienceFormCount}`, "med", "Position",
-      "h3", `position-preview-${experienceFormCount}`, "position-preview"
+      "h3", `position-preview-${experienceFormCount}`, "preview-info-2"
     );
-
+//----------------------------------------------------------------------------------------------------------------------
     //Employer Dates And Location Preview Container
-    const employerDatesLocationPreviewContainer = createAppendContainer(`employer-dates-location-preview-container-${experienceFormCount}`, 'employer-dates-location-preview-container', experiencePreviewContainer);
+    const employerDatesLocationPreviewContainer = createAppendContainer(`employer-dates-location-preview-container-${experienceFormCount}`, 'dates-location-preview-container', experiencePreviewContainer);
     
     //Employer Dates Preview Container
-    const employerDatesPreviewContainer = createAppendContainer(`employer-dates-preview-container-${experienceFormCount}`, 'employer-dates-preview-container', employerDatesLocationPreviewContainer)
+    const employerDatesPreviewContainer = createAppendContainer(`employer-dates-preview-container-${experienceFormCount}`, 'dates-preview-container', employerDatesLocationPreviewContainer)
  
     //JOB START DATE
     createDateInputAndReview(jobFormContainer, employerDatesPreviewContainer, 
@@ -84,22 +85,13 @@ export function addNewExperienceSection(buttonName) {
     "p", `end-date-preview-${experienceFormCount}`, "end-date-preview");
 
     //Employer Location Preview Container
-    const employerLocationPreviewContainer = createAppendContainer(`employer-location-preview-container-${experienceFormCount}`, 'employer-location-preview-container', employerDatesLocationPreviewContainer)
-    
-    //EMPLOYER CITY
-    createInputAndPreview(
-      jobFormContainer, employerLocationPreviewContainer,
-      "text", `employer-city-input-${experienceFormCount}`, "med", "City",
-      "p", `employer-city-preview-${experienceFormCount}`, "employer-city-preview"
-    );
-    const cityStateComma = createAppendPreviewElement('p', `city-state-comma-${experienceFormCount}`, 'city-state-comma', employerLocationPreviewContainer)
-    cityStateComma.textContent = ' , '
+    const employerLocationPreviewContainer = createAppendContainer(`employer-location-preview-container-${experienceFormCount}`, 'employer-location-preview-container', employerDatesLocationPreviewContainer);
 
-    //EMPLOYER STATE
+    //EMPLOYER Location
     createInputAndPreview(
       jobFormContainer, employerLocationPreviewContainer,
-      "text", `employer-state-input-${experienceFormCount}`, "med", "State",
-      "p", `employer-state-preview-${experienceFormCount}`, "employer-state-preview"
+      "text", `employer-location-input-${experienceFormCount}`, "med", "Location",
+      "p", `employer-location-preview-${experienceFormCount}`, "employer-location-preview"
     );
 
     addJobDuty(experienceFormCount, jobFormContainer, experiencePreviewContainer);

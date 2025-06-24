@@ -28,23 +28,19 @@
 
 /*EXPERIENCE PREVIEW*/
 
-.employer-name-position-preview-container{
-  /* width: 40%; */
-  display: flex;
-}
-
+/* 
 .employer-name-preview{
   margin-top: 0;
   margin-right: .5em;
-}
-
+} */
+/* 
 .position-preview{
   margin-top: 0;
   margin-right: .5em;
-}
+} */
 
 
-
+/* 
 .employer-dates-location-preview-container{
   display: flex;
   justify-content: space-between;
@@ -52,12 +48,12 @@
 
 .employer-dates-preview-container{
   display: flex;
-  /* justify-content: space-between; */
+
   width: 40%;
    
-}
+} */
 
-.start-date-preview{
+/* .start-date-preview{
   margin-right: .5rem;
 }
 
@@ -75,6 +71,6 @@
 .city-state-comma{
     margin-left: .1rem;
   margin-right: .3rem;
-}
+} */
 
 

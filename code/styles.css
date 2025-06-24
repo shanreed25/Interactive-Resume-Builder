@@ -94,3 +94,30 @@ button {
 
 
 
+/*PREVIEW*/
+.preview-info-1-container{
+    display: flex;
+    align-items: center; /* Aligns items vertically at the center */
+    font-size: 1.2rem;
+}
+
+.preview-info-1{
+  margin-bottom: 0;
+}
+
+.preview-info-2{
+  margin-bottom: 0;
+  margin-left: .5rem;
+  font-weight: 100;
+}
+
+.dates-location-preview-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.dates-preview-container{
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+}
