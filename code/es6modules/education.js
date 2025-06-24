@@ -1,6 +1,6 @@
 import { createAppendContainer } from './functions/createAppendContainer.js';
 
-import { createInputAndPreview } from './functions/inputPreviewConnection.js';
+import { createInputAndPreview, createDashedInputAndPreview } from './functions/inputPreviewConnection.js';
 
 import {educationFormsContainer, allEducationPreviewsContainer} from './functions/getElement.js'
 
@@ -18,16 +18,28 @@ export function addNewEducationSection(buttonName){
     //Container for each education preview
     const educationPreviewContainer = createAppendContainer(`education-preview-container-${educationFormCount}`, 'education-preview-container', allEducationPreviewsContainer)
     
-    //Degree and GPA
-    const degreeGpaPreviewContainer = createAppendContainer(`degree-gpa-preview-container-${educationFormCount}`, 'degree-gpa-preview-container', educationPreviewContainer);
+    //Degree and School Name
+    const degreeSchoolNamePreviewContainer = createAppendContainer(`degree-school-name-preview-container-${educationFormCount}`, 'degree-school-name-preview-container', educationPreviewContainer);
 
     //Degree
-    const degreePreviewContainer = createAppendContainer(`degree-preview-container-${educationFormCount}`, 'degree-preview-container', degreeGpaPreviewContainer);
+    const degreePreviewContainer = createAppendContainer(`degree-preview-container-${educationFormCount}`, 'degree-preview-container', degreeSchoolNamePreviewContainer);
     createInputAndPreview(
       educationFormContainer, degreePreviewContainer,
        "text", `degree-input-${educationFormCount}`, "med", "Degree",
        'h4', `degree-preview-${educationFormCount}`, 'degree-preview'
     );
+
+       //School Name Container
+    const schoolNamePreviewContainer = createAppendContainer(`school-name-preview-container-${educationFormCount}`, 'school-name-preview-container', degreeSchoolNamePreviewContainer);
+    createDashedInputAndPreview(
+      educationFormContainer,  schoolNamePreviewContainer,
+       "text", `school-name-input-${educationFormCount}`, "med", "School Name",
+       'p', `school-name-preview-${educationFormCount}`, 'school-name-preview'
+    );
+    
+
+
+
 
     //GPA
     const gpaPreviewContainer = createAppendContainer(`gpa-preview-container-${educationFormCount}`, 'gpa-preview-container', degreeGpaPreviewContainer);
@@ -40,15 +52,10 @@ export function addNewEducationSection(buttonName){
     //School Name and Location Container
     const schoolNameLocationPreviewContainer = createAppendContainer(`school-name-location-preview-container-${educationFormCount}`, 'school-name-location-preview-container', educationPreviewContainer);
     
-    //School Name Container
-    const schoolNamePreviewContainer = createAppendContainer(`school-name-preview-container-${educationFormCount}`, 'school-name-preview-container', schoolNameLocationPreviewContainer);
-    createInputAndPreview(
-      educationFormContainer,  schoolNamePreviewContainer,
-       "text", `school-name-input-${educationFormCount}`, "med", "School Name",
-       'h5', `school-name-preview-${educationFormCount}`, 'school-name-preview'
-    );
-    
-    //School Name Container
+ 
+
+
+    //School Location Container
     const schoolLocationPreviewContainer = createAppendContainer(`school-location-preview-container-${educationFormCount}`, 'school-location-preview-container', schoolNameLocationPreviewContainer);
     createInputAndPreview(
       educationFormContainer,  schoolLocationPreviewContainer,

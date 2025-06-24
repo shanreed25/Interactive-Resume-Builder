@@ -11,6 +11,7 @@ header {
   -moz-box-shadow: 0px 1px 7px 0px rgba(236, 240, 241, 0.75);
   display: flex;
   justify-content: space-between;
+  font-size: 2rem;
 }
 
 .menu{
@@ -30,9 +31,20 @@ header {
     display: flex;
     justify-content: space-around;
     
-    
 }
+ .menu-list li a {
+  text-decoration: none;
+  color: initial; /*removes the blue color of the a element*/
+ }
 
+ h2{
+  font-size: 2rem;
+ }
+
+
+  h3{
+  font-size: 1.5rem;
+ }
 
 /*CONTENT-----------------------------------------------------*/
 #content {
@@ -99,7 +111,6 @@ textarea{
 }
 
 .experience-form-container{
-  border: 2px solid red;
   margin: 1rem 0;
 }
 
@@ -148,20 +159,20 @@ textarea{
 
 .employer-name-position-preview-container{
   /* width: 40%; */
-  border: 2px solid red;
   display: flex;
 }
 
 .employer-name-preview{
+  margin-top: 0;
   margin-right: .5em;
 }
 
-.employer-name-position-dash{
-  vertical-align: sub; /*lowers the dash character relative to the text around it, giving the appearance of a subscript.*/
-  font-size: 1.1em;
-  font-weight: bolder;
+.position-preview{
+  margin-top: 0;
   margin-right: .5em;
 }
+
+
 
 .employer-dates-location-preview-container{
   display: flex;
@@ -170,20 +181,50 @@ textarea{
 
 .employer-dates-preview-container{
   display: flex;
-  justify-content: space-between;
-  width: 20%;
+  /* justify-content: space-between; */
+  width: 40%;
+   
+}
+
+.start-date-preview{
+  margin-right: .5rem;
+}
+
+.end-date-preview{
+  margin-left: .5rem;
 }
 
 
-.employer-location-preview{
+.employer-location-preview-container{
   display: flex;
   justify-content: flex-end;
-  width: 50%;
-} */
+  width: 15%;
+} 
 
+.city-state-comma{
+    margin-left: .1rem;
+  margin-right: .3rem;
+}
 
 
 /* EDUCATION */
+.education-preview-container{
+    border: 2px solid red;
+}
+
+.degree-school-name-preview-container{
+  display: flex;
+}
+
+.degree-preview{
+  font-size: 1.5rem;
+}
+
+.school-name-preview{
+  margin-top: 2.2rem;
+  font-size: 1.3rem;
+}
+
 .school-dates-preview-container{
   display: flex;
 }

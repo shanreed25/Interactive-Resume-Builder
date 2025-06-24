@@ -1,7 +1,7 @@
 import {createAppendContainer} from './functions/createAppendContainer.js';
 import {createAppendInput} from './functions/createAppendInput.js';
 import {addButton} from './functions/addButton.js';
-import {createInputAndPreview, createPositionInputAndPreview, createDateInputAndReview, createEndDateInputAndReview} from './functions/inputPreviewConnection.js';
+import {createInputAndPreview, createDashedInputAndPreview, createDateInputAndReview, createEndDateInputAndReview} from './functions/inputPreviewConnection.js';
 import {experienceFormsContainer, allExperiencePreviewsContainer} from './functions/getElement.js'
 import { createAppendPreviewElement } from './functions/createAppendPreviewElement.js'
 
@@ -57,14 +57,14 @@ export function addNewExperienceSection(buttonName) {
     createInputAndPreview(
       jobFormContainer, employerNamePositionPreviewContainer,
       "text", `employer-name-input-${experienceFormCount}`, "med", "Employer/Company Name",
-      "h2", `employer-name-preview-${experienceFormCount}`, "employer-name-preview"
+      "h3", `employer-name-preview-${experienceFormCount}`, "employer-name-preview"
     );
     
     //JOB POSITION
-    createPositionInputAndPreview(
+    createDashedInputAndPreview(
       jobFormContainer, employerNamePositionPreviewContainer,
       "text", `position-input-${experienceFormCount}`, "med", "Position",
-      "h2", `position-preview-${experienceFormCount}`, "position-preview"
+      "h3", `position-preview-${experienceFormCount}`, "position-preview"
     );
 
     //Employer Dates And Location Preview Container
@@ -92,6 +92,8 @@ export function addNewExperienceSection(buttonName) {
       "text", `employer-city-input-${experienceFormCount}`, "med", "City",
       "p", `employer-city-preview-${experienceFormCount}`, "employer-city-preview"
     );
+    const cityStateComma = createAppendPreviewElement('p', `city-state-comma-${experienceFormCount}`, 'city-state-comma', employerLocationPreviewContainer)
+    cityStateComma.textContent = ' , '
 
     //EMPLOYER STATE
     createInputAndPreview(

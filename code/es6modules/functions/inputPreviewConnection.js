@@ -23,7 +23,7 @@ export function createInputAndPreview(
 
 
 //Connects the Job Position Inputs to the Preview Elements and Updates then accordingly--------------------------------------------------------------------------------------------------
-export function createPositionInputAndPreview(
+export function createDashedInputAndPreview(
   formContainer, previewContainer, 
   inputType, inputId, inputClassName, inputPlaceholder, 
   elementType, elementId, elementClassName ) {
