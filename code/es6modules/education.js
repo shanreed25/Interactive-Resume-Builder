@@ -1,6 +1,7 @@
 import { createAppendContainer } from './functions/createAppendContainer.js';
 
-import { createInputAndPreview, createDashedInputAndPreview } from './functions/inputPreviewConnection.js';
+import {createInputAndPreview, createDashedInputAndPreview, createDateInputAndReview, createEndDateInputAndReview} from './functions/inputPreviewConnection.js';
+
 
 import {educationFormsContainer, allEducationPreviewsContainer} from './functions/getElement.js'
 
@@ -29,7 +30,7 @@ export function addNewEducationSection(buttonName){
        'h4', `degree-preview-${educationFormCount}`, 'degree-preview'
     );
 
-       //School Name Container
+    //School Name Container
     const schoolNamePreviewContainer = createAppendContainer(`school-name-preview-container-${educationFormCount}`, 'school-name-preview-container', degreeSchoolNamePreviewContainer);
     createDashedInputAndPreview(
       educationFormContainer,  schoolNamePreviewContainer,
@@ -38,30 +39,45 @@ export function addNewEducationSection(buttonName){
     );
     
 
+    //Degree and School Name
+    const schoolDatesLocationPreviewContainer = createAppendContainer(`school-dates-location-preview-container-${educationFormCount}`, 'school-dates-location-preview-container', educationPreviewContainer);
+    //School Dates Preview Container
+    const schoolDatesPreviewContainer = createAppendContainer(`school-dates-preview-container-${educationFormCount}`, 'school-dates-preview-container', schoolDatesLocationPreviewContainer)
+    //SCHOOL START DATE
+    createDateInputAndReview(educationFormContainer, schoolDatesPreviewContainer, 
+    "month", `school-start-date-input-${educationFormCount}`, "med", "Start Date", 
+     "p", `school-start-date-preview-${educationFormCount}`, "school-start-date-preview");
+    
+    //SCHOOL END DATE
+    createEndDateInputAndReview(educationFormContainer, schoolDatesPreviewContainer, 
+    "month", `school-end-date-input-${educationFormCount}`, "med", "End Date" , 
+    "p", `school-end-date-preview-${educationFormCount}`, "school-end-date-preview");
 
 
 
-    //GPA
-    const gpaPreviewContainer = createAppendContainer(`gpa-preview-container-${educationFormCount}`, 'gpa-preview-container', degreeGpaPreviewContainer);
-    createInputAndPreview(
-      educationFormContainer,  gpaPreviewContainer,
-       "text", `gpa-input-${educationFormCount}`, "med", "GPA",
-       'h5', `gpa-preview-${educationFormCount}`, 'gpa-preview'
-    );
 
-    //School Name and Location Container
-    const schoolNameLocationPreviewContainer = createAppendContainer(`school-name-location-preview-container-${educationFormCount}`, 'school-name-location-preview-container', educationPreviewContainer);
+
+    // //GPA
+    // const gpaPreviewContainer = createAppendContainer(`gpa-preview-container-${educationFormCount}`, 'gpa-preview-container', degreeGpaPreviewContainer);
+    // createInputAndPreview(
+    //   educationFormContainer,  gpaPreviewContainer,
+    //    "text", `gpa-input-${educationFormCount}`, "med", "GPA",
+    //    'h5', `gpa-preview-${educationFormCount}`, 'gpa-preview'
+    // );
+
+    // //School Name and Location Container
+    // const schoolNameLocationPreviewContainer = createAppendContainer(`school-name-location-preview-container-${educationFormCount}`, 'school-name-location-preview-container', educationPreviewContainer);
     
  
 
 
-    //School Location Container
-    const schoolLocationPreviewContainer = createAppendContainer(`school-location-preview-container-${educationFormCount}`, 'school-location-preview-container', schoolNameLocationPreviewContainer);
-    createInputAndPreview(
-      educationFormContainer,  schoolLocationPreviewContainer,
-       "text", `school-location-input-${educationFormCount}`, "med", "School Location",
-       'h5', `school-location-preview-${educationFormCount}`, 'school-location-preview'
-    );
+    // //School Location Container
+    // const schoolLocationPreviewContainer = createAppendContainer(`school-location-preview-container-${educationFormCount}`, 'school-location-preview-container', schoolNameLocationPreviewContainer);
+    // createInputAndPreview(
+    //   educationFormContainer,  schoolLocationPreviewContainer,
+    //    "text", `school-location-input-${educationFormCount}`, "med", "School Location",
+    //    'h5', `school-location-preview-${educationFormCount}`, 'school-location-preview'
+    // );
   });
 };
 

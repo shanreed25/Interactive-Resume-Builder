@@ -1,0 +1,21 @@
+/* EDUCATION */
+.education-preview-container{
+    border: 2px solid red;
+}
+
+.degree-school-name-preview-container{
+  display: flex;
+}
+
+.degree-preview{
+  font-size: 1.5rem;
+}
+
+.school-name-preview{
+  margin-top: 2.2rem;
+  font-size: 1.3rem;
+}
+
+.school-dates-preview-container{
+  display: flex;
+}

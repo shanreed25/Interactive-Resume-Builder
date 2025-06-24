@@ -1,0 +1,80 @@
+/*EXPERIENCE FORM*/
+
+.all-experience-forms-container{
+  
+}
+
+.experience-form-container{
+  margin: 1rem 0;
+}
+
+.experience-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-job-duty-button{
+  margin: 1rem 0;
+}
+
+.job-duties-input-container{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+/*EXPERIENCE PREVIEW*/
+
+.employer-name-position-preview-container{
+  /* width: 40%; */
+  display: flex;
+}
+
+.employer-name-preview{
+  margin-top: 0;
+  margin-right: .5em;
+}
+
+.position-preview{
+  margin-top: 0;
+  margin-right: .5em;
+}
+
+
+
+.employer-dates-location-preview-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.employer-dates-preview-container{
+  display: flex;
+  /* justify-content: space-between; */
+  width: 40%;
+   
+}
+
+.start-date-preview{
+  margin-right: .5rem;
+}
+
+.end-date-preview{
+  margin-left: .5rem;
+}
+
+
+.employer-location-preview-container{
+  display: flex;
+  justify-content: flex-end;
+  width: 15%;
+} 
+
+.city-state-comma{
+    margin-left: .1rem;
+  margin-right: .3rem;
+}
+
+

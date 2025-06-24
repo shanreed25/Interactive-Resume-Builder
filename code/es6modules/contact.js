@@ -11,7 +11,7 @@ export function updateContactSection(contactInputs){
             document.getElementById("preview-phone-number").innerText =
             document.getElementById("phone-number").value;
             document.getElementById("preview-city").innerText =
-            document.getElementById("city").value;
+            document.getElementById("city").value + ',';
             document.getElementById("preview-state").innerText =
             document.getElementById("state").value;
       });
