@@ -48,12 +48,12 @@ export function addNewEducationSection(buttonName){
     //SCHOOL START DATE
     createDateInputAndReview(educationFormContainer, schoolDatesPreviewContainer, 
     "month", `school-start-date-input-${educationFormCount}`, "med", "Start Date", 
-     "p", `school-start-date-preview-${educationFormCount}`, "school-start-date-preview");
+     "p", `school-start-date-preview-${educationFormCount}`, "start-date-preview");
     
     //SCHOOL END DATE
     createEndDateInputAndReview(educationFormContainer, schoolDatesPreviewContainer, 
     "month", `school-end-date-input-${educationFormCount}`, "med", "End Date" , 
-    "p", `school-end-date-preview-${educationFormCount}`, "school-end-date-preview");
+    "p", `school-end-date-preview-${educationFormCount}`, "end-date-preview");
 
     //School Location Container
     const schoolLocationPreviewContainer = createAppendContainer(`school-location-preview-container-${educationFormCount}`, 'school-location-preview-container', schoolDatesLocationPreviewContainer);

@@ -119,5 +119,13 @@ button {
 .dates-preview-container{
   width: 25%;
   display: flex;
-  justify-content: space-around;
+
+}
+
+.start-date-preview{
+  margin-right: .5rem;
+}
+
+.end-date-preview{
+  margin-left: .5rem;
 }
