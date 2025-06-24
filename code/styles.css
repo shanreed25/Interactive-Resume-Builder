@@ -4,7 +4,7 @@ html {
 
 /*My Code*/
 /*HEADER*/
-header {
+header, footer {
   background-color: #ecf0f1;
   box-shadow: 0px 1px 7px 0px rgba(236, 240, 241, 0.75);
   -webkit-box-shadow: 0px 1px 7px 0px rgba(236, 240, 241, 0.75);
@@ -37,14 +37,7 @@ header {
 /*color: initial; removes the blue color of the a element*/
   color:  #1ABC9C;
  }
-/* 
- h2{
-  font-size: 2rem;
- }
 
-  h3{
-  font-size: 1.5rem;
- } */
 
 /*CONTENT-----------------------------------------------------*/
 #content {
@@ -60,6 +53,7 @@ header {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .section-headers {
@@ -102,9 +96,15 @@ header {
   margin-right: .3rem;
 }
 
+.experience-form-container{
+    border-bottom: thin dotted #2d3436;
+}
+
 button {
   background-color: #1abc9c;
 }
+
+
 
 
 
@@ -142,4 +142,14 @@ button {
 
 .end-date-preview{
   margin-left: .5rem;
+}
+
+.li-preview, .summary-preview{
+  font-size: 1.5rem;
+}
+
+
+.copyright{
+  width: 100%;
+  text-align: center;
 }

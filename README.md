@@ -22,3 +22,6 @@
 -----------------------------------------
 
 ## CSS
+
+
+**Give me a professional summary for a resume in which i am returning to the web development field after 2 years**

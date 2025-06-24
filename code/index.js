@@ -23,7 +23,7 @@ const contactInputs = document.querySelectorAll(".contact-item");
 updateContactSection(contactInputs)
 
 //SUMMARY SECTION - 1--------------------------------------------------------------------------------------------------------
-const summaryInput = document.getElementById("summary");
+const summaryInput = document.getElementById("summary-textarea");
 updateSummarySection(summaryInput);
 //EXPERIENCE SECTION - 1-----------------------------------------------------------------------------------------------------
 const newExperienceButton = document.getElementById("new-job-experience");

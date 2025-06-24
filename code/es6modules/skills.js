@@ -17,8 +17,8 @@ export function addNewSkillInput(buttonName){
 
     createInputAndPreview(
         skillInputContainer, allSkillsPreviewList,
-        'text', `skill-input-${skillInputCount}`, 'skill-input', "Skill",
-        'li', `skills-list-item-${skillInputCount}`, "skills-list-item" 
+        'text', `skill-input-${skillInputCount}`, 'large', "Skill",
+        'li', `skills-list-item-${skillInputCount}`, "li-preview" 
     );
   })
 }

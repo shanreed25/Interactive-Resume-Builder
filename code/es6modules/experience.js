@@ -22,11 +22,11 @@ export function addJobDuty(formCount, jobFormContainer, employerDetailsPreviewCo
   jobDutyButton.addEventListener('click', () => {
     jobDutyCount++;//count of the number of list item added to each unordered list
 
-     const dutyInput = createAppendInput("text", `duty-input-${jobDutyCount}-for-experience-${formCount}`, "duty-input", "Add Job Duty/Description", jobDutyInputsContainer);
+     const dutyInput = createAppendInput("text", `duty-input-${jobDutyCount}-for-experience-${formCount}`, "large", "Add Job Duty/Description", jobDutyInputsContainer);
     // jobDutyInputsContainer.appendChild(dutyInput);
 
     //Create and add job duty list item to preview container
-    const jobDutyLIPreviewElement = createAppendPreviewElement("li", `job-duty-li-preview-${jobDutyCount}-for-experience-${formCount}`, "job-duty-li-preview", jobDutyULPreviewElement);
+    const jobDutyLIPreviewElement = createAppendPreviewElement("li", `job-duty-li-preview-${jobDutyCount}-for-experience-${formCount}`, "li-preview", jobDutyULPreviewElement);
 
     // ---> Listen for the input and add the value to the preview
     dutyInput.addEventListener("input", () => {
