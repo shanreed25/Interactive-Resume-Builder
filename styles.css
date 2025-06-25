@@ -2,6 +2,9 @@ html {
   font-size: 62.5%; /* Sets the root font size to 10px (62.5% of the default 16px) */
 }
 
+body {
+  margin: 0;
+}
 /*My Code*/
 /*HEADER*/
 header, footer {
@@ -12,6 +15,11 @@ header, footer {
   display: flex;
   justify-content: space-between;
   font-size: 2rem;
+  /* width: 100%; */
+}
+
+.header-title{
+    color:  #1ABC9C;
 }
 
 .menu{
@@ -20,7 +28,6 @@ header, footer {
     display: flex;
     align-items: center;
     justify-content: center;
-     
 }
 
 .menu-list {
@@ -35,7 +42,12 @@ header, footer {
 .menu-list li a {
   text-decoration: none;
 /*color: initial; removes the blue color of the a element*/
-  color:  #1ABC9C;
+  color: #2D3436;
+
+ }
+
+ .menu-list li a:hover{
+  color: #1ABC9C;
  }
 
 
@@ -50,10 +62,13 @@ header, footer {
   width: 45%;
   background: #ecf0f1;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 7px 0px rgba(236, 240, 241, 0.75);
+  -webkit-box-shadow: 0px 1px 7px 0px #1ABC9C;
+  -moz-box-shadow: 0px 1px 7px 0px rgba(236, 240, 241, 0.75);
   border-radius: 8px;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  min-height: 90vh;
 }
 
 .section-headers {
@@ -61,7 +76,16 @@ header, footer {
   padding-bottom: 5px;
 }
 
+/*Buttons*/
+button {
+  background-color: #1abc9c;
+}
+
 /* Form Inputs */
+input:focus, textarea:focus {
+  outline-color: #1ABC9C; /* Change to your desired color */
+}
+
 .large{
   width: 90%;
   padding: 12px 20px;
@@ -92,20 +116,38 @@ header, footer {
   box-sizing: border-box;
 }
 
+/*EXPERIENCE FORM*/
+.experience-form-container{
+  margin: 1rem 0;
+  border-bottom: thin dotted #2d3436;
+}
+
+.add-job-duty-button{
+  margin: 1rem 0;
+}
+
+.job-duties-input-container{
+  display: flex;
+  flex-direction: column;
+}
+
 .gap-input{
   margin-right: .3rem;
 }
 
-.experience-form-container{
-    border-bottom: thin dotted #2d3436;
+
+/*SUMMARY*/
+.summary{
+  display: flex;
+  flex-direction: column;
+}
+textarea{
+  width: 89%;
 }
 
-button {
-  background-color: #1abc9c;
+.preview-summary{
+  font-size: 1.2rem;
 }
-
-
-
 
 
 /*PREVIEW*/
@@ -115,6 +157,44 @@ button {
     font-size: 1.2rem;
 }
 
+/*CONTACT*/
+.preview-contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.preview-name {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: thick double #2d3436;
+  font-size: 1.5rem;
+}
+
+.full-name{
+  margin-bottom: 0;
+}
+
+.preview-contact-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.contact-item{
+  margin-bottom: 0;
+  margin-top: .5rem;
+}
+
+
+
+
+
+/*Other*/
 .preview-info-1{
   margin-bottom: 0;
 }
@@ -148,8 +228,13 @@ button {
   font-size: 1.5rem;
 }
 
-
+/*Footer*/
 .copyright{
   width: 100%;
   text-align: center;
+  color: #2D3436;
+}
+
+.color-teal{
+  color: #1ABC9C;
 }
